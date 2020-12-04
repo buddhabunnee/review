@@ -1,0 +1,1822 @@
+<!-- JQuery <3 -->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- Compressed CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-prototype.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-rtl.min.css">
+
+<!-- Compressed JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+
+<!-- Highlight JS -->
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/gradient-dark.min.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+<script>
+hljs.initHighlightingOnLoad();
+$(document).foundation();
+$(document).ready(function(){
+    $(".voyage-nav").click(function() {
+        $(".nav-item").removeClass("nav-selected");
+        $(".voyage-nav").addClass("nav-selected");
+        $(".voyage-wrap").fadeIn();
+        $(".marvel-wrap, .edge-wrap").hide();
+    });
+    $(".marvel-nav").click(function() {
+        $(".nav-item").removeClass("nav-selected");
+        $(".marvel-nav").addClass("nav-selected");
+        $(".marvel-wrap").fadeIn();	
+        $(".edge-wrap, .voyage-wrap").hide();
+	  });
+    $(".edge-nav").click(function() {
+        $(".nav-item").removeClass("nav-selected");
+        $(".edge-nav").addClass("nav-selected");
+        $(".edge-wrap").fadeIn();	
+        $(".marvel-wrap, .voyage-wrap").hide();
+	  });
+})
+</script>
+<style>
+.hljs {
+	background: linear-gradient(180deg, #501f7a 0, #2820b3 55%);
+}
+body {
+	background: #45255f;
+	font-family: Calibri, Arial;
+	font-size: 14px;
+}
+pre {
+	overflow-x: auto;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	font-size: 14px;
+	line-height: 16px;
+}
+.wrap {
+	height: 500px !important;
+}
+code {
+	border: 1px dotted #af8dd9;
+}
+nav {
+	border-top: 1px dotted #af8dd9;
+	border-bottom: 1px dotted #af8dd9;
+	background: #331a47;
+	font-size: 18px;
+}
+.nav-item {
+	color: #FFFFFF;
+	transition: 0.1s ease-in;
+	cursor: pointer;
+}
+.nav-selected {
+	color: #ffc800;
+}
+</style>
+<div class="grid-x align-center-middle" style="padding-top:20px;">
+	<h2 class="small-12" style="padding-left:20px;padding-right:20px;font-family: 'Oleo Script', cursive;color:#af8dd9;">Coding Examples</h2>
+	<p class="small-12 sub-heading" style="padding-left:20px;padding-right:20px;color:#e7e4eb;">Below please find examples of code I've authored for select promotions while working for Motivation Technologies in 2020.</p>
+	<nav class="small-12" style="color:#e7e4eb; padding-top:5px; padding-bottom:5px;">
+		<p style="padding-left:20px;padding-right:20px;margin-bottom:0px;"><span class="voyage-nav nav-item nav-selected">Voyage Into the Deep</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="marvel-nav nav-item">Marvel Avengers Giveaway</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="edge-nav nav-item">Edge Games</span></p>
+	</nav>
+
+
+	
+	<div class="voyage-wrap grid-x grid-margin-x small-12 align-center wrap" style="margin-top:25px;padding-left:5px;padding-right:5px;min-height:750px;">
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;"><p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">JavaScript</p><code style="">irep.ready(function(){
+ 
+    if (window.location.href.indexOf("?t=battledeck") > -1 ) {
+		setTimeout(function() {
+			$(".battle-nav").trigger('click');
+		},10);
+    }
+    
+    if (window.location.href.indexOf("?t=ranks") > -1 ) {
+		setTimeout(function() {
+			$(".ranking-nav").trigger('click');
+		},10);
+    }
+ 
+// INITIAL DISPLAYS
+    $(".battle-wrap").hide();
+    $(".ranking-wrap").hide();
+    
+    //Leaderboard//
+    $("table").addClass("cell grid-x small-12 xlarge-10");
+    $("tbody").addClass("cell grid-x");
+    $("tr").addClass("cell grid-x");
+    $("th:first-child").addClass("cell small-5 medium-6 padding--medium text-left");
+    $("th:nth-child(2)").addClass("cell small-4 medium-3 padding--medium text-center");
+    $("th:nth-child(3)").addClass("cell small-3 padding--medium text-center");
+    $("td:first-child").addClass("cell small-5 medium-6 padding--medium text-left");
+    $("td:nth-child(2)").addClass("cell small-4 medium-3 padding--medium text-center");
+    $("td:nth-child(3)").addClass("cell small-3 padding--medium text-center");
+    $("tr[data-self = True ]").addClass('myRank');
+    $("th[colspan = 3 ]").removeClass("small-5 medium-6").addClass('small-12 noBorder');
+    if ($("tr[data-self]").length > 0) {
+        $(".lbHeader").show();
+        $(".lbRanks").show();
+        $(".lbSpacer").hide();
+    }
+    /*Change BG color of My Rank*/
+
+    
+    /* loading animation for users with slower cxn - plays by default in spaces that pull in data - turned off when data loads */
+    var dots = 0;
+    setInterval(function () {
+        if(dots < 3) {
+            $('.loading-ani').append('.');
+            dots++;
+        } else {
+            $('.loading-ani').html('<MT-LOCALETEXT:233935>');
+            dots = 0;
+        }
+    }, 800);
+  
+  
+// MAIN NAVIGATION
+    $(".hiw-nav").click(function() {
+        $(".nav-item").removeClass("nav-selected");
+        $(".hiw-nav").addClass("nav-selected");
+        $(".hiw-wrap").fadeIn();
+        $(".battle-wrap, .ranking-wrap").hide();
+    });
+    $(".battle-nav").click(function() {
+        $(".nav-item").removeClass("nav-selected");
+        $(".battle-nav").addClass("nav-selected");
+        $(".battle-wrap").fadeIn();
+        $(".hiw-wrap, .ranking-wrap").hide();
+        // BATTLE DECK API
+        irep.callApi({
+        url: "voyageintothedeep/battledeck",
+        type: "GET",
+        datatype: "JSON"
+        }).done(function (data) {
+            if ((data.matchesLeft) > 0) {
+                $(".objective-item a").addClass("obj-ready");
+                $(".objective-item .btn-text").show();
+            } else {
+                $(".objective-item a").removeAttr("href").addClass("obj-notready");
+                $(".objective-item .btn-text").show();
+            }
+            $("#x-matches-left").html(data.matchesLeft);
+            $("#x-objectives-complete").html(data.objectivesCompleted);
+            $("#x-total-score").html(data.totalScore);
+            console.table(data);
+        });
+    });
+    $(".ranking-nav").click(function() {
+        $(".nav-item").removeClass("nav-selected");
+        $(".ranking-nav").addClass("nav-selected");
+        $(".ranking-wrap").fadeIn();
+        $(".battle-wrap, .hiw-wrap").hide();
+    });
+    
+
+// BATTLE DECK CARDS
+    $(".objectives-panel").hide();
+    $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc").hide();
+    
+    /* encounter/objective navigation */
+    $(".encounter-nav").click(function() {
+        $(".objectives-nav").removeClass("active");
+        $(this).addClass("active");
+        $(".objectives-panel").hide();    
+        $(".encounter-panel").show();
+    });
+    $(".objectives-nav").click(function() {
+        $(".encounter-nav").removeClass("active");
+        $(this).addClass("active");
+        $(".encounter-panel").hide();
+        $(".objectives-panel").show();
+    });
+    
+    /* weekly navigation */
+    $(".week-1-nav").click(function() {
+        $(".week-1-objs, .week-1-enc").show();
+        $(".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc").hide();
+        $(".weekly-nav div").removeClass("active-week-ani");
+        $(this).addClass("active-week-ani");
+        $(".week-number").html(" <MT-LOCALETEXT:236120> ");
+        $(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+    });
+    $(".week-2-nav").click(function() {
+        $(".week-2-objs, .week-2-enc").show();
+        $(".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc").hide();
+        $(".weekly-nav div").removeClass("active-week-ani");
+        $(this).addClass("active-week-ani");
+        $(".week-number").html(" <MT-LOCALETEXT:236141> ");
+        $(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+    });
+    $(".week-3-nav").click(function() {
+        $(".week-3-objs, .week-3-enc").show();
+        $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc").hide();
+        $(".weekly-nav div").removeClass("active-week-ani");
+        $(this).addClass("active-week-ani");
+        $(".week-number").html(" <MT-LOCALETEXT:236153> ");
+        $(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
+    });
+    // $(".week-4-nav").click(function() {
+    //     $(".week-4-objs, .week-4-enc").show();
+    //     $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc").hide();
+    //     $(".weekly-nav div").removeClass("active-week-ani");
+    //     $(this).addClass("active-week-ani");
+    //     $(".week-number").html(" <MT-LOCALETEXT:236165> ");
+    //     $(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+    // });
+    
+    /* pageload animation on current week's encounter */
+    $(".encounter-text").addClass("fall-anim");
+    $(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
+    $(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
+    
+    /* adds animations for encounters panel */
+    $(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(function() {
+        if ($(".week-1-enc").is(':visible')) {
+            $(".week-1-enc .encounter-text").addClass("fall-anim");
+            $(".pirate").addClass("ghost-anim, shift-left");
+            $(".piratebg").addClass("ghost-animbg, shift-left");
+        } else if ($(".week-2-enc").is(':visible')) {
+            $(".week-2-enc .encounter-text").addClass("fall-anim");
+            $(".islander").addClass("ghost-anim");
+            $(".islanderbg").addClass("ghost-animbg");
+        } else if ($(".week-3-enc").is(':visible')) {
+            $(".week-3-enc .encounter-text").addClass("fall-anim");
+            $(".beast").addClass("ghost-anim");
+            $(".beastbg").addClass("ghost-animbg");
+        } else if ($(".week-4-enc").is(':visible')) {
+            $(".week-4-enc .encounter-text").addClass("fall-anim");
+            $(".empress").addClass("ghost-anim");
+            $(".empressbg").addClass("ghost-animbg");
+        } else if ($(".objectives-panel").is(':visible')) {
+            $(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass("rise-anim");
+        }
+    });
+    
+
+// REMATCH BUTTONS
+    // TRAININGS CLAIM REMATCH BUTTON
+    irep.callApi({
+    url: "voyageintothedeep/training",
+    type: "GET",
+    datatype: "JSON"
+    }).done(function (data) {
+         console.log("number of high priority trainings taken: " + (data.count));
+        if ((data.count) < 10) {
+            $(".rematch-trainings .btn-text").html(" <MT-LOCALETEXT:236109> "); // "TRAINING LIST"
+            $(".rematch-trainings").addClass("rematch-avail").removeClass("rematch-unavail");
+        } else {
+            $(".rematch-credits").addClass("rematch-unavail").removeClass("rematch-avail");
+            $(".rematch-credits .btn-text").html(" <MT-LOCALETEXT:236110> "); // "MAX EARNED"
+            $("a.trainings-btn").removeAttr("href");
+        }
+    });    
+
+    // CREDITS CLAIM REMATCH BUTTON
+    irep.callApi({
+    url: "voyageintothedeep/available/purchase",
+    type: "GET",
+    datatype: "JSON"
+    }).done(function (data) {
+        console.log("rematch available for purchase with credits? " + (data.available));
+        if (data.available) {
+            $(".rematch-credits .btn-text").html(" <MT-LOCALETEXT:236112> "); // "PURCHASE REMATCH" - changes button text
+            $(".rematch-credits").addClass("rematch-avail").removeClass("rematch-unavail"); // blue background + pointer cursor
+            $(".rematch-credits").one("click", function() { 
+                $(this).addClass("rematch-unavail").removeClass("rematch-avail"); // grey background + no pointer cursor, since user only allowed one redepemtion /week, clicking the button immediately 'disables' it
+                $(".rematch-credits .btn-text").html(" <MT-LOCALETEXT:236113> "); // "PURCHASED" - changes button text
+                irep.callApi({
+                    url: "voyageintothedeep/purchase",
+                    type: "POST",
+                    datatype: "JSON"
+                    }).done(function (data) {
+                        console.log(data);
+                });
+            });
+        } else {
+            $(".rematch-credits").addClass("rematch-unavail").removeClass("rematch-avail");
+            $(".rematch-credits .btn-text").html(" <MT-LOCALETEXT:236113> "); // "PURCHASED"
+        }
+    });    
+
+    // RXT CLAIM REMATCH BUTTON 
+    irep.callApi({
+    url: "voyageintothedeep/available/rxt",
+    type: "GET",
+    datatype: "JSON"
+    }).done(function (data) {
+        console.log("rematch available for purchase with rxt? " + (data.available));
+        if (data.available) {
+            $(".rematch-rxt .btn-text").html(" <MT-LOCALETEXT:236115> "); // "SUBMIT METRICS"
+            $(".rematch-rxt").addClass("rematch-avail").removeClass("rematch-unavail");
+        } else {
+            $(".rematch-rxt").addClass("rematch-unavail").removeClass("rematch-avail");
+            $(".rematch-rxt .btn-text").html(" <MT-LOCALETEXT:236116> "); // "SUBMITTED"
+            $("a.rxt-btn").removeAttr("href");
+        }
+    });
+    
+
+    
+    // BATTLE DECK OBJECTIVES
+    irep.callApi({
+    url: "voyageintothedeep/scores",
+    type: "GET"
+    }).done(function (data) {
+        $.each(data.participantObjectiveScores, function( i,item ) {
+            console.log(item);
+            // avatar item checked
+            if ((item.score) > 0) {
+                $("#obj-" + item.objectiveId + " .avatar-item").append( "<div class='align-center-middle cell grid-x small-12' style='background: rgba(229,169,45,0.85);'><img src='/content/images/voyage/sitepages/fordev/Checkmark.png'></div>" );
+                // display and load score
+                $("#obj-" + item.objectiveId + " .obj-score").show();
+                $("#obj-" + item.objectiveId + " .obj-score span").html(item.score);
+            }
+        })
+    });
+    
+})
+		
+		</code></pre>
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
+<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">CSS</p><code style="">/* for small view only */
+@media only screen and (max-width:39.9735em) {
+.hiw-wrap h4 { font-weight: bold; font-size: 1.6em !important; }
+.hiw-wrap h3, .ranking-wrap h3 { font-size: 1.9em; }
+.header-bg h3 { font-size: 1.5em; }
+.header-desc { font-size: 1em; line-height: 1.3em; }
+.dates { font-size: 1.2em !important; }
+.encounter-title { font-size: 1.5em; }
+.encounter-subtitle { font-size: 1.1em; font-weight: bold; }
+.encounter-desc { font-size: 1em; font-style: italic; line-height: 1.1em; }
+.battle-deck-nav h5, .weekly-nav h5 { font-size: 1.1em; } 
+.grid-container { padding-left: 0px; padding-right: 0px; }      
+.header-bg { background: #c2c5cb url(/content/images/voyage/sitepages/fordev/Top_Banner_Mobile.jpg) center bottom; padding-bottom: 120px; }
+.hiw-wrap { padding-top: 100px; }
+.hiw-divider { border-bottom: 3px dashed #445c66; }
+.rematch-header { font-size: 1.2em; font-weight: bold; }
+.rematch-desc { font-style: italic; font-size: 1em; }
+.active-week-ani { animation: active-week-ani 0.3s ease 0s forwards; }
+@-webkit-keyframes active-week-ani {
+    0% { box-shadow: 0px 0px 0px 0px rgba(229,165,45,1); }
+    100% { box-shadow: 0px 0px 0px 8px rgba(229,165,45,1); }
+}
+.pirate { bottom: -50px; left: -30px; position: relative; opacity: 0; animation: small-rise 1s cubic-bezier(0, 0.91, 0.66, 1) 0s forwards; }
+.islander { bottom: -50px; left: -35px; position: relative; opacity: 0; animation: small-rise 1s cubic-bezier(0, 0.91, 0.66, 1) 0s forwards; }
+.beast { bottom: -50px; left: -35px; position: relative; opacity: 0; animation: small-rise 1s cubic-bezier(0, 0.91, 0.66, 1) 0s forwards; }
+.empress { bottom: -50px; left: -35px; position: relative; opacity: 0; animation: small-rise 1s cubic-bezier(0, 0.91, 0.66, 1) 0s forwards; }
+@-webkit-keyframes small-rise {
+    50% { opacity: 1; }
+    100% { opacity: 1; bottom: 0px; }
+}
+}
+/* for medium view only */
+@media only screen and (min-width:40em) and (max-width:63.9735em) {
+.hiw-wrap h4 { font-weight: bold; font-size: 1.8em; }
+.shift-left { position: relative; left: -20px; }
+.shift-leftbg { background-position: -20px  !important; }
+.encounter-title { font-size: 1.7em; }
+.encounter-subtitle { font-size: 1.2em; font-weight: bold; }
+.encounter-desc { font-size: 1em; font-style: italic; line-height: 1.1em; }
+.encounter-text { top: -100px; }
+.week-number { font-size: 1.7em; } 
+.battle-deck-nav h5, .weekly-nav h5 { font-size: 1.2em; } 
+.grid-container { padding-left: 0px; padding-right: 0px; }  
+.header-bg { background: #c2c5cb url(/content/images/voyage/sitepages/fordev/Top_Banner_Desktop_1.jpg) center top; }
+.main { height: 712px; }
+.hiw-wrap { padding-top: 100px; }
+.hiw-divider { border-bottom: 3px dashed #445c66; }
+.nav-item { font-size: 1.2em !important; }
+.rematch-header { font-size: 1.3em; font-weight: bold; }
+.rematch-desc { font-style: italic; font-size: 1em; }
+.active-week-ani { animation: active-week-ani 0.3s ease 0s forwards; }
+@-webkit-keyframes active-week-ani {
+    0% { box-shadow: 0px 0px 0px 0px rgba(229,165,45,1); }
+    100% { box-shadow: 0px 0px 0px 10px rgba(229,165,45,1); }
+}
+}
+/* for medium and up */
+@media only screen and (min-width:40em) {
+.hiw-wrap h3, .header-bg h3 { font-size: 2.3em; }
+.header-desc { font-size: 1.3em; }
+.battle-deck { margin-bottom: 100px; }
+.pirate, .empress { animation: ghost-anim 5s ease-out 0s infinite; mix-blend-mode: screen; opacity: 0; }
+.islander, .beast { animation: ghost-anim 5s ease-out 0s infinite; mix-blend-mode: color-dodge; opacity: 0; }
+@-webkit-keyframes ghost-anim {
+    from, to { opacity: 0; }
+    50% { opacity: .6; }
+}
+.piratebg { bottom: -240px; position: relative; opacity: 0; background: url('/content/images/voyage/sitepages/fordev/Encounter_1_Character.png') 100% / contain no-repeat; }
+.islanderbg { bottom: -240px; position: relative; opacity: 0; background: url('/content/images/voyage/sitepages/fordev/Encounter_2_Character.png') 100% / contain no-repeat; }
+.beastbg { bottom: -240px; position: relative; opacity: 0; background: url('/content/images/voyage/sitepages/fordev/Encounter_3_Character.png') 100% / contain no-repeat; }
+.empressbg { bottom: -240px; position: relative; opacity: 0; background: url('/content/images/voyage/sitepages/fordev/Encounter_4_Character.png') 100% / contain no-repeat; }
+.ghost-animbg { animation: ghost-animbg 1s cubic-bezier(0, 0.91, 0.66, 1) 0s forwards; }
+@-webkit-keyframes ghost-animbg {
+    50% { opacity: 1; }
+    100% { opacity: 1; bottom: 0px; }
+}
+}
+/* for large and up */
+@media only screen and (min-width:64em) {
+.encounter-title { font-size: 2.35em; }
+.encounter-subtitle { font-size: 1.5em; font-weight: bold; }
+.encounter-desc { font-size: 1.1em; font-style: italic; line-height: 1.45em; }
+.main { height: 712px; }
+.hiw-wrap { padding-top: 100px; }
+.hiw-divider { border-bottom: 3px solid #97afb3; }
+.rematch-header { font-size: 1.5em; font-weight: bold; }
+.rematch-desc { font-style: italic; font-size: 1.2em; }
+.active-week-ani { animation: active-week-ani 0.3s ease 0s forwards; }
+@-webkit-keyframes active-week-ani {
+    0% { box-shadow: 0px 0px 0px 0px rgba(229,165,45,1); }
+    100% { box-shadow: 0px 0px 0px 15px rgba(229,165,45,1); } 
+}
+}
+/* for large view only */
+@media only screen and (min-width:64em) and (max-width:85.4735em)  {
+.encounter-text { top: -240px; }
+.battle-deck-nav h5, .weekly-nav h5 { font-size: 1.4em; } 
+.header-bg { background: #c2c5cb url(/content/images/voyage/sitepages/fordev/Top_Banner_Desktop_1.jpg) center top; }
+.introText { padding-left: 60px; }
+}
+/* for extra large view only */
+@media only screen and (min-width:85.5em) {
+.encounter-text { top: -240px; padding-left: 48px; }
+.battle-deck-nav h5, .weekly-nav h5 { font-size: 1.4em; } 
+.header-bg { background: #c2c5cb url(/content/images/voyage/sitepages/fordev/Top_Banner_Desktop_1.jpg) center; }
+.introText { padding-left: 100px; }
+}
+
+
+body { overflow-x: hidden !important; }
+
+.user-dash .loading-ani { 
+    font-size: 0.6em;
+}
+
+.voyageColor1 { color: #182126; }
+.voyageColor2 { color: #1d2e35; }
+.voyageColor3 { color: #263a43; }
+.voyageColor4 { color: #445c66; }
+.voyageColor5 { color: #547483; }
+.voyageColor6 { color: #97afb3; }
+.voyageColor7 { color: #0b5b7e; }
+.voyageColor8 { color: #0671c3; }
+.voyageColor9 { color: #e5a92d; }
+.voyageColor10 { color: #c1b38c; }
+
+.header-bg {
+    background-repeat: no-repeat;
+    background-size: cover; 
+    overflow-x: hidden !important;
+}
+
+.hiw-wrap h4 { font-weight: bold; font-size: 1.8em; }
+.hiw-wrap a { color: #0b5b7e; font-style: italic; font-weight: bold; }
+.hiw-wrap a:hover { color: #0671c3; text-decoration: underline; }
+.hiw-wrap { background: url(/content/images/voyage/sitepages/fordev/Paper2.png) center top no-repeat; }
+
+.rematch-avail { 
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #0671c3;
+    border: 2px solid #FFFFFF;
+}
+
+.rematch-unavail { 
+    color: #b7b7b5;
+    background: #384b52;
+    border: 2px solid #FFFFFF;
+    cursor: default;
+}
+
+.rematch-row a:hover { text-decoration: none; }
+
+.nav-item { color: #FFFFFF; transition: 0.1s ease-in; font-size: 1.4em; cursor: pointer; }
+.nav-selected { color: #e5a92d; }
+.show-for-small-only .battle-nav { border-top: 1px solid #445c66; }
+.show-for-small-only .ranking-nav { border-top: 1px solid #445c66; }
+
+.btn-text { font-size: 1.1em; }
+
+/* needed for ipad pro */
+.weekly-nav img { width: 100%; height: 100%; }
+
+/* battle deck styles */
+.obj-score { display: none; font-size: 1.1em; font-weight: bold; }
+.obj-complete { background: rgba(229,169,45,0.85); }
+a.obj-ready { 
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #0671c3;
+}
+a.obj-notready { 
+    cursor: auto;
+    color: #b7b7b5;
+    background: #384b52;
+}
+.obj-ready, .obj-notready { border: 2px solid #FFFFFF; }
+.encounter-nav, .objectives-nav { cursor: pointer; }
+.weekly-nav .week-unlocked { cursor: pointer; }
+.battle-deck-nav .active { color: #FFFFFF; border-bottom: 3px solid #FFFFFF; }
+.battle-deck-nav { z-index: 1; }
+.objective-item { background: #1d2e35; }
+.weekly-nav div { background: #537382; }
+.battle-deck { background: #445c66; }
+.weekly-nav-wrap { background: #1d2e35; border-top: 15px solid #547483; z-index: 1; }
+.week-unlocked img { opacity: 0; }
+.encounter-panel, .objectives-panel { background: #445c66; }
+.objective-item h4 { font-size: 1.3em; }
+
+/* battle deck animations */
+.week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs { bottom: -50px; position: relative; opacity: 0; }
+.rise-anim { animation: rise-anim 1s cubic-bezier(0, 0.91, 0.66, 1) 0s forwards; }
+@-webkit-keyframes rise-anim {
+    to { bottom: 0px; opacity: 1; }
+}
+.encounter-text { position: relative; opacity: 0; }
+.fall-anim { animation: fall-anim 1s cubic-bezier(0, 0.91, 0.66, 1) 0s forwards; }
+@-webkit-keyframes fall-anim {
+    to { top: 0px; opacity: 1; }
+}
+</code></pre>
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
+<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">HTML</p><code class="language-html" style="">&lt;div class="header-bg" style="" &gt;
+&lt;div id="IREPf4eaa00c0f244fbcbf4d281f116ae5c7" data-controluid="f4eaa00c-0f24-4fbc-bf4d-281f116ae5c7" class="grid-container " style=""&gt;
+    &lt;div class="grid-x align-center-middle" style=""&gt;
+&lt;div id="top" class="grid-x cell align-center padding-for-small-only--large text-align-for-small-only--center text-align-for-medium--left small-12 medium-9 large-7 xlarge-6 main"&gt;
+    &lt;div class="cell align-self-middle introText"&gt;
+        &lt;h2 class="margin-bottom--small voyageColor7"&gt;VIAJE A LO PROFUNDO&lt;/h2&gt;
+        &lt;h3 class="margin--none text--black"&gt;&lt;em&gt;&lt;strong&gt;una odisea de Intel&lt;/strong&gt;&lt;/em&gt;&lt;/h3&gt;
+        &lt;h5 class="margin--none header-desc text-black padding-vertical--large"&gt;¡Una bruja marina ha arrojado una maldición sobre tu aldea y de ti depende romper el hechizo! Zarpa y navega por islas inexploradas, cuevas submarinas y más, mientras tus excéntricos oponentes ponen a prueba tus conocimientos y te permiten obtener exclusivas recompensas a lo largo del camino.&lt;/h5&gt;
+        &lt;h4 class="margin--none padding-top-for-small-only--xsmall bodyText1 dates voyageColor7 text--bold" style="font-size:1.4em;line-height:1.1em;"&gt;La promoción empieza el lunes 16 de noviembre y termina el lunes 14 de diciembre (cuatro semanas).&lt;/h4&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="nav-bar" style="background: #182126;border-top: 4px solid #445c66;border-bottom: 4px solid #445c66;" &gt;
+&lt;div id="IREPd8ee183b7e864969816f11f5fcf0934b" data-controluid="d8ee183b-7e86-4969-816f-11f5fcf0934b" class="grid-container " style=""&gt;
+    &lt;div class="grid-x align-center-middle" style=""&gt;
+&lt;style&gt;
+
+&lt;/style&gt;
+
+&lt;!-- nav for medium and large --&gt;
+&lt;div class="grid-x text-center text--white align-center-middle hide-for-small-only small-12 xlarge-10"&gt;
+	&lt;div class="cell small-12 medium-4 large-3 padding-vertical--large"&gt;&lt;span class="hiw-nav nav-item nav-selected margin--none text--bold"&gt;CÓMO FUNCIONA&lt;/h4&gt;&lt;/div&gt;
+	&lt;div class="cell small-12 medium-4 large-3 padding-vertical--large"&gt;&lt;span class="battle-nav nav-item margin--none text--bold"&gt;PLATAFORMA DE BATALLA&lt;/h4&gt;&lt;/div&gt;
+	&lt;div class="cell small-12 medium-4 large-3 padding-vertical--large"&gt;&lt;span class="ranking-nav nav-item margin--none text--bold"&gt;LAS POSICIONES&lt;/h4&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- nav for small --&gt;
+&lt;div class="grid-x text-center text--white align-center-middle show-for-small-only small-12"&gt;
+    &lt;div class="cell small-12 hiw-nav nav-item nav-selected padding-vertical--large"&gt;&lt;span class="margin--none text--bold"&gt;CÓMO FUNCIONA&lt;/span&gt;&lt;/div&gt;
+	&lt;div class="cell small-12 battle-nav nav-item padding-vertical--large"&gt;&lt;span class="margin--none text--bold"&gt;PLATAFORMA DE BATALLA&lt;/span&gt;&lt;/div&gt;
+	&lt;div class="cell small-12 ranking-nav nav-item padding-vertical--large"&gt;&lt;span class="margin--none text--bold"&gt;LAS POSICIONES&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="" style="background: url(/content/images/voyage/sitepages/fordev/Background.jpg) center top;background-attachment:fixed;" &gt;
+&lt;div id="IREPca88a946455b4676b59510844bc1d7cd" data-controluid="ca88a946-455b-4676-b595-10844bc1d7cd" class="grid-container " style=""&gt;
+    &lt;div class="grid-x hiw-wrap align-center-middle" style=""&gt;
+&lt;!--HOW IT WORKS--&gt;
+&lt;div class="grid-x cell align-center padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--large padding-top-for-small-only--large padding-top-for-medium-only--large padding-for-large--xlarge text-center small-12 medium-11 large-10 xlarge-9 hiw-divider"&gt;
+    &lt;div class="cell adjust1 padding-bottom-for-small-only--xlarge padding-bottom-for-medium-only--xlarge"&gt;
+        &lt;h3 class="padding-bottom--medium voyageColor3"&gt;&lt;strong&gt;CÓMO FUNCIONA&lt;/strong&gt;&lt;/h3&gt;&lt;!--HOW IT WORKS--&gt;
+        &lt;h4 class="padding-top-for-medium--large padding-top-for-small-only--medium voyageColor5" style="text-transform:uppercase;"&gt;Encuentros&lt;/h4&gt;&lt;!--ENCOUNTERS--&gt;
+        &lt;p class="bodyText1 padding-vertical--medium text-black margin--none"&gt;Cada semana, aparecerá un nuevo encuentro en la página de Plataforma de Batalla. Cada encuentro te presentará un oponente virtual con una provisión de nuevos accesorios para tu Avatar. Puedes obtenerlos para tu Casillero de Avatar cumpliendo con los objetivos que presenta cada oponente.&lt;/p&gt;&lt;!--Each week, a new encounter will appear on the Battle Deck page. Every encounter will introduce you to a virtual opponent who holds a stash of new Avatar items. You can earn these items for your Avatar Locker by completing the objectives each opponent presents.--&gt;
+        &lt;a href="/50/apac/avatareditor" class="bodyText1 padding-top--medium"&gt;CONSULTA TU CASILLERO DE AVATAR&lt;/a&gt;&lt;!--CHECK OUT YOUR AVATAR LOCKER--&gt;
+        &lt;h4 class="padding-top--xlarge voyageColor5" style="text-transform:uppercase;"&gt;Objetivos&lt;/h4&gt;&lt;!--OBJECTIVES--&gt;
+        &lt;p class="bodyText1 padding-top--medium text-black"&gt;Se propondrán cuatro objetivos en cada encuentro. Los objetivos son cuestionarios exclusivos que deben responderse cumpliendo con criterios específicos. Cada objetivo es diferente, ya sea por sus criterios de cumplimiento, su temática o ambas cosas.&lt;/p&gt;&lt;!--Four objectives will be offered with each encounter. Objectives are unique quizzes that must be completed by meeting the specified criteria. Each objective is different – be it by completion criteria, subject matter, or both!--&gt;
+        &lt;p class="bodyText1 text-black"&gt;¡Dado que cada objetivo cumplido te otorga un accesorio de Avatar, eso significa que puedes ganar hasta 16 nuevos accesorios para tu Casillero de Avatar!&lt;/p&gt;&lt;!--Since each completed objective earns you an Avatar item, that means you can earn up to 16 brand new items for your Avatar Locker!--&gt;
+        &lt;p class="bodyText1 padding-bottom--medium text-black margin--none"&gt;&lt;span class="text--bold"&gt;NOTA:&lt;/span&gt; Los objetivos de las primeras tres semanas pueden cumplirse en cualquier orden una vez que están disponibles, pero el encuentro de la semana final solo se presentará si se han cumplido los primeros 12 objetivos.&lt;/p&gt;&lt;!--NOTE: Objectives from the first three weeks can be completed in any order once they are available, but the final week’s encounter will only be unlocked if the first 12 objectives are completed.--&gt;
+        &lt;a class="bodyText1 padding-top--medium battle-nav adjust2" href="#top"&gt;VISITA LA PLATAFORMA DE BATALLA&lt;/a&gt;&lt;!--VISIT THE BATTLE DECK--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--SCORING--&gt;
+&lt;div class="grid-x cell align-center padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--large padding-top-for-small-only--xlarge padding-top-for-medium-only--xlarge padding-for-large--xlarge text-center small-12 medium-11 large-10 xlarge-9 hiw-divider"&gt;
+    &lt;div class="cell adjust1 padding-bottom-for-small-only--xlarge padding-bottom-for-medium-only--xlarge"&gt;
+        &lt;h3 class="margin--none voyageColor3"&gt;&lt;strong&gt;PUNTUACIÓN&lt;/strong&gt;&lt;/h3&gt;&lt;!--SCORING--&gt;
+        &lt;p class="bodyText1 padding-top--medium text-black"&gt;Cada objetivo cumplido te otorgará una puntuación de 1000 puntos, según tu velocidad y tu precisión. Las puntuaciones de los objetivos individuales se combinarán para generar una puntuación total sobre 16 mil.&lt;/p&gt;&lt;!--Each completed objective will earn you a score out of 1,000 points, based on your speed and accuracy. Individual objective scores will be combined to give you a total score out of 16,000.--&gt;
+        &lt;p class="bodyText1 text-black"&gt;Una vez que cumplas un objetivo, podrás usar las Revanchas para mejorar tu puntuación (consulta la sección de Revanchas a continuación). No te preocupes; solo contaremos tu puntuación más alta para cada objetivo al calcular la puntuación total.&lt;/p&gt;&lt;!--After you complete an objective, you can use Rematches to improve your score (see Rematches section below). Don’t worry, we will only count your highest score for each objective when calculating your total score.--&gt;
+        &lt;p class="bodyText1 padding-bottom--medium text-black margin--none"&gt;Los participantes aparecerán clasificados según su puntuación total en el Marcador. Puedes hacer un seguimiento del Marcador y ver qué premios se pueden ganar en la página de Posiciones.&lt;/p&gt;&lt;!--Individuals will be ranked by their total score on the Leaderboard. You can track your Leaderboard rank and check out what prizes are up for grabs on the Ranks page.--&gt;
+        &lt;a class="bodyText1 padding-top--medium ranking-nav adjust2" href="#top"&gt;VER LAS POSICIONES&lt;/a&gt;&lt;!--SEE THE RANKS--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--REMATCHES--&gt;
+&lt;div class="grid-x cell align-center padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--large padding-horizontal-for-large--xlarge padding-top-for-small-only--xlarge padding-top-for-medium-only--xlarge padding-top-for-large--xlarge padding-bottom-for-small-only--large padding-bottom-for-medium-only--large padding-bottom-for-large--large text-center small-12 medium-11 large-10 xlarge-9"&gt;
+    &lt;div class="cell adjust1"&gt;
+        &lt;h3 class="margin--none voyageColor3"&gt;&lt;strong&gt;REVANCHAS&lt;/strong&gt;&lt;/h3&gt;&lt;!--REMATCHES--&gt;
+        &lt;p class="bodyText1 padding-top--medium text-black"&gt;Cada semana, recibirás tres partidas gratuitas para intentar cumplir los objetivos disponibles. Una vez que las hayas utilizado, tendrás que usar Revanchas. Puedes hacer un seguimiento de las partidas disponibles en la página de la Plataforma de Batalla.&lt;/p&gt;&lt;!--Every week, you’ll receive three free matches to attempt to complete the available objectives. Once those are used up, you’ll need to use Rematches. You can track the number of matches available on the Battle Deck page.--&gt;
+        &lt;p class="bodyText1 text-black"&gt;Puedes usar Revanchas para cumplir con los objetivos restantes, o para mejorar la puntuación en objetivos que ya hayas cumplido. No sufrirás ningún perjuicio por usar una Revancha, ya que siempre usaremos la puntuación más alta que hayas logrado para cada objetivo.&lt;/p&gt;&lt;!--After you complete an objective, you can use Rematches to improve your score (see Rematches section below). Don’t worry, we will only count your highest score for each objective when calculating your total score.--&gt;
+        &lt;p class="bodyText1 text-black"&gt;Puedes acceder a las Revanchas haciendo lo siguiente:&lt;/p&gt;&lt;!--Rematches can be used to complete remaining objectives, or to improve your score on previously completed objectives. There’s no harm in using a Rematch, as we will always count your highest earned score for each objective!--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+.rematch-row a { font-style: normal; }
+&lt;/style&gt;
+
+&lt;div class="grid-x cell align-center text-center small-12 xlarge-10 padding-bottom-for-medium--xlarge padding-bottom-for-small-only--medium grid-margin-x grid-margin-y padding-horizontal-for-small-only--small padding-horizontal-for-large--xlarge rematch-row"&gt;
+    
+&lt;!--GET REMATCH VIA TRAININGS--&gt;
+    &lt;div class="grid-x cell medium-4 align-top" style="background: #445c66;"&gt;
+        &lt;div class="cell small-12 text--white padding-vertical--large padding-horizontal--medium grid-x align-center-middle" style="background: #1d2e35; border-bottom: 4px solid #b39e65;"&gt;&lt;p class="margin--none rematch-header"&gt;+1 REVANCHA&lt;/p&gt;&lt;/div&gt;&lt;!--+1 REMATCH--&gt;
+        &lt;div class="cell align-self-stretch small-12 text--white padding-for-small-only--large padding-for-medium-only--medium padding-for-large--large grid-x align-center"&gt;
+            &lt;p class="margin-vertical-for-medium-only--medium margin-vertical-for-large--small margin-for-small-only--none margin-for-large--none padding-horizontal-for-large--medium padding-bottom-for-small-only--large padding-bottom-for-medium-only--medium padding-bottom-for-large--large rematch-desc"&gt;Completa un entrenamiento de prioridad alta y gana +1 Revancha (límite de 10 por semana).&lt;/p&gt;&lt;!--Complete a high-priority training and earn +1 Rematch (limit 10 per week).--&gt;
+            &lt;a class='grid-x cell align-center trainings-btn' href="/50/lar/learning/search?search=tag_voyagerematch&amp;returnurl=voyage"&gt;&lt;div class="cell small-12 xlarge-9 padding-vertical--small padding-horizontal--medium align-self-bottom rematch-trainings rematch-unavail"&gt;&lt;p class="margin--none text--bold btn-text"&gt;&lt;span class="loading-ani"&gt;CARGANDO&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--TRAINING LIST--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;        
+    
+    
+&lt;!--GET REMATCH VIA PURCHASE WITH CREDITS--&gt;
+    &lt;div class="grid-x cell medium-4 align-top" style="background: #445c66;"&gt;
+        &lt;div class="cell small-12 text--white padding-vertical--large padding-horizontal--medium grid-x align-center-middle" style="background: #1d2e35; border-bottom: 4px solid #b39e65;"&gt;&lt;p class="margin--none rematch-header"&gt;+1 REVANCHA&lt;/p&gt;&lt;/div&gt;&lt;!--+1 REMATCH--&gt;
+        &lt;div class="cell align-self-stretch small-12 text--white padding-for-small-only--large padding-for-medium-only--medium padding-for-large--large grid-x align-center"&gt;
+            &lt;p class="margin-vertical-for-medium-only--medium margin-vertical-for-large--small margin-for-small-only--none margin-for-large--none padding-horizontal-for-large--medium padding-bottom-for-small-only--large padding-bottom-for-medium-only--medium padding-bottom-for-large--large rematch-desc"&gt;Gasta 2000 Créditos para comprar +1 Revancha (límite de una compra por semana).&lt;/p&gt;&lt;!--Spend 2,000 Credits to buy +1 Rematch (limit one purchase per week).--&gt;
+            &lt;div class="cell small-12 xlarge-9 padding-vertical--small padding-horizontal--medium align-self-bottom rematch-credits rematch-unavail"&gt;&lt;p class="margin--none text--bold btn-text"&gt;&lt;span class="loading-ani"&gt;CARGANDO&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;!--PURCHASE REMATCH--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;    
+    
+    
+&lt;!--GET REMATCH VIA SUBMITTING RXT METRICS--&gt;
+    &lt;div class="grid-x cell medium-4 align-top" style="background: #445c66;"&gt;
+        &lt;div class="cell small-12 text--white padding-vertical--large padding-horizontal--medium grid-x align-center-middle" style="background: #1d2e35; border-bottom: 4px solid #b39e65;"&gt;&lt;p class="margin--none rematch-header"&gt;+1 REVANCHA&lt;/p&gt;&lt;/div&gt;&lt;!--+1 REMATCH--&gt;
+        &lt;div class="cell align-self-stretch small-12 text--white padding-for-small-only--large padding-for-medium-only--medium padding-for-large--large grid-x align-center"&gt;
+            &lt;p class="margin-vertical-for-medium-only--medium margin-vertical-for-large--small margin-for-small-only--none margin-for-large--none padding-horizontal-for-large--medium padding-bottom-for-small-only--large padding-bottom-for-medium-only--medium padding-bottom-for-large--large rematch-desc"&gt;Envía métricas de Intel® RXT para obtener +1 Revancha (límite de un envío por semana).&lt;/p&gt;&lt;!--Submit RXT metrics to earn +1 Rematch (limit one submission per week).--&gt;
+            &lt;a class='grid-x cell align-center rxt-btn' href='/50/lar/retailexperiencetool?returnurl=voyage'&gt;&lt;div class="cell small-12 xlarge-9 padding-vertical--small padding-horizontal--medium align-self-bottom rematch-rxt rematch-unavail"&gt;&lt;p class="margin--none text--bold btn-text"&gt;&lt;span class="loading-ani"&gt;CARGANDO&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--SUBMIT METRICS--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="IREP2a4843ef822542729795ce9c80e44132" data-controluid="2a4843ef-8225-4272-9795-ce9c80e44132" class="grid-container " style=""&gt;
+    &lt;div class="grid-x battle-wrap align-center-middle" style=""&gt;
+&lt;style&gt;
+/* for small view only */
+@media only screen and (max-width:39.9735em) { 
+.user-dash { background: url(/content/images/voyage/sitepages/fordev/Book_Mobile.png) center center no-repeat; height: 514px; }
+h1#x-matches-left,
+h1#x-objectives-complete,
+h1#x-total-score { font-size: 3em; margin-bottom: 0px; }
+.stats h5 { font-size: 1.3em; }
+}
+/* for medium view only */
+@media only screen and (min-width:40em) and (max-width:63.9735em) {
+.user-dash { background: url(/content/images/voyage/sitepages/fordev/Book_Desktop.png) center center no-repeat; height: 325px; }
+h1#x-matches-left,
+h1#x-objectives-complete,
+h1#x-total-score { font-size: 4rem; }
+.stats h5 { font-size: 1.2em; }
+}
+/* for large view only */
+@media only screen and (min-width:64em) and (max-width:85.4735em)  {
+.user-dash { background: url(/content/images/voyage/sitepages/fordev/Book_Desktop.png) center center / cover no-repeat; height: 330px; background-size: 100%; }
+h1#x-matches-left,
+h1#x-objectives-complete,
+h1#x-total-score { font-size: 4rem; }
+.stats h5 { font-size: 1.3em; }
+.mid-stat { border-left: 2px solid #97afb3; border-right: 2px solid #97afb3; }
+}
+/* for extra large view only */
+@media only screen and (min-width:85.5em) {
+.user-dash { background: url(/content/images/voyage/sitepages/fordev/Book_Desktop.png) center center / contain no-repeat; height: 330px; background-size: 100%; }
+h1#x-matches-left,
+h1#x-objectives-complete,
+h1#x-total-score { font-size: 5rem; }
+.stats h5 { font-size: 1.3em; }
+.mid-stat { border-left: 2px solid #97afb3; border-right: 2px solid #97afb3; }
+}
+.stats { background: #e9e2d8; box-shadow: 0px 0px 22px #a89a74; margin-top: -10px; }
+&lt;/style&gt;
+
+&lt;!--USER SCORE DASHBOARD--&gt;
+&lt;div class="grid-x cell align-center-middle small-12 xlarge-9 user-dash padding-for-large--large margin-top-for-small-only--xlarge margin-top-for-medium-only--xlarge margin-top-for-large--large"&gt;
+    &lt;div class="grid-x cell align-center-middle small-12 medium-12 large-11 stats padding-horizontal-for-medium-only--medium padding-vertical-for-medium-only--xlarge padding-horizontal-for-large--xlarge padding-vertical-for-large--large"&gt;
+        &lt;div class="cell small-12 align-self-bottom medium-auto text-center padding-top-for-small-only--large padding-horizontal--small"&gt;&lt;h5 class="text-black text--bold"&gt;PARTIDAS RESTANTES&lt;/h5&gt;&lt;h1 class="voyageColor8" id="x-matches-left"&gt;&lt;span class="loading-ani"&gt;CARGANDO&lt;/span&gt;&lt;/h1&gt;&lt;/div&gt;&lt;!--MATCHES LEFT--&gt;
+        &lt;div class="cell small-12 align-self-bottom medium-5 text-center padding-vertical-for-small-only--large padding-horizontal--small mid-stat"&gt;&lt;h5 class="text-black text--bold"&gt;OBJETIVOS CUMPLIDOS&lt;/h5&gt;&lt;h1 class="voyageColor8" id="x-objectives-complete"&gt;&lt;span class="loading-ani"&gt;CARGANDO&lt;/span&gt;&lt;/h1&gt;&lt;/div&gt;&lt;!--OBJECTIVES COMPLETE--&gt;
+        &lt;div class="cell small-12 align-self-bottom medium-auto text-center padding-bottom-for-small-only--large padding-horizontal--small"&gt;&lt;h5 class="text-black text--bold"&gt;PUNTUACIÓN TOTAL&lt;/h5&gt;&lt;h1 class="voyageColor8" id="x-total-score"&gt;&lt;span class="loading-ani"&gt;CARGANDO&lt;/span&gt;&lt;/h1&gt;&lt;/div&gt;&lt;!--TOTAL SCORE--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="battle-deck grid-x cell small-12 xlarge-10 margin-top-for-small-only--large margin-top-for-medium-only--xlarge margin-top-for-large--large"&gt;
+    
+    
+    
+    
+&lt;!-- BATTLE DECK NAVIGATION --&gt;
+    &lt;div class="battle-deck-nav grid-x cell small-12 align-center-middle padding-vertical--large padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--large padding-horizontal-for-large--xlarge" style="background: #1d2e35; border-bottom: 4px solid #b39e65;"&gt;
+        &lt;div class="medium-shrink large-shrink voyageColor6"&gt;&lt;h5 class="active encounter-nav padding-bottom--small margin-bottom--none text--bold"&gt;ENCUENTRO&lt;/h5&gt;&lt;/div&gt;&lt;!--ENCOUNTER--&gt;
+        &lt;div class="medium-shrink large-shrink voyageColor6 padding-left--large"&gt;&lt;h5 class="objectives-nav padding-bottom--small margin-bottom--none text--bold"&gt;OBJETIVOS&lt;/h5&gt;&lt;/div&gt;&lt;!--OBJECTIVES--&gt;
+        &lt;div class="cell medium-auto large-auto voyageColor6 text--right hide-for-small-only"&gt;&lt;h3 class="week-number text--bold"&gt;SEMANA 3&lt;/h3&gt;&lt;/div&gt;&lt;!--WEEK #--&gt;
+    &lt;/div&gt;
+    
+
+
+    
+&lt;!-- WEEK NUMBER SMALL ONLY --&gt;
+    &lt;div class="small-12 show-for-small-only text-center align-center voyageColor6 padding--medium" style="background: #537382;"&gt;&lt;h3 class="week-number text--bold text--white margin--none"&gt;SEMANA 2&lt;/h3&gt;&lt;/div&gt;&lt;!--WEEK #--&gt;    
+    
+    
+    
+&lt;!-- ENCOUNTERS MEDIUM/LARGE --&gt;
+    &lt;div class="hide-for-small-only encounter-panel cell align-center-middle"&gt;
+        &lt;!--WEEK 1 ENCOUNTER--&gt;
+        &lt;div class="grid-x cell week-1-enc" style="background:url('/content/images/voyage/sitepages/fordev/Encounter_1_Background.jpg') center / cover no-repeat;"&gt;
+            &lt;div class="cell align-self-middle small-12 medium-5 padding-left-for-medium--large padding-left-for-large--xlarge padding-vertical--xlarge"&gt;
+                &lt;div class="encounter-text"&gt;
+                    &lt;h3 class="text--white encounter-title"&gt;&lt;strong&gt;EL ANTIGUO MARINERO&lt;/strong&gt;&lt;/h3&gt;&lt;!--THE ANCIENT MARINER--&gt;
+                    &lt;h4 class="voyageColor9 encounter-subtitle padding-bottom--medium"&gt;UBICACIÓN: ESTRECHOS DEL GOLFO FANTASMA&lt;/h3&gt;&lt;!--LOCATION: STRAITS OF GHOST GULF--&gt;
+                    &lt;h5 class="bodyText1 text--white encounter-desc margin--none"&gt;Encuentras tu embarcación a la deriva en aguas oscuras, bañadas por la luz de la luna y muy quietas. Espeluznantemente quietas. Sientes un fuerte escalofrío que te llega a los huesos y rápidamente te encuentras cara a cara con un Antiguo Marinero en un barco fantasma que se aparece en medio de la bruma nocturna. Cuando el espectro habla, te das cuenta de que no pretende hacerte daño. En cambio, te da sabios consejos fantasmales que trae de más allá de las olas.&lt;/h5&gt;&lt;!--You find your vessel adrift in dark, moonlight-shrouded, still waters. Eerily still. A chill washes over your bones, and soon you’re face to face with an Ancient Mariner on a ghost ship that materializes from the night mists. As the specter speaks, you realize he means no harm. Instead, he imparts sage and ghostly advice from beyond the waves.--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="cell small-12 medium-7 align-self-bottom piratebg shift-leftbg"&gt;&lt;img class="pirate shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_1_Character.png"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!--WEEK 2 ENCOUNTER--&gt;
+        &lt;div class="grid-x cell week-2-enc" style="background:url('/content/images/voyage/sitepages/fordev/Encounter_2_Background.jpg') center / cover no-repeat;"&gt;
+            &lt;div class="cell align-self-middle small-12 medium-5 padding-left-for-medium--large padding-left-for-large--xlarge padding-vertical--xlarge"&gt;
+                &lt;div class="encounter-text"&gt;
+                    &lt;h3 class="text--white encounter-title"&gt;&lt;strong&gt;EL SABIO ISLEÑO&lt;/strong&gt;&lt;/h3&gt;&lt;!--THE WISE ISLANDER--&gt;
+                    &lt;h4 class="voyageColor9 encounter-subtitle padding-bottom--medium"&gt;ISLA TROPICAL INEXPLORADA&lt;/h3&gt;&lt;!--UNCHARTED TROPICAL ISLAND--&gt;
+                    &lt;h5 class="bodyText1 text--white encounter-desc margin--none"&gt;Habiendo casi agotado tus provisiones, llegas a la orilla de una exuberante isla. Mientras recolectas fruta, te asedia un isleño local. Aunque su aspecto está lejos de inspirarte temor, intenta molestarte desafiándote a resolver acertijos casi imposibles. Pronto comprendes que si pretendes abandonar la isla alguna vez, tendrás que apaciguar al Sabio Isleño resolviendo los acertijos.&lt;/h5&gt;&lt;!--With your provisions nearly depleted, you wash ashore on a lush island. While gathering fruit, you are besieged by a local islander. When his appearance fails to scare you away, he attempts to make your life miserable by challenging you to near-impossible riddles. Soon, you understand if you’re ever going to leave the island, you’ll have to appease the Wise Islander by solving the riddles..--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="cell small-12 medium-7 align-self-bottom islanderbg shift-leftbg"&gt;&lt;img class="islander shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_2_Character.png"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!--WEEK 3 ENCOUNTER--&gt;
+        &lt;div class="grid-x cell week-3-enc" style="background:url('/content/images/voyage/sitepages/fordev/Encounter_3_Background.jpg') center / cover no-repeat;"&gt;
+            &lt;div class="cell align-self-middle small-12 medium-5 padding-left-for-medium--large padding-left-for-large--xlarge padding-vertical--xlarge"&gt;
+                &lt;div class="encounter-text"&gt;
+                    &lt;h3 class="text--white encounter-title"&gt;&lt;strong&gt;BESTIA DE AGUAS PROFUNDAS&lt;/strong&gt;&lt;/h3&gt;&lt;!--DEEP SEA BEAST--&gt;
+                    &lt;h4 class="voyageColor9 encounter-subtitle padding-bottom--medium"&gt;MAR DE LAS ALMAS PERDIDAS&lt;/h3&gt;&lt;!--SEA OF LOST SOULS--&gt;
+                    &lt;h5 class="bodyText1 text--white encounter-desc margin--none"&gt;En medio de una furiosa tormenta, tu embarcación queda a merced de un poderoso remolino de agua. ¡Del centro del remolino emerge una criatura marina con feroces colmillos y una maraña de tentáculos! Tu única esperanza de sobrevivir consiste en mantener la embarcación estable y superar a la bestia en una serie de pruebas. ¡Con tu ingenio como arma, tu única opción será imponerte!&lt;/h5&gt;&lt;!--In the grip of a raging squall, your ship is tormented by a swirling maelstrom. From the center of the whirlpool arises a sea creature with gnashing fangs and a tangle of tentacles! Your only hope of surviving is to keep the vessel steady and best the beast in a series of tests. With your wits as your weapons, you’ll have no choice but to prevail!--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="cell small-12 medium-7 align-self-bottom beastbg shift-leftbg"&gt;&lt;img class="beast shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_3_Character.png"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!--WEEK 4 ENCOUNTER--&gt;
+        &lt;div class="grid-x cell week-4-enc" style="background:url('/content/images/voyage/sitepages/fordev/Encounter_4_Background.jpg') center / cover no-repeat;"&gt;
+            &lt;div class="cell align-self-middle small-12 medium-5 padding-left-for-medium--large padding-left-for-large--xlarge padding-vertical--xlarge"&gt;
+                &lt;div class="encounter-text"&gt;
+                    &lt;h3 class="text--white encounter-title"&gt;&lt;strong&gt;LA REINA DEL MAR&lt;/strong&gt;&lt;/h3&gt;&lt;!--THE SEA EMPRESS--&gt;
+                    &lt;h4 class="voyageColor9 encounter-subtitle padding-bottom--medium"&gt;CAVERNA SUBMARINA&lt;/h3&gt;&lt;!--UNDERSEA CAVERN--&gt;
+                    &lt;h5 class="bodyText1 text--white encounter-desc margin--none"&gt;Agotado, navegas en busca de la Reina del Mar, que podría ayudarte a romper con la maldición. Te tropiezas con un brillante atolón de coral. ¡Aquí es donde el mar se abre y se traga tu barco! Te arrojas al abismo, y emerges en la caverna de la Reina del Mar. Pero espera: ¡la Reina del Mar resulta ser la bruja que maldijo tu aldea! Tu única esperanza consiste en ser más ingenioso que ella. Si sobrevives, obtendrás sus dones, anularás la maldición y navegarás de regreso a casa. ¡Que los dioses del mar te sonrían!&lt;/h5&gt;&lt;!--Exhausted, you sail on in search of the Sea Empress who might help you break the curse. You stumble upon an atoll of bright coral. It’s here that the sea opens and swallows your ship! You plunge into the abyss, emerging in the cavern of the Sea Empress. But wait - the Sea Empress reveals herself to be the witch who cursed your village! Your only hope is to outwit her. If you survive, you’ll gain her gifts, undo the curse, and sail for home. May the sea gods smile upon you!--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="cell small-12 medium-7 align-self-bottom empressbg shift-leftbg"&gt;&lt;img class="empress shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_4_Character.png"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;    
+
+
+
+
+
+
+
+&lt;!-- WEEKLY NAV SMALL ONLY --&gt;
+&lt;!--    &lt;div class="show-for-small-only weekly-nav-wrap grid-x cell small-12 align-center-middle padding-for-small-only--large padding-for-medium-only--large padding-for-large--xlarge"&gt;--&gt;
+&lt;!--        &lt;div class="weekly-nav grid-x cell grid-margin-x grid-margin-y small-12 large-11 xlarge-10 padding-vertical--large"&gt;--&gt;
+&lt;!--            &lt;div class="week-unlocked active-week-ani week-1-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_1.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 1&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 1--&gt;
+&lt;!--            &lt;div class="week-2-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_2.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 2&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 2--&gt;
+&lt;!--            &lt;div class="week-3-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_3.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 3&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 3--&gt;
+&lt;!--            &lt;div class="week-4-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_4.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 4&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 4--&gt;
+&lt;!--        &lt;/div&gt;--&gt;
+&lt;!--    &lt;/div&gt;--&gt;
+
+
+
+
+
+
+
+
+
+
+    
+&lt;!-- ENCOUNTERS SMALL ONLY --&gt;
+    &lt;div class="show-for-small-only encounter-panel cell align-center-middle"&gt;
+        &lt;!--WEEK 1 ENCOUNTER--&gt;
+        &lt;div class="grid-x cell week-1-enc"&gt;
+            &lt;div class="cell small-12 medium-7 align-self-bottom piratebg shift-leftbg" style="background:url('/content/images/voyage/sitepages/fordev/Encounter_1_Background.jpg') center / cover no-repeat;"&gt;&lt;img class="pirate shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_1_Character.png"&gt;&lt;/div&gt;            
+            &lt;div class="cell text-center align-self-middle small-12 padding-horizontal--large padding-vertical--xlarge" style="background:#1d2e35;z-index:2;"&gt;
+                &lt;div class="encounter-text"&gt;
+                    &lt;h3 class="text--white encounter-title"&gt;&lt;strong&gt;EL ANTIGUO MARINERO&lt;/strong&gt;&lt;/h3&gt;&lt;!--THE ANCIENT MARINER--&gt;
+                    &lt;h4 class="voyageColor9 encounter-subtitle padding-bottom--medium"&gt;UBICACIÓN: ESTRECHOS DEL GOLFO FANTASMA&lt;/h3&gt;&lt;!--LOCATION: STRAITS OF GHOST GULF--&gt;
+                    &lt;h5 class="bodyText1 text--white encounter-desc"&gt;Encuentras tu embarcación a la deriva en aguas oscuras, bañadas por la luz de la luna y muy quietas. Espeluznantemente quietas. Sientes un fuerte escalofrío que te llega a los huesos y rápidamente te encuentras cara a cara con un Antiguo Marinero en un barco fantasma que se aparece en medio de la bruma nocturna. Cuando el espectro habla, te das cuenta de que no pretende hacerte daño. En cambio, te da sabios consejos fantasmales que trae de más allá de las olas.&lt;/h5&gt;&lt;!--You find your vessel adrift in dark, moonlight-shrouded, still waters. Eerily still. A chill washes over your bones, and soon you’re face to face with an Ancient Mariner on a ghost ship that materializes from the night mists. As the specter speaks, you realize he means no harm. Instead, he imparts sage and ghostly advice from beyond the waves.--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!--WEEK 2 ENCOUNTER--&gt;
+        &lt;div class="grid-x cell week-2-enc"&gt;
+            &lt;div class="cell small-12 medium-7 align-self-bottom islanderbg shift-leftbg" style="background:url('/content/images/voyage/sitepages/fordev/Encounter_2_Background.jpg') center / cover no-repeat;"&gt;&lt;img class="islander shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_2_Character.png"&gt;&lt;/div&gt;
+            &lt;div class="cell text-center align-self-middle small-12 padding-horizontal--large padding-vertical--xlarge" style="background:#1d2e35;z-index:2;"&gt;
+                &lt;div class="encounter-text"&gt;
+                    &lt;h3 class="text--white encounter-title"&gt;&lt;strong&gt;EL SABIO ISLEÑO&lt;/strong&gt;&lt;/h3&gt;&lt;!--THE WISE ISLANDER--&gt;
+                    &lt;h4 class="voyageColor9 encounter-subtitle padding-bottom--medium"&gt;ISLA TROPICAL INEXPLORADA&lt;/h3&gt;&lt;!--UNCHARTED TROPICAL ISLAND--&gt;
+                    &lt;h5 class="bodyText1 text--white encounter-desc"&gt;Habiendo casi agotado tus provisiones, llegas a la orilla de una exuberante isla. Mientras recolectas fruta, te asedia un isleño local. Aunque su aspecto está lejos de inspirarte temor, intenta molestarte desafiándote a resolver acertijos casi imposibles. Pronto comprendes que si pretendes abandonar la isla alguna vez, tendrás que apaciguar al Sabio Isleño resolviendo los acertijos.&lt;/h5&gt;&lt;!--With your provisions nearly depleted, you wash ashore on a lush island. While gathering fruit, you are besieged by a local islander. When his appearance fails to scare you away, he attempts to make your life miserable by challenging you to near-impossible riddles. Soon, you understand if you’re ever going to leave the island, you’ll have to appease the Wise Islander by solving the riddles..--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!--WEEK 3 ENCOUNTER--&gt;
+        &lt;div class="grid-x cell week-3-enc"&gt;
+            &lt;div class="cell small-12 medium-7 align-self-bottom beastbg shift-leftbg" style="background:url('/content/images/voyage/sitepages/fordev/Encounter_3_Background.jpg') center / cover no-repeat;"&gt;&lt;img class="beast shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_3_Character.png"&gt;&lt;/div&gt;            
+            &lt;div class="cell text-center align-self-middle small-12 padding-horizontal--large padding-vertical--xlarge" style="background:#1d2e35;z-index:2;"&gt;
+                &lt;div class="encounter-text"&gt;
+                    &lt;h3 class="text--white encounter-title"&gt;&lt;strong&gt;BESTIA DE AGUAS PROFUNDAS&lt;/strong&gt;&lt;/h3&gt;&lt;!--DEEP SEA BEAST--&gt;
+                    &lt;h4 class="voyageColor9 encounter-subtitle padding-bottom--medium"&gt;MAR DE LAS ALMAS PERDIDAS&lt;/h3&gt;&lt;!--SEA OF LOST SOULS--&gt;
+                    &lt;h5 class="bodyText1 text--white encounter-desc"&gt;En medio de una furiosa tormenta, tu embarcación queda a merced de un poderoso remolino de agua. ¡Del centro del remolino emerge una criatura marina con feroces colmillos y una maraña de tentáculos! Tu única esperanza de sobrevivir consiste en mantener la embarcación estable y superar a la bestia en una serie de pruebas. ¡Con tu ingenio como arma, tu única opción será imponerte!&lt;/h5&gt;&lt;!--In the grip of a raging squall, your ship is tormented by a swirling maelstrom. From the center of the whirlpool arises a sea creature with gnashing fangs and a tangle of tentacles! Your only hope of surviving is to keep the vessel steady and best the beast in a series of tests. With your wits as your weapons, you’ll have no choice but to prevail!--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!--WEEK 4 ENCOUNTER--&gt;
+        &lt;div class="grid-x cell week-4-enc"&gt;
+            &lt;div class="cell small-12 medium-7 align-self-bottom empressbg shift-leftbg" style="background:url('/content/images/voyage/sitepages/fordev/Encounter_4_Background.jpg') center / cover no-repeat;"&gt;&lt;img class="empress shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_4_Character.png"&gt;&lt;/div&gt;            
+            &lt;div class="cell text-center align-self-middle small-12 padding-horizontal--large padding-vertical--xlarge" style="background:#1d2e35;z-index:2;"&gt;
+                &lt;div class="encounter-text"&gt;
+                    &lt;h3 class="text--white encounter-title"&gt;&lt;strong&gt;LA REINA DEL MAR&lt;/strong&gt;&lt;/h3&gt;&lt;!--THE SEA EMPRESS--&gt;
+                    &lt;h4 class="voyageColor9 encounter-subtitle padding-bottom--medium"&gt;CAVERNA SUBMARINA&lt;/h3&gt;&lt;!--UNDERSEA CAVERN--&gt;
+                    &lt;h5 class="bodyText1 text--white encounter-desc"&gt;Agotado, navegas en busca de la Reina del Mar, que podría ayudarte a romper con la maldición. Te tropiezas con un brillante atolón de coral. ¡Aquí es donde el mar se abre y se traga tu barco! Te arrojas al abismo, y emerges en la caverna de la Reina del Mar. Pero espera: ¡la Reina del Mar resulta ser la bruja que maldijo tu aldea! Tu única esperanza consiste en ser más ingenioso que ella. Si sobrevives, obtendrás sus dones, anularás la maldición y navegarás de regreso a casa. ¡Que los dioses del mar te sonrían!&lt;/h5&gt;&lt;!--Exhausted, you sail on in search of the Sea Empress who might help you break the curse. You stumble upon an atoll of bright coral. It’s here that the sea opens and swallows your ship! You plunge into the abyss, emerging in the cavern of the Sea Empress. But wait - the Sea Empress reveals herself to be the witch who cursed your village! Your only hope is to outwit her. If you survive, you’ll gain her gifts, undo the curse, and sail for home. May the sea gods smile upon you!--&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+&lt;!-- OBJECTIVES --&gt;
+    &lt;div class="objectives-panel padding-top-for-small-only--xlarge padding-horizontal-for-small-only--large padding-vertical-for-medium-only--xlarge padding-horizontal-for-medium-only--large padding-for-large--xlarge cell align-center-middle"&gt;
+        
+        &lt;!-- objectives heading --&gt;
+        &lt;h3 class="margin--none text--white text-center" style="text-transform: uppercase;"&gt;&lt;strong&gt;Objetivos y premios&lt;/strong&gt;&lt;/h3&gt;&lt;!--Objectives and Prizes--&gt;
+        &lt;p class="bodyText1 padding-top--medium text--white text-center padding-horizontal-for-large--xlarge objective-subheading"&gt;Presta atención a la sabiduría del Antiguo Marinero, transmitida mediante los siguientes objetivos.&lt;/p&gt;&lt;!--encounter specific text swapped here--&gt;
+        &lt;p class="bodyText1 text--white text-center margin--none padding-horizontal-for-large--xlarge"&gt;Cada objetivo cumplido te permitirá acceder a un accesorio para tu Casillero de Avatar. Recuerda que puedes usar Revanchas para objetivos cumplidos si quieres mejorar tu puntuación.&lt;/p&gt;&lt;!--Each completed objective will earn you an item for your Avatar Locker. Remember, Rematches can be used on completed objectives to improve your score.--&gt;
+        
+        &lt;!-- WEEK 1 OBJECTIVES GRID --&gt;
+        &lt;div class="grid-x week-1-objs grid-margin-x grid-margin-y padding-horizontal-for-large--large padding-top--xlarge padding-bottom--large align-center-middle text-left"&gt;
+            
+            &lt;div id="obj-1" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_1_Item_1.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+                &lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 1:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 1:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 8 de 10 preguntas correctamente.&lt;/p&gt;&lt;!--Answer 8 out of 10 questions correctly.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective1&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-2" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_1_Item_2.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+				&lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 2:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 2:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Logra un 80 % de precisión y una velocidad promedio por pregunta de 12 segundos o menos.&lt;/p&gt;&lt;!--Achieve 80% accuracy and an average speed per question of 12 seconds or less.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective2&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-3" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_1_Item_3.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+                &lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 3:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 3:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Te daremos la respuesta y deberás relacionarla con la pregunta correspondiente que la haga verdadera. Logra un 80 % de precisión para cumplir con este objetivo. &lt;/p&gt;&lt;!--We’ll give you the answer and you must match it to the corresponding question that makes it true. Achieve 80% accuracy to complete this objective.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective3&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-4" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_1_Item_4.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+				&lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 4:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 4:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Lee las situaciones de venta y elige la mejor respuesta con una precisión del 80 %.&lt;/p&gt;&lt;!--Read the sales scenarios and choose the best answer with 80% accuracy.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective4&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- WEEK 2 OBJECTIVES GRID --&gt;
+        &lt;div class="grid-x week-2-objs grid-margin-x grid-margin-y padding-horizontal-for-large--large padding-top--xlarge padding-bottom--large align-center-middle text-left"&gt;
+            
+            &lt;div id="obj-5" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_2_Item_1.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+                &lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 5:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 5:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 13 de 15 preguntas correctamente.&lt;/p&gt;&lt;!--Answer 13 out of 15 questions correctly.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective5&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-6" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_2_Item_2.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+				&lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 6:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 6:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Relaciona el producto o la tecnología Intel® con su descripción con una precisión del 100 %.&lt;/p&gt;&lt;!--Match the Intel® product or technology to its description with 100% accuracy.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective6&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-7" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_2_Item_3.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+                &lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 7:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 7:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Logra un 80 % de precisión y una velocidad promedio por pregunta de 12 segundos o menos.&lt;/p&gt;&lt;!--Achieve 80% accuracy and an average speed per question of 12 seconds or less.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective7&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-8" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_2_Item_4.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+				&lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 8:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 8:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Usa las pistas visuales para responder preguntas sobre los productos y las tecnologías Intel® con un 80 % de precisión.&lt;/p&gt;&lt;!--Use the visual clues to answer questions about Intel® products and technologies with 80% accuracy.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective8&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; 
+        
+        &lt;!-- WEEK 3 OBJECTIVES GRID --&gt;
+        &lt;div class="grid-x week-3-objs grid-margin-x grid-margin-y padding-horizontal-for-large--large padding-top--xlarge padding-bottom--large align-center-middle text-left"&gt;
+            
+            &lt;div id="obj-9" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_3_Item_1.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+                &lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 9:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 9:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 13 de 15 preguntas correctamente.&lt;/p&gt;&lt;!--Answer 13 out of 15 questions correctly..--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective9&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-10" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_3_Item_2.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+				&lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 10:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 10:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Relaciona el SKU del procesador Intel® con su descripción con una precisión del 100 %.&lt;/p&gt;&lt;!--Match the Intel® processor SKU to its description with 100% accuracy..--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective10&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-11" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_3_Item_3.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+                &lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 11:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 11:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Logra un 90 % de precisión y una velocidad promedio por pregunta de 12 segundos o menos.&lt;/p&gt;&lt;!--Achieve 90% accuracy and an average speed per question of 12 seconds or less..--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective11&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-12" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_3_Item_4.jpg');background-size: contain; background-repeat: no-repeat; background-position: center center;"&gt;
+				&lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 12:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 12:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 10 preguntas consecutivas correctamente y logra un 80 % de precisión.&lt;/p&gt;&lt;!--Answer 10 consecutive questions correctly and achieve 80% overall accuracy.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective12&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- WEEK 4 OBJECTIVES GRID --&gt;
+        &lt;div class="grid-x week-4-objs grid-margin-x grid-margin-y padding-horizontal-for-large--large padding-top--xlarge padding-bottom--large align-center-middle text-left"&gt;
+            
+            &lt;div id="obj-13" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_4_Item_1.jpg');background-size: cover; background-repeat: no-repeat; background-position: center center;"&gt;
+                &lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 13:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 13:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 13 de 15 preguntas correctamente.&lt;/p&gt;&lt;!--It’s backwards day! We’ll give you the answer and you must match it to the corresponding question that makes it true. Achieve 80% accuracy to complete this objective..--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective13&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-14" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_4_Item_2.jpg');background-size: cover; background-repeat: no-repeat; background-position: center center;"&gt;
+				&lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 14:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 14:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Logra un 80 % de precisión y una velocidad promedio por pregunta de 10 segundos o menos.&lt;/p&gt;&lt;!--Achieve 80% accuracy and an average speed per question of 10 seconds per less..--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective14&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-15" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_4_Item_3.jpg');background-size: cover; background-repeat: no-repeat; background-position: center center;"&gt;
+                &lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 15:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 15:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 18 de 20 preguntas correctamente.&lt;/p&gt;&lt;!--Answer 18 out of 20 questions correctly..--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective15&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div id="obj-16" class="objective-item grid-x cell small-12 medium-6 text--white margin--large align-self-stretch"&gt;
+                &lt;div class="small-4 large-3 cell avatar-item grid-x" style="background: #263a43 url('/content/images/voyage/sitepages/fordev/Encounter_4_Item_4.jpg');background-size: cover; background-repeat: no-repeat; background-position: center center;"&gt;
+				&lt;/div&gt;
+                &lt;div class="small-8 large-9 padding-for-large--large cell"&gt;
+                    &lt;div class="cell padding--large grid-x"&gt;
+                        &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 16:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 16:--&gt;
+                        &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Te daremos la respuesta y deberás relacionarla con la pregunta correspondiente que la haga verdadera. Logra un 80 % de precisión para cumplir con este objetivo. &lt;/p&gt;&lt;!--Answer 10 consecutive questions correctly and achieve 80% overall accuracy.--&gt;
+                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective16&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt; 
+
+    &lt;/div&gt;
+    
+    
+    
+&lt;!-- WEEKLY NAV MEDIUM/LARGE --&gt;
+    &lt;div class="weekly-nav-wrap grid-x cell small-12 align-center-middle padding-for-small-only--large padding-for-medium-only--large padding-for-large--xlarge"&gt;
+        &lt;div class="weekly-nav grid-x cell grid-margin-x grid-margin-y small-12 large-11 xlarge-10 padding-vertical--large"&gt;
+            &lt;div class="week-unlocked week-1-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_1.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 1&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 1--&gt;
+            &lt;div class="week-unlocked week-2-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_2.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 2&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 2--&gt;
+            &lt;div class="week-unlocked active-week-ani week-3-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_3.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 3&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 3--&gt;
+            &lt;div class="week-4-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_4.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 4&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 4--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+
+    
+&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="IREPe4e9f39ae64242e28e790d1efa2dc637" data-controluid="e4e9f39a-e642-42e2-8e79-0d1efa2dc637" class="grid-container " style=""&gt;
+    &lt;div class="grid-x ranking-wrap align-center-middle grid-x" style=""&gt;
+&lt;style&gt;
+.prize-item li { line-height: 1.8em; font-size: 16px; }
+.prize-item h3 { font-size: 1.5em; }
+.prize-item h4 { font-size: 1.2em; }
+.prizeBox { background: #1d2e35; }
+
+/* medium */
+@media print, screen and (max-width: 63.975em) {   
+.prizeBox { margin-top: 40px; }
+.prizeImg2 {
+    position: relative;
+    top: -90px;
+    margin-bottom: -60px;
+    max-width: 75%;
+}
+.badge-title { font-size: 1.3em; }
+.five-k-credits { font-size: 3.5em; }
+}
+
+/* large and up */    
+@media print, screen and (min-width: 64em) {   
+.prizeImg2 {
+    position: relative;
+    top: -90px;
+    margin-bottom: -60px;
+}
+.badge-title { font-size: 1.71em; }
+.five-k-credits { font-size: 4.5em; }
+.prizeBox { margin-bottom: 120px; }
+}
+
+/* small only */
+@media only screen and (max-width:39.9735em) {
+.prizeBox { margin-top: 60px; }
+}
+
+.FadeIn {
+-webkit-animation: slideIn 0.8s ease 0.3s forwards;
+animation: slideIn 0.8s ease 0.3s forwards;
+}
+
+@keyframes slideIn {
+0% { -webkit-transform: translateX(-40px); opacity: 0; }
+100% { -webkit-transform: translateX(0px); opacity: 1; }
+}
+&lt;/style&gt;
+
+
+
+
+&lt;!-- NAUTICAL REWARDS --&gt;
+&lt;div class="grid-x cell align-center padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--large padding-top-for-small-only--large padding-top-for-medium-only--xlarge padding-for-large--xlarge small-12 medium-11 large-10 xlarge-9"&gt;
+    &lt;div class="cell adjust1 text-center padding-bottom-for-small-only--xlarge"&gt;
+        &lt;h3 class="margin--none text--white"&gt;&lt;strong&gt;RECOMPENSAS NÁUTICAS&lt;/strong&gt;&lt;/h3&gt;&lt;!--NAUTICAL REWARDS--&gt;
+        &lt;p class="bodyText1 padding-top--medium text--white"&gt;A lo largo de la travesía, tendrás muchas oportunidades de acumular recompensas. Cada objetivo cumplido te permitirá acceder a un accesorio para tu Casillero de Avatar. ¡Aprovéchalas todas y tendrás 16 nuevos accesorios!&lt;/p&gt;&lt;!--Throughout your voyage, you’ll have abundant opportunities to reap rewards. Each completed objective will earn you an item for your Avatar Locker. Complete them all and you’ll have 16 new items!--&gt;
+        &lt;p class="bodyText1 text--white"&gt;Cumple con los 16 objetivos y TAMBIÉN recibirás:&lt;/p&gt;&lt;!--Complete all 16 objectives and you’ll ALSO receive:--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- BADGE SECTION FOR MEDIUM AND LARGE --&gt;
+&lt;div class="hide-for-small-only grid-x align-center cell small-12 xlarge-10 margin-bottom--xlarge prizeBox" style="margin-bottom: 0px !important;"&gt;
+    &lt;div class="cell medium-6 padding-for-large-only--large padding-for-medium-only--medium align-center align-self-middle text-center grid-x" style="margin-top: -50px; margin-bottom:-50px;"&gt;
+       &lt;div class="cell medium-5"&gt;&lt;img src="/Content/Images/Voyage/SitePages/ForDev/Badge.png"&gt;&lt;/div&gt;
+       &lt;div class="cell medium-7 xlarge-6 align-self-middle padding-left-for-medium-only--medium padding-left-for-large--xlarge"&gt;&lt;h4 class="badge-title padding-for-medium--medium voyageColor6 text--bold text-align-for-medium--left" style="text-transform:uppercase;"&gt;&lt;strong&gt;Insignia de Capitán del Barco&lt;/strong&gt;&lt;/h4&gt;&lt;/div&gt;&lt;!--Captain of the Ship Badge--&gt;
+    &lt;/div&gt;
+    &lt;div class="cell medium-6 auto grid-x align-center align-self-middle border-left-for-medium--small-uie-gray"&gt;
+        &lt;h2 class="five-k-credits margin-bottom--small padding-vertical-for-large--medium padding-vertical-for-medium--large voyageColor9"&gt;5000 créditos&lt;/h2&gt;&lt;!--5,000 Credits--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- BADGE SECTION FOR SMALL --&gt;
+&lt;div class="show-for-small-only grid-x align-center cell small-12 margin-bottom--xlarge margin-top--large prizeBox padding--large"&gt;
+    &lt;img class="prizeImg2" src="/Content/Images/Voyage/SitePages/ForDev/Badge.png" style="border: none !important; width:175px; height:175px;"&gt;
+    &lt;h3 class="cell small-12 margin--none voyageColor6 padding-bottom--medium text-center" style="text-transform:uppercase;"&gt;&lt;strong&gt;Insignia de Capitán del Barco&lt;/strong&gt;&lt;/h3&gt;&lt;!--Captain of the Ship Badge--&gt;
+    &lt;div style="border-bottom: 1px solid #c9d0d8;" class="cell small-3 margin-bottom--medium align-self-top"&gt;&amp;nbsp;&lt;/div&gt;
+    &lt;h2 class="cell small-12 voyageColor9 text-center padding-top--medium padding-bottom--large"&gt;5000 créditos&lt;/h2&gt;&lt;!--5,000 Credits--&gt;
+&lt;/div&gt;
+&lt;!-- PRIZES SECTION HEADER --&gt;
+&lt;div class="grid-x cell align-center padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--large padding-top-for-small-only--large padding-top-for-medium-only--large padding-for-large--xlarge small-12 medium-11 large-10 xlarge-9"&gt;
+    &lt;div class="cell padding-horizontal-for-large--large text-center padding-top-for-small-only--large padding-top-for-medium-only--large padding-top-for-large--small padding-bottom-for-small-only--xlarge padding-bottom-for-medium-only--xlarge"&gt;
+        &lt;p class="bodyText1 padding-top--medium text--white"&gt;Y si llegas a los primeros puestos de la Tabla de líderes, ¡puedes ganar uno de estos premios increíbles*!&lt;!--And, if you top the Leaderboard, you could snag one of these awesome prizes*!--&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!-- INDIVIDUAL PRIZES  --&gt;
+&lt;div class="cell small-12 grid-x margin-bottom--medium"&gt;
+    &lt;div class="align-self-middle cell small-12 medium-6 align-center-middle text-align-for-medium--right text-align-for-small-only--center"&gt;&lt;img src="/Content/Images/Voyage/SitePages/ForDev/LAR/ForDev/Mexico_1.png"&gt;&lt;/div&gt;
+    &lt;div class="prize-item cell small-12 medium-6 padding-horizontal-for-small-only--xlarge padding-vertical-for-small-only--medium padding-for-medium--large align-self-middle"&gt;
+        &lt;h3 class="voyageColor9" style="text-transform:uppercase;"&gt;&lt;strong&gt;1.er puesto:&lt;/strong&gt;&lt;/h3&gt;&lt;!--1st Place--&gt;
+        &lt;h4 class="padding-vertical--xsmall text--white"&gt;&lt;strong&gt;Samsung Galaxy Note 10 Lite&lt;/strong&gt;&lt;/h4&gt;&lt;!--Samsung Galaxy Note 10 Lite--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell small-12 grid-x margin-bottom--medium"&gt;
+    &lt;div class="align-self-middle cell small-12 medium-6 align-center-middle text-align-for-medium--right text-align-for-small-only--center"&gt;&lt;img src="/Content/Images/Voyage/SitePages/ForDev/LAR/ForDev/Mexico_2.png"&gt;&lt;/div&gt;
+    &lt;div class="prize-item cell small-12 medium-6 padding-horizontal-for-small-only--xlarge padding-vertical-for-small-only--medium padding-for-medium--large align-self-middle"&gt;
+        &lt;h3 class="voyageColor9" style="text-transform:uppercase;"&gt;&lt;strong&gt;2.o puesto:&lt;/strong&gt;&lt;/h3&gt;&lt;!--2nd Place--&gt;
+        &lt;h4 class="padding-vertical--xsmall text--white"&gt;&lt;strong&gt;Apple Watch serie 5&lt;/strong&gt;&lt;/h4&gt;&lt;!--Apple Watch Series 5--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell small-12 grid-x margin-bottom--medium"&gt;
+    &lt;div class="align-self-middle cell small-12 medium-6 align-center-middle text-align-for-medium--right text-align-for-small-only--center"&gt;&lt;img src="/Content/Images/Voyage/SitePages/ForDev/LAR/ForDev/Mexico_3.png"&gt;&lt;/div&gt;
+    &lt;div class="prize-item cell small-12 medium-6 padding-horizontal-for-small-only--xlarge padding-vertical-for-small-only--medium padding-for-medium--large align-self-middle"&gt;
+        &lt;h3 class="voyageColor9" style="text-transform:uppercase;"&gt;&lt;strong&gt;3.er puesto:&lt;/strong&gt;&lt;/h3&gt;&lt;!--3rd Place--&gt;
+        &lt;h4 class="padding-vertical--xsmall text--white"&gt;&lt;strong&gt;Nintendo Switch&lt;/strong&gt;&lt;/h4&gt;&lt;!--Nintendo Switch--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell small-12 grid-x margin-bottom--medium"&gt;
+    &lt;div class="align-self-middle cell small-12 medium-6 align-center-middle text-align-for-medium--right text-align-for-small-only--center"&gt;&lt;img src="/Content/Images/Voyage/SitePages/ForDev/LAR/ForDev/Mexico_4_5.png"&gt;&lt;/div&gt;
+    &lt;div class="prize-item cell small-12 medium-6 padding-horizontal-for-small-only--xlarge padding-vertical-for-small-only--medium padding-for-medium--large align-self-middle"&gt;
+        &lt;h3 class="voyageColor9" style="text-transform:uppercase;"&gt;&lt;strong&gt;4.o y 5.o puesto&lt;/strong&gt;&lt;/h3&gt;&lt;!--4th and 5th Place--&gt;
+        &lt;h4 class="padding-vertical--xsmall text--white"&gt;&lt;strong&gt;Smart TV LED Ultra HD de 40”&lt;/strong&gt;&lt;/h4&gt;&lt;!--40” LED Full HD Smart TV--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell small-12 grid-x margin-bottom--medium"&gt;
+    &lt;div class="align-self-middle cell small-12 medium-6 align-center-middle text-align-for-medium--right text-align-for-small-only--center"&gt;&lt;img src="/Content/Images/Voyage/SitePages/ForDev/LAR/ForDev/Mexico_6.png"&gt;&lt;/div&gt;
+    &lt;div class="prize-item cell small-12 medium-6 padding-horizontal-for-small-only--xlarge padding-vertical-for-small-only--medium padding-for-medium--large align-self-middle"&gt;
+        &lt;h3 class="voyageColor9" style="text-transform:uppercase;"&gt;&lt;strong&gt;6.o puesto:&lt;/strong&gt;&lt;/h3&gt;&lt;!--6th Place--&gt;
+        &lt;h4 class="padding-vertical--xsmall text--white"&gt;&lt;strong&gt;Auriculares para gaming HyperX Cloud Revolver&lt;/strong&gt;&lt;/h4&gt;&lt;!--HyperX Cloud Revolver Gaming Headphones--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class="cell small-12 grid-x margin-bottom--medium"&gt;
+    &lt;div class="align-self-middle cell small-12 medium-6 align-center-middle text-align-for-medium--right text-align-for-small-only--center"&gt;&lt;img src="/Content/Images/Voyage/SitePages/ForDev/LAR/ForDev/Mexico_7.png"&gt;&lt;/div&gt;
+    &lt;div class="prize-item cell small-12 medium-6 padding-horizontal-for-small-only--xlarge padding-vertical-for-small-only--medium padding-for-medium--large align-self-middle"&gt;
+        &lt;h3 class="voyageColor9" style="text-transform:uppercase;"&gt;&lt;strong&gt;7.o puesto:&lt;/strong&gt;&lt;/h3&gt;&lt;!--7th Place--&gt;
+        &lt;h4 class="padding-vertical--xsmall text--white"&gt;&lt;strong&gt;Amazon Alexa Echo Show 5&lt;/strong&gt;&lt;/h4&gt;&lt;!--Amazon Alexa Echo Show 5--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="cell small-12 grid-x margin-bottom--medium"&gt;
+    &lt;div class="align-self-middle cell small-12 medium-6 align-center-middle text-align-for-medium--right text-align-for-small-only--center"&gt;&lt;img src="/Content/Images/Voyage/SitePages/ForDev/LAR/ForDev/Mexico_8.png"&gt;&lt;/div&gt;
+    &lt;div class="prize-item cell small-12 medium-6 padding-horizontal-for-small-only--xlarge padding-vertical-for-small-only--medium padding-for-medium--large align-self-middle"&gt;
+        &lt;h3 class="voyageColor9" style="text-transform:uppercase;"&gt;&lt;strong&gt;8.o puesto:&lt;/strong&gt;&lt;/h3&gt;&lt;!--8th Place--&gt;
+        &lt;h4 class="padding-vertical--xsmall text--white"&gt;&lt;strong&gt;Amazon Alexa Echo Dot con reloj&lt;/strong&gt;&lt;/h4&gt;&lt;!--Amazon Alexa Echo Dot with Clock--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;!--Terms--&gt;
+&lt;div class="grid-x cell align-center padding-horizontal--large padding-top--large small-12 medium-11 large-10 xlarge-9"&gt;
+    &lt;div class="cell padding-horizontal-for-large--large text-center"&gt;
+        &lt;p class="bodyText1 padding-bottom--medium text--white"&gt;*Los participantes que hayan ganado otras competencias a lo largo de 2020 no son elegibles para ganar esta promoción.&lt;/p&gt;&lt;!--*Participants who have won other competitions throughout 2020 are ineligible to win this promotion.--&gt;
+        &lt;p class="bodyText1 padding-bottom--medium text--white margin--none"&gt;&lt;a href="/50/lar/voyage/terms" style="text-decoration:underline; color:#ffffff !important;"&gt;Consulta los detalles en los Términos y condiciones.&lt;/a&gt;&lt;/p&gt;&lt;!--See Terms and Conditions for details.--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="small-12 lbSpacer" style="height:100px;"&gt;&lt;/div&gt;
+&lt;div class="lbHeader grid-x cell align-center padding-horizontal--large padding-vertical--small text-center small-12 xlarge-10" style="background: #1d2e35;margin-top:80px;display:none;"&gt;
+    &lt;div class="cell padding-vertical--medium"&gt;
+        &lt;h3 class="text--white margin--none"&gt;MARCADOR&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+<div class="marvel-wrap grid-x grid-margin-x small-12 align-center wrap" style="margin-top:25px;padding-left:5px;padding-right:5px;min-height:750px;display:none;">
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
+<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">JavaScript</p><code style="">
+
+$(document).foundation();
+
+$(".week-1-nav").click(function () {
+	$(".week-1-objs, .week-1-enc").show();
+	$(
+		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+});
+$(".week-2-nav").click(function () {
+	$(".week-2-objs, .week-2-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+});
+$(".week-3-nav").click(function () {
+	$(".week-3-objs, .week-3-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
+});
+$(".week-4-nav").click(function () {
+	$(".week-4-objs, .week-4-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+});
+
+/* pageload animation on current week's encounter */
+$(".encounter-text").addClass("fall-anim");
+$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
+$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
+
+/* adds animations for encounters panel */
+$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
+	function () {
+		if ($(".week-1-enc").is(":visible")) {
+			$(".week-1-enc .encounter-text").addClass("fall-anim");
+			$(".pirate").addClass("ghost-anim, shift-left");
+			$(".piratebg").addClass("ghost-animbg, shift-left");
+		} else if ($(".week-2-enc").is(":visible")) {
+			$(".week-2-enc .encounter-text").addClass("fall-anim");
+			$(".islander").addClass("ghost-anim");
+			$(".islanderbg").addClass("ghost-animbg");
+		} else if ($(".week-3-enc").is(":visible")) {
+			$(".week-3-enc .encounter-text").addClass("fall-anim");
+			$(".beast").addClass("ghost-anim");
+			$(".beastbg").addClass("ghost-animbg");
+		} else if ($(".week-4-enc").is(":visible")) {
+			$(".week-4-enc .encounter-text").addClass("fall-anim");
+			$(".empress").addClass("ghost-anim");
+			$(".empressbg").addClass("ghost-animbg");
+		} else if ($(".objectives-panel").is(":visible")) {
+			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
+				"rise-anim"
+			);
+		}
+	}
+);
+</code></pre>
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
+<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">CSS</p><code style="">
+
+$(document).foundation();
+
+$(".week-1-nav").click(function () {
+	$(".week-1-objs, .week-1-enc").show();
+	$(
+		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+});
+$(".week-2-nav").click(function () {
+	$(".week-2-objs, .week-2-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+});
+$(".week-3-nav").click(function () {
+	$(".week-3-objs, .week-3-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
+});
+$(".week-4-nav").click(function () {
+	$(".week-4-objs, .week-4-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+});
+
+/* pageload animation on current week's encounter */
+$(".encounter-text").addClass("fall-anim");
+$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
+$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
+
+/* adds animations for encounters panel */
+$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
+	function () {
+		if ($(".week-1-enc").is(":visible")) {
+			$(".week-1-enc .encounter-text").addClass("fall-anim");
+			$(".pirate").addClass("ghost-anim, shift-left");
+			$(".piratebg").addClass("ghost-animbg, shift-left");
+		} else if ($(".week-2-enc").is(":visible")) {
+			$(".week-2-enc .encounter-text").addClass("fall-anim");
+			$(".islander").addClass("ghost-anim");
+			$(".islanderbg").addClass("ghost-animbg");
+		} else if ($(".week-3-enc").is(":visible")) {
+			$(".week-3-enc .encounter-text").addClass("fall-anim");
+			$(".beast").addClass("ghost-anim");
+			$(".beastbg").addClass("ghost-animbg");
+		} else if ($(".week-4-enc").is(":visible")) {
+			$(".week-4-enc .encounter-text").addClass("fall-anim");
+			$(".empress").addClass("ghost-anim");
+			$(".empressbg").addClass("ghost-animbg");
+		} else if ($(".objectives-panel").is(":visible")) {
+			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
+				"rise-anim"
+			);
+		}
+	}
+);
+</code></pre>
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
+<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">HTML</p><code style="">
+
+$(document).foundation();
+
+$(".week-1-nav").click(function () {
+	$(".week-1-objs, .week-1-enc").show();
+	$(
+		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+});
+$(".week-2-nav").click(function () {
+	$(".week-2-objs, .week-2-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+});
+$(".week-3-nav").click(function () {
+	$(".week-3-objs, .week-3-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
+});
+$(".week-4-nav").click(function () {
+	$(".week-4-objs, .week-4-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+});
+
+/* pageload animation on current week's encounter */
+$(".encounter-text").addClass("fall-anim");
+$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
+$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
+
+/* adds animations for encounters panel */
+$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
+	function () {
+		if ($(".week-1-enc").is(":visible")) {
+			$(".week-1-enc .encounter-text").addClass("fall-anim");
+			$(".pirate").addClass("ghost-anim, shift-left");
+			$(".piratebg").addClass("ghost-animbg, shift-left");
+		} else if ($(".week-2-enc").is(":visible")) {
+			$(".week-2-enc .encounter-text").addClass("fall-anim");
+			$(".islander").addClass("ghost-anim");
+			$(".islanderbg").addClass("ghost-animbg");
+		} else if ($(".week-3-enc").is(":visible")) {
+			$(".week-3-enc .encounter-text").addClass("fall-anim");
+			$(".beast").addClass("ghost-anim");
+			$(".beastbg").addClass("ghost-animbg");
+		} else if ($(".week-4-enc").is(":visible")) {
+			$(".week-4-enc .encounter-text").addClass("fall-anim");
+			$(".empress").addClass("ghost-anim");
+			$(".empressbg").addClass("ghost-animbg");
+		} else if ($(".objectives-panel").is(":visible")) {
+			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
+				"rise-anim"
+			);
+		}
+	}
+);
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="edge-wrap grid-x grid-margin-x small-12 align-center wrap" style="margin-top:25px;padding-left:5px;padding-right:5px;min-height:750px;display:none;">
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
+<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">JavaScript</p><code style="">
+
+$(document).foundation();
+
+$(".week-1-nav").click(function () {
+	$(".week-1-objs, .week-1-enc").show();
+	$(
+		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+});
+$(".week-2-nav").click(function () {
+	$(".week-2-objs, .week-2-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+});
+$(".week-3-nav").click(function () {
+	$(".week-3-objs, .week-3-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
+});
+$(".week-4-nav").click(function () {
+	$(".week-4-objs, .week-4-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+});
+
+/* pageload animation on current week's encounter */
+$(".encounter-text").addClass("fall-anim");
+$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
+$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
+
+/* adds animations for encounters panel */
+$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
+	function () {
+		if ($(".week-1-enc").is(":visible")) {
+			$(".week-1-enc .encounter-text").addClass("fall-anim");
+			$(".pirate").addClass("ghost-anim, shift-left");
+			$(".piratebg").addClass("ghost-animbg, shift-left");
+		} else if ($(".week-2-enc").is(":visible")) {
+			$(".week-2-enc .encounter-text").addClass("fall-anim");
+			$(".islander").addClass("ghost-anim");
+			$(".islanderbg").addClass("ghost-animbg");
+		} else if ($(".week-3-enc").is(":visible")) {
+			$(".week-3-enc .encounter-text").addClass("fall-anim");
+			$(".beast").addClass("ghost-anim");
+			$(".beastbg").addClass("ghost-animbg");
+		} else if ($(".week-4-enc").is(":visible")) {
+			$(".week-4-enc .encounter-text").addClass("fall-anim");
+			$(".empress").addClass("ghost-anim");
+			$(".empressbg").addClass("ghost-animbg");
+		} else if ($(".objectives-panel").is(":visible")) {
+			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
+				"rise-anim"
+			);
+		}
+	}
+);
+</code></pre>
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
+<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">CSS</p><code style="">
+
+$(document).foundation();
+
+$(".week-1-nav").click(function () {
+	$(".week-1-objs, .week-1-enc").show();
+	$(
+		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+});
+$(".week-2-nav").click(function () {
+	$(".week-2-objs, .week-2-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+});
+$(".week-3-nav").click(function () {
+	$(".week-3-objs, .week-3-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
+});
+$(".week-4-nav").click(function () {
+	$(".week-4-objs, .week-4-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+});
+
+/* pageload animation on current week's encounter */
+$(".encounter-text").addClass("fall-anim");
+$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
+$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
+
+/* adds animations for encounters panel */
+$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
+	function () {
+		if ($(".week-1-enc").is(":visible")) {
+			$(".week-1-enc .encounter-text").addClass("fall-anim");
+			$(".pirate").addClass("ghost-anim, shift-left");
+			$(".piratebg").addClass("ghost-animbg, shift-left");
+		} else if ($(".week-2-enc").is(":visible")) {
+			$(".week-2-enc .encounter-text").addClass("fall-anim");
+			$(".islander").addClass("ghost-anim");
+			$(".islanderbg").addClass("ghost-animbg");
+		} else if ($(".week-3-enc").is(":visible")) {
+			$(".week-3-enc .encounter-text").addClass("fall-anim");
+			$(".beast").addClass("ghost-anim");
+			$(".beastbg").addClass("ghost-animbg");
+		} else if ($(".week-4-enc").is(":visible")) {
+			$(".week-4-enc .encounter-text").addClass("fall-anim");
+			$(".empress").addClass("ghost-anim");
+			$(".empressbg").addClass("ghost-animbg");
+		} else if ($(".objectives-panel").is(":visible")) {
+			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
+				"rise-anim"
+			);
+		}
+	}
+);
+</code></pre>
+		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
+<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">HTML</p><code style="">
+
+$(document).foundation();
+
+$(".week-1-nav").click(function () {
+	$(".week-1-objs, .week-1-enc").show();
+	$(
+		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+});
+$(".week-2-nav").click(function () {
+	$(".week-2-objs, .week-2-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+});
+$(".week-3-nav").click(function () {
+	$(".week-3-objs, .week-3-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
+});
+$(".week-4-nav").click(function () {
+	$(".week-4-objs, .week-4-enc").show();
+	$(
+		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
+	).hide();
+	$(".weekly-nav div").removeClass("active-week-ani");
+	$(this).addClass("active-week-ani");
+	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
+	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+});
+
+/* pageload animation on current week's encounter */
+$(".encounter-text").addClass("fall-anim");
+$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
+$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
+
+/* adds animations for encounters panel */
+$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
+	function () {
+		if ($(".week-1-enc").is(":visible")) {
+			$(".week-1-enc .encounter-text").addClass("fall-anim");
+			$(".pirate").addClass("ghost-anim, shift-left");
+			$(".piratebg").addClass("ghost-animbg, shift-left");
+		} else if ($(".week-2-enc").is(":visible")) {
+			$(".week-2-enc .encounter-text").addClass("fall-anim");
+			$(".islander").addClass("ghost-anim");
+			$(".islanderbg").addClass("ghost-animbg");
+		} else if ($(".week-3-enc").is(":visible")) {
+			$(".week-3-enc .encounter-text").addClass("fall-anim");
+			$(".beast").addClass("ghost-anim");
+			$(".beastbg").addClass("ghost-animbg");
+		} else if ($(".week-4-enc").is(":visible")) {
+			$(".week-4-enc .encounter-text").addClass("fall-anim");
+			$(".empress").addClass("ghost-anim");
+			$(".empressbg").addClass("ghost-animbg");
+		} else if ($(".objectives-panel").is(":visible")) {
+			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
+				"rise-anim"
+			);
+		}
+	}
+);
+</code></pre>
+	</div>
+</div>
