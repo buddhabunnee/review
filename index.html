@@ -133,19 +133,20 @@ nav {
 	
 	
 	<div class="voyage-wrap grid-x grid-margin-x grid-margin-y grid-margin-y small-12 align-center wrap" style="margin-top:10px;padding-left:15px;padding-right:15px;min-height:750px;">
-		<pre class="cell small-12 large-6" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">JavaScript</span></p><code style="margin-top:-30px;">irep.ready(function(){
+		<pre class="cell small-12 large-6" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">JavaScript</span></p><code style="margin-top:-30px;">&lt;script&gt;
+irep.ready(function(){
 
     setTimeout(function() {
 		$(".hiw-nav").trigger('click');
 	},10); 
 	
-    if (window.location.href.indexOf("?t=battledeck") > -1 ) {
+    if (window.location.href.indexOf("?t=battledeck") &gt; -1 ) {
 		setTimeout(function() {
 			$(".battle-nav").trigger('click');
 		},10);
     }
     
-    if (window.location.href.indexOf("?t=ranks") > -1 ) {
+    if (window.location.href.indexOf("?t=ranks") &gt; -1 ) {
 		setTimeout(function() {
 			$(".ranking-nav").trigger('click');
 		},10);
@@ -158,11 +159,11 @@ nav {
     /* loading animation for users with slower cxn - plays by default in spaces that pull in data - turned off when data loads */
     var dots = 0;
     setInterval(function () {
-        if(dots < 3) {
+        if(dots &lt; 3) {
             $('.loading-ani').append('.');
             dots++;
         } else {
-            $('.loading-ani').html('CARGANDO');
+            $('.loading-ani').html('&lt;MT-LOCALETEXT:233935&gt;');
             dots = 0;
         }
     }, 800);
@@ -182,12 +183,12 @@ nav {
         datatype: "JSON"
         }).done(function (data) {
              console.log("number of high priority trainings taken: " + (data.count));
-            if ((data.count) < 10) {
-                $(".rematch-trainings .btn-text").html(" LISTA DE ENTRENAMIENTOS "); // "TRAINING LIST"
+            if ((data.count) &lt; 10) {
+                $(".rematch-trainings .btn-text").html(" &lt;MT-LOCALETEXT:236109&gt; "); // "TRAINING LIST"
                 $(".rematch-trainings").addClass("rematch-avail").removeClass("rematch-unavail");
             } else {
                 $(".rematch-credits").addClass("rematch-unavail").removeClass("rematch-avail");
-                $(".rematch-credits .btn-text").html(" MÁX. OBTENIDO "); // "MAX EARNED"
+                $(".rematch-credits .btn-text").html(" &lt;MT-LOCALETEXT:236110&gt; "); // "MAX EARNED"
                 $("a.trainings-btn").removeAttr("href");
             }
         });    
@@ -200,11 +201,11 @@ nav {
         }).done(function (data) {
             console.log("rematch available for purchase with credits? " + (data.available));
             if (data.available) {
-                $(".rematch-credits .btn-text").html(" COMPRAR REVANCHA "); // "PURCHASE REMATCH" - changes button text
+                $(".rematch-credits .btn-text").html(" &lt;MT-LOCALETEXT:236112&gt; "); // "PURCHASE REMATCH" - changes button text
                 $(".rematch-credits").addClass("rematch-avail").removeClass("rematch-unavail"); // blue background + pointer cursor
                 $(".rematch-credits").one("click", function() { 
                     $(this).addClass("rematch-unavail").removeClass("rematch-avail"); // grey background + no pointer cursor, since user only allowed one redepemtion /week, clicking the button immediately 'disables' it
-                    $(".rematch-credits .btn-text").html(" COMPRADAS "); // "PURCHASED" - changes button text
+                    $(".rematch-credits .btn-text").html(" &lt;MT-LOCALETEXT:236113&gt; "); // "PURCHASED" - changes button text
                     irep.callApi({
                         url: "voyageintothedeep/purchase",
                         type: "POST",
@@ -215,7 +216,7 @@ nav {
                 });
             } else {
                 $(".rematch-credits").addClass("rematch-unavail").removeClass("rematch-avail");
-                $(".rematch-credits .btn-text").html(" COMPRADAS "); // "PURCHASED"
+                $(".rematch-credits .btn-text").html(" &lt;MT-LOCALETEXT:236113&gt; "); // "PURCHASED"
             }
         });    
     
@@ -227,11 +228,11 @@ nav {
         }).done(function (data) {
             console.log("rematch available for purchase with rxt? " + (data.available));
             if (data.available) {
-                $(".rematch-rxt .btn-text").html(" ENVIAR MÉTRICAS "); // "SUBMIT METRICS"
+                $(".rematch-rxt .btn-text").html(" &lt;MT-LOCALETEXT:236115&gt; "); // "SUBMIT METRICS"
                 $(".rematch-rxt").addClass("rematch-avail").removeClass("rematch-unavail");
             } else {
                 $(".rematch-rxt").addClass("rematch-unavail").removeClass("rematch-avail");
-                $(".rematch-rxt .btn-text").html(" ENVIADAS "); // "SUBMITTED"
+                $(".rematch-rxt .btn-text").html(" &lt;MT-LOCALETEXT:236116&gt; "); // "SUBMITTED"
                 $("a.rxt-btn").removeAttr("href");
             }
         });
@@ -247,7 +248,7 @@ nav {
         type: "GET",
         datatype: "JSON"
         }).done(function (data) {
-            if ((data.matchesLeft) > 0) {
+            if ((data.matchesLeft) &gt; 0) {
                 $(".objective-item a").addClass("obj-ready");
                 $(".objective-item .btn-text").show();
             } else {
@@ -291,24 +292,24 @@ nav {
         $(".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc").hide();
         $(".weekly-nav div").removeClass("active-week-ani");
         $(this).addClass("active-week-ani");
-        $(".week-number").html(" SEMANA 1 ");
-        $(".objective-subheading").html(" Presta atención a la sabiduría del Antiguo Marinero, transmitida mediante los siguientes objetivos. "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+        $(".week-number").html(" &lt;MT-LOCALETEXT:236120&gt; ");
+        $(".objective-subheading").html(" &lt;MT-LOCALETEXT:236128&gt; "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
     });
     $(".week-2-nav").click(function() {
         $(".week-2-objs, .week-2-enc").show();
         $(".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc").hide();
         $(".weekly-nav div").removeClass("active-week-ani");
         $(this).addClass("active-week-ani");
-        $(".week-number").html(" SEMANA 2 ");
-        $(".objective-subheading").html(" Resuelve los acertijos del Sabio Isleño cumpliendo con los cuatro objetivos siguientes. "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+        $(".week-number").html(" &lt;MT-LOCALETEXT:236141&gt; ");
+        $(".objective-subheading").html(" &lt;MT-LOCALETEXT:236145&gt; "); // Solve the Wise Islander’s riddles by completing the four objectives below.
     });
     $(".week-3-nav").click(function() {
         $(".week-3-objs, .week-3-enc").show();
         $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc").hide();
         $(".weekly-nav div").removeClass("active-week-ani");
         $(this).addClass("active-week-ani");
-        $(".week-number").html(" SEMANA 3 ");
-        $(".objective-subheading").html(" Resiste a las aguas y demuestra tus conocimientos. "); // Withstand the waters and prove your knowledge.
+        $(".week-number").html(" &lt;MT-LOCALETEXT:236153&gt; ");
+        $(".objective-subheading").html(" &lt;MT-LOCALETEXT:236157&gt; "); // Withstand the waters and prove your knowledge.
     });
     
     /* week 4 unlocks */    
@@ -317,8 +318,8 @@ nav {
     type: "GET",
     datatype: "JSON"
     }).done(function (data) {
-        if ((data.objectivesCompleted) > 11) {
-            $(".week-number").html(" SEMANA 4 ");
+        if ((data.objectivesCompleted) &gt; 11) {
+            $(".week-number").html(" &lt;MT-LOCALETEXT:236165&gt; ");
             $(".week-4-nav").addClass("week-unlocked active-week-ani");
             $(".week-3-nav").removeClass("active-week-ani");
             $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc").hide();
@@ -327,8 +328,8 @@ nav {
                 $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc").hide();
                 $(".weekly-nav div").removeClass("active-week-ani");
                 $(this).addClass("active-week-ani");
-                $(".week-number").html(" SEMANA 4 ");
-                $(".objective-subheading").html(" Has llegado hasta aquí. Es hora de superar a la Reina del Mar. "); // You’ve come this far. It’s time to outwit the Sea Empress.
+                $(".week-number").html(" &lt;MT-LOCALETEXT:236165&gt; ");
+                $(".objective-subheading").html(" &lt;MT-LOCALETEXT:236169&gt; "); // You’ve come this far. It’s time to outwit the Sea Empress.
             });
         } else {
             $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc").hide();
@@ -371,7 +372,7 @@ nav {
         $.each(data.participantObjectiveScores, function( i,item ) {
             console.log(item);
             // avatar item checked
-            if ((item.score) > 0) {
+            if ((item.score) &gt; 0) {
                 $("#obj-" + item.objectiveId + " .avatar-item").append( "&lt;div class='align-center-middle cell grid-x small-12' style='background: rgba(229,169,45,0.85);'&gt;&lt;img src='/content/images/voyage/sitepages/fordev/Checkmark.png'&gt;&lt;/div&gt;" );
                 // display and load score
                 $("#obj-" + item.objectiveId + " .obj-score").show();
@@ -380,7 +381,8 @@ nav {
         })
     });
     
-})</code></pre>
+})
+&lt;/script&gt;</code></pre>
 				<pre class="cell small-12 large-6" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">CSS</span></p><code style="margin-top:-30px;">/* for small view only */
 @media only screen and (max-width:39.9735em) {
 .hiw-wrap h4 { font-weight: bold; font-size: 1.6em !important; }
@@ -1238,7 +1240,7 @@ a.obj-notready {
                 }
             }).done(function(data) {
                 console.log(data.codesRemaining);
-                if ((data.codesRemaining) > 0) {
+                if ((data.codesRemaining) &gt; 0) {
                     // checks if intro trainings complete
                     irep.callApi({
                         url: "/education/promotiontimeframe?ts=" + Date.now(),
@@ -1265,7 +1267,7 @@ a.obj-notready {
                                 }).done(function(data) {
                                     if (data.takenLastHour) {
                                         console.log(data.duration);
-                                        $(".failed-text").text("<MT-LOCALETEXT:235156>");
+                                        $(".failed-text").text("&lt;MT-LOCALETEXT:235156&gt;");
                                         $(".failed-text").addClass("divider-1 margin-top-for-small-only--large margin-top-for-medium--xlarge");
                                         var duration = moment.duration((data.duration));
                                         var interval = 1;
@@ -1276,7 +1278,7 @@ a.obj-notready {
                                                 clearInterval(countdown);
                                                 $(".failed-text").empty();
                                                 $(".timer").hide();
-                                                $(".take-quiz").text("<MT-LOCALETEXT:235146>");
+                                                $(".take-quiz").text("&lt;MT-LOCALETEXT:235146&gt;");
                                                 $(".quiz-unlocked .avg-button").removeClass("inactive-button").addClass("active-button").click(function() {
                                                     window.location = "50/lar/quiz?code=202009exam-AvengersGame&redirectid=457054";
                                                 })
@@ -1284,7 +1286,7 @@ a.obj-notready {
                                         }, 1000);
                                     } else {
                                         $(".failed-text").empty();
-                                        $(".take-quiz").text("<MT-LOCALETEXT:235146>");
+                                        $(".take-quiz").text("&lt;MT-LOCALETEXT:235146&gt;");
                                         $(".quiz-unlocked .avg-button").removeClass("inactive-button").addClass("active-button").click(function() {
                                             window.location = "50/lar/quiz?code=202009exam-AvengersGame&redirectid=457054";
                                         })
