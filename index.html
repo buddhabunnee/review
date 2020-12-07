@@ -155,24 +155,6 @@ nav {
     $(".battle-wrap").hide();
     $(".ranking-wrap").hide();
     
-    //Leaderboard//
-    $("table").addClass("cell grid-x small-12 xlarge-10");
-    $("tbody").addClass("cell grid-x");
-    $("tr").addClass("cell grid-x");
-    $("th:first-child").addClass("cell small-5 medium-6 padding--medium text-left");
-    $("th:nth-child(2)").addClass("cell small-4 medium-3 padding--medium text-center");
-    $("th:nth-child(3)").addClass("cell small-3 padding--medium text-center");
-    $("td:first-child").addClass("cell small-5 medium-6 padding--medium text-left");
-    $("td:nth-child(2)").addClass("cell small-4 medium-3 padding--medium text-center");
-    $("td:nth-child(3)").addClass("cell small-3 padding--medium text-center");
-    $("tr[data-self = True ]").addClass('myRank');
-    $("th[colspan = 3 ]").removeClass("small-5 medium-6").addClass('small-12 noBorder');
-    if ($("tr[data-self]").length > 0) {
-        $(".lbHeader").show();
-        $(".lbRanks").show();
-        $(".lbSpacer").hide();
-    }
-    
     /* loading animation for users with slower cxn - plays by default in spaces that pull in data - turned off when data loads */
     var dots = 0;
     setInterval(function () {
@@ -390,7 +372,7 @@ nav {
             console.log(item);
             // avatar item checked
             if ((item.score) > 0) {
-                $("#obj-" + item.objectiveId + " .avatar-item").append( "<div class='align-center-middle cell grid-x small-12' style='background: rgba(229,169,45,0.85);'><img src='/content/images/voyage/sitepages/fordev/Checkmark.png'></div>" );
+                $("#obj-" + item.objectiveId + " .avatar-item").append( "&lt;div class='align-center-middle cell grid-x small-12' style='background: rgba(229,169,45,0.85);'&gt;&lt;img src='/content/images/voyage/sitepages/fordev/Checkmark.png'&gt;&lt;/div&gt;" );
                 // display and load score
                 $("#obj-" + item.objectiveId + " .obj-score").show();
                 $("#obj-" + item.objectiveId + " .obj-score span").html(item.score);
