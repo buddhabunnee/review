@@ -47,8 +47,24 @@ $(document).ready(function(){
 })
 </script>
 <style>
+pre::-webkit-scrollbar {
+    width: .9em;
+	border-left: 1px dotted #af8dd9;
+	border-right: 1px dotted #af8dd9;
+}
+pre::-webkit-scrollbar-thumb {
+	background:#17fc95;
+}
 .hljs {
-	background: linear-gradient(180deg, #501f7a 0, #2820b3 55%);
+	background: linear-gradient(180deg, #3a2050 30%, #2820b3 90%);
+	background-attachment: fixed;
+}
+.tab {
+	background:#d7d7d7;
+	color:#000000;
+	line-height: 30px;
+	padding: 7px 14px;
+	border-radius: 0px 0px 20px 20px;
 }
 body {
 	background: #45255f;
@@ -62,20 +78,24 @@ pre {
 	white-space: -pre-wrap;
 	white-space: -o-pre-wrap;
 	word-wrap: break-word;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 16px;
+	border-top: 1px dotted #af8dd9;
+	border-bottom: 1px dotted #af8dd9;
+	border-left: 1px dotted #af8dd9;
 }
 .wrap {
 	height: 500px !important;
 }
 code {
-	border: 1px dotted #af8dd9;
+	border: none;
 }
 nav {
 	border-top: 1px dotted #af8dd9;
 	border-bottom: 1px dotted #af8dd9;
-	background: #331a47;
+	background: #3a2050;
 	font-size: 18px;
+	color: e7e4eb;
 }
 .nav-item {
 	color: #FFFFFF;
@@ -87,16 +107,33 @@ nav {
 }
 </style>
 <div class="grid-x align-center-middle" style="padding-top:20px;">
-	<h2 class="small-12" style="padding-left:20px;padding-right:20px;font-family: 'Oleo Script', cursive;color:#af8dd9;">Coding Examples</h2>
-	<p class="small-12 sub-heading" style="padding-left:20px;padding-right:20px;color:#e7e4eb;">Below please find examples of code I've authored for select promotions while working for Motivation Technologies in 2020.</p>
+	<h2 class="small-12" style="padding-left:30px;padding-right:30px;font-family: 'Oleo Script', cursive;color:#c688d6;">Coding Examples</h2>
+	<p class="small-12 sub-heading" style="padding-left:30px;padding-right:30px;color:#e7e4eb;">Below please find examples of code I've authored for select promotions while working for Motivation Technologies in 2020.</p>
 	<nav class="small-12" style="color:#e7e4eb; padding-top:5px; padding-bottom:5px;">
-		<p style="padding-left:20px;padding-right:20px;margin-bottom:0px;"><span class="voyage-nav nav-item nav-selected">Voyage Into the Deep</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="marvel-nav nav-item">Marvel Avengers Giveaway</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="edge-nav nav-item">Edge Games</span></p>
+		<p style="padding-left:30px;padding-right:30px;margin-bottom:0px;"><span class="voyage-nav nav-item nav-selected">Voyage Into the Deep</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="marvel-nav nav-item">Marvel Avengers Giveaway</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="edge-nav nav-item">Edge Games</span></p>
 	</nav>
 
 
 	
-	<div class="voyage-wrap grid-x grid-margin-x small-12 align-center wrap" style="margin-top:25px;padding-left:5px;padding-right:5px;min-height:750px;">
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;"><p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">JavaScript</p><code style="">irep.ready(function(){
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="voyage-wrap grid-x grid-margin-x grid-margin-y grid-margin-y small-12 align-center wrap" style="margin-top:10px;padding-left:15px;padding-right:15px;min-height:750px;">
+		<pre class="cell small-12 large-6" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">JavaScript</span></p><code style="margin-top:-30px;">irep.ready(function(){
  
     if (window.location.href.indexOf("?t=battledeck") > -1 ) {
 		setTimeout(function() {
@@ -114,26 +151,6 @@ nav {
     $(".battle-wrap").hide();
     $(".ranking-wrap").hide();
     
-    //Leaderboard//
-    $("table").addClass("cell grid-x small-12 xlarge-10");
-    $("tbody").addClass("cell grid-x");
-    $("tr").addClass("cell grid-x");
-    $("th:first-child").addClass("cell small-5 medium-6 padding--medium text-left");
-    $("th:nth-child(2)").addClass("cell small-4 medium-3 padding--medium text-center");
-    $("th:nth-child(3)").addClass("cell small-3 padding--medium text-center");
-    $("td:first-child").addClass("cell small-5 medium-6 padding--medium text-left");
-    $("td:nth-child(2)").addClass("cell small-4 medium-3 padding--medium text-center");
-    $("td:nth-child(3)").addClass("cell small-3 padding--medium text-center");
-    $("tr[data-self = True ]").addClass('myRank');
-    $("th[colspan = 3 ]").removeClass("small-5 medium-6").addClass('small-12 noBorder');
-    if ($("tr[data-self]").length > 0) {
-        $(".lbHeader").show();
-        $(".lbRanks").show();
-        $(".lbSpacer").hide();
-    }
-    /*Change BG color of My Rank*/
-
-    
     /* loading animation for users with slower cxn - plays by default in spaces that pull in data - turned off when data loads */
     var dots = 0;
     setInterval(function () {
@@ -145,7 +162,6 @@ nav {
             dots = 0;
         }
     }, 800);
-  
   
 // MAIN NAVIGATION
     $(".hiw-nav").click(function() {
@@ -185,7 +201,6 @@ nav {
         $(".battle-wrap, .hiw-wrap").hide();
     });
     
-
 // BATTLE DECK CARDS
     $(".objectives-panel").hide();
     $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc").hide();
@@ -229,14 +244,14 @@ nav {
         $(".week-number").html(" <MT-LOCALETEXT:236153> ");
         $(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
     });
-    // $(".week-4-nav").click(function() {
-    //     $(".week-4-objs, .week-4-enc").show();
-    //     $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc").hide();
-    //     $(".weekly-nav div").removeClass("active-week-ani");
-    //     $(this).addClass("active-week-ani");
-    //     $(".week-number").html(" <MT-LOCALETEXT:236165> ");
-    //     $(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
-    // });
+    $(".week-4-nav").click(function() {
+         $(".week-4-objs, .week-4-enc").show();
+         $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc").hide();
+         $(".weekly-nav div").removeClass("active-week-ani");
+         $(this).addClass("active-week-ani");
+         $(".week-number").html(" <MT-LOCALETEXT:236165> ");
+         $(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+    });
     
     /* pageload animation on current week's encounter */
     $(".encounter-text").addClass("fall-anim");
@@ -266,7 +281,6 @@ nav {
         }
     });
     
-
 // REMATCH BUTTONS
     // TRAININGS CLAIM REMATCH BUTTON
     irep.callApi({
@@ -329,8 +343,6 @@ nav {
         }
     });
     
-
-    
     // BATTLE DECK OBJECTIVES
     irep.callApi({
     url: "voyageintothedeep/scores",
@@ -340,19 +352,15 @@ nav {
             console.log(item);
             // avatar item checked
             if ((item.score) > 0) {
-                $("#obj-" + item.objectiveId + " .avatar-item").append( "<div class='align-center-middle cell grid-x small-12' style='background: rgba(229,169,45,0.85);'><img src='/content/images/voyage/sitepages/fordev/Checkmark.png'></div>" );
+                $("#obj-" + item.objectiveId + " .avatar-item").append( "&lt;div class='align-center-middle cell grid-x small-12' style='background: rgba(229,169,45,0.85);'&rt;&lt;img src='/content/images/voyage/sitepages/fordev/Checkmark.png'&rt;&lt;/div&rt;" );
                 // display and load score
                 $("#obj-" + item.objectiveId + " .obj-score").show();
                 $("#obj-" + item.objectiveId + " .obj-score span").html(item.score);
             }
         })
     });
-    
-})
-		
-		</code></pre>
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
-<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">CSS</p><code style="">/* for small view only */
+})</code></pre>
+				<pre class="cell small-12 large-6" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">CSS</span></p><code style="margin-top:-30px;">/* for small view only */
 @media only screen and (max-width:39.9735em) {
 .hiw-wrap h4 { font-weight: bold; font-size: 1.6em !important; }
 .hiw-wrap h3, .ranking-wrap h3 { font-size: 1.9em; }
@@ -553,8 +561,7 @@ a.obj-notready {
     to { top: 0px; opacity: 1; }
 }
 </code></pre>
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
-<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">HTML</p><code class="language-html" style="">&lt;div class="header-bg" style="" &gt;
+				<pre class="cell small-12" style="position:relative;height:50%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">HTML</span></p><code style="margin-top:-30px;">&lt;div class="header-bg" style="" &gt;
 &lt;div id="IREPf4eaa00c0f244fbcbf4d281f116ae5c7" data-controluid="f4eaa00c-0f24-4fbc-bf4d-281f116ae5c7" class="grid-container " style=""&gt;
     &lt;div class="grid-x align-center-middle" style=""&gt;
 &lt;div id="top" class="grid-x cell align-center padding-for-small-only--large text-align-for-small-only--center text-align-for-medium--left small-12 medium-9 large-7 xlarge-6 main"&gt;
@@ -646,7 +653,6 @@ a.obj-notready {
         &lt;/div&gt;
     &lt;/div&gt;        
     
-    
 &lt;!--GET REMATCH VIA PURCHASE WITH CREDITS--&gt;
     &lt;div class="grid-x cell medium-4 align-top" style="background: #445c66;"&gt;
         &lt;div class="cell small-12 text--white padding-vertical--large padding-horizontal--medium grid-x align-center-middle" style="background: #1d2e35; border-bottom: 4px solid #b39e65;"&gt;&lt;p class="margin--none rematch-header"&gt;+1 REVANCHA&lt;/p&gt;&lt;/div&gt;&lt;!--+1 REMATCH--&gt;
@@ -655,7 +661,6 @@ a.obj-notready {
             &lt;div class="cell small-12 xlarge-9 padding-vertical--small padding-horizontal--medium align-self-bottom rematch-credits rematch-unavail"&gt;&lt;p class="margin--none text--bold btn-text"&gt;&lt;span class="loading-ani"&gt;CARGANDO&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;!--PURCHASE REMATCH--&gt;
         &lt;/div&gt;
     &lt;/div&gt;    
-    
     
 &lt;!--GET REMATCH VIA SUBMITTING RXT METRICS--&gt;
     &lt;div class="grid-x cell medium-4 align-top" style="background: #445c66;"&gt;
@@ -672,43 +677,6 @@ a.obj-notready {
 
 &lt;div id="IREP2a4843ef822542729795ce9c80e44132" data-controluid="2a4843ef-8225-4272-9795-ce9c80e44132" class="grid-container " style=""&gt;
     &lt;div class="grid-x battle-wrap align-center-middle" style=""&gt;
-&lt;style&gt;
-/* for small view only */
-@media only screen and (max-width:39.9735em) { 
-.user-dash { background: url(/content/images/voyage/sitepages/fordev/Book_Mobile.png) center center no-repeat; height: 514px; }
-h1#x-matches-left,
-h1#x-objectives-complete,
-h1#x-total-score { font-size: 3em; margin-bottom: 0px; }
-.stats h5 { font-size: 1.3em; }
-}
-/* for medium view only */
-@media only screen and (min-width:40em) and (max-width:63.9735em) {
-.user-dash { background: url(/content/images/voyage/sitepages/fordev/Book_Desktop.png) center center no-repeat; height: 325px; }
-h1#x-matches-left,
-h1#x-objectives-complete,
-h1#x-total-score { font-size: 4rem; }
-.stats h5 { font-size: 1.2em; }
-}
-/* for large view only */
-@media only screen and (min-width:64em) and (max-width:85.4735em)  {
-.user-dash { background: url(/content/images/voyage/sitepages/fordev/Book_Desktop.png) center center / cover no-repeat; height: 330px; background-size: 100%; }
-h1#x-matches-left,
-h1#x-objectives-complete,
-h1#x-total-score { font-size: 4rem; }
-.stats h5 { font-size: 1.3em; }
-.mid-stat { border-left: 2px solid #97afb3; border-right: 2px solid #97afb3; }
-}
-/* for extra large view only */
-@media only screen and (min-width:85.5em) {
-.user-dash { background: url(/content/images/voyage/sitepages/fordev/Book_Desktop.png) center center / contain no-repeat; height: 330px; background-size: 100%; }
-h1#x-matches-left,
-h1#x-objectives-complete,
-h1#x-total-score { font-size: 5rem; }
-.stats h5 { font-size: 1.3em; }
-.mid-stat { border-left: 2px solid #97afb3; border-right: 2px solid #97afb3; }
-}
-.stats { background: #e9e2d8; box-shadow: 0px 0px 22px #a89a74; margin-top: -10px; }
-&lt;/style&gt;
 
 &lt;!--USER SCORE DASHBOARD--&gt;
 &lt;div class="grid-x cell align-center-middle small-12 xlarge-9 user-dash padding-for-large--large margin-top-for-small-only--xlarge margin-top-for-medium-only--xlarge margin-top-for-large--large"&gt;
@@ -720,9 +688,6 @@ h1#x-total-score { font-size: 5rem; }
 &lt;/div&gt;
 &lt;div class="battle-deck grid-x cell small-12 xlarge-10 margin-top-for-small-only--large margin-top-for-medium-only--xlarge margin-top-for-large--large"&gt;
     
-    
-    
-    
 &lt;!-- BATTLE DECK NAVIGATION --&gt;
     &lt;div class="battle-deck-nav grid-x cell small-12 align-center-middle padding-vertical--large padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--large padding-horizontal-for-large--xlarge" style="background: #1d2e35; border-bottom: 4px solid #b39e65;"&gt;
         &lt;div class="medium-shrink large-shrink voyageColor6"&gt;&lt;h5 class="active encounter-nav padding-bottom--small margin-bottom--none text--bold"&gt;ENCUENTRO&lt;/h5&gt;&lt;/div&gt;&lt;!--ENCOUNTER--&gt;
@@ -730,13 +695,8 @@ h1#x-total-score { font-size: 5rem; }
         &lt;div class="cell medium-auto large-auto voyageColor6 text--right hide-for-small-only"&gt;&lt;h3 class="week-number text--bold"&gt;SEMANA 3&lt;/h3&gt;&lt;/div&gt;&lt;!--WEEK #--&gt;
     &lt;/div&gt;
     
-
-
-    
 &lt;!-- WEEK NUMBER SMALL ONLY --&gt;
-    &lt;div class="small-12 show-for-small-only text-center align-center voyageColor6 padding--medium" style="background: #537382;"&gt;&lt;h3 class="week-number text--bold text--white margin--none"&gt;SEMANA 2&lt;/h3&gt;&lt;/div&gt;&lt;!--WEEK #--&gt;    
-    
-    
+    &lt;div class="small-12 show-for-small-only text-center align-center voyageColor6 padding--medium" style="background: #537382;"&gt;&lt;h3 class="week-number text--bold text--white margin--none"&gt;SEMANA 2&lt;/h3&gt;&lt;/div&gt;&lt;!--WEEK #--&gt;      
     
 &lt;!-- ENCOUNTERS MEDIUM/LARGE --&gt;
     &lt;div class="hide-for-small-only encounter-panel cell align-center-middle"&gt;
@@ -785,32 +745,6 @@ h1#x-total-score { font-size: 5rem; }
             &lt;div class="cell small-12 medium-7 align-self-bottom empressbg shift-leftbg"&gt;&lt;img class="empress shift-left" src="/content/images/voyage/sitepages/fordev/Encounter_4_Character.png"&gt;&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;    
-
-
-
-
-
-
-
-&lt;!-- WEEKLY NAV SMALL ONLY --&gt;
-&lt;!--    &lt;div class="show-for-small-only weekly-nav-wrap grid-x cell small-12 align-center-middle padding-for-small-only--large padding-for-medium-only--large padding-for-large--xlarge"&gt;--&gt;
-&lt;!--        &lt;div class="weekly-nav grid-x cell grid-margin-x grid-margin-y small-12 large-11 xlarge-10 padding-vertical--large"&gt;--&gt;
-&lt;!--            &lt;div class="week-unlocked active-week-ani week-1-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_1.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 1&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 1--&gt;
-&lt;!--            &lt;div class="week-2-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_2.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 2&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 2--&gt;
-&lt;!--            &lt;div class="week-3-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_3.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 3&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 3--&gt;
-&lt;!--            &lt;div class="week-4-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_4.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 4&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 4--&gt;
-&lt;!--        &lt;/div&gt;--&gt;
-&lt;!--    &lt;/div&gt;--&gt;
-
-
-
-
-
-
-
-
-
-
     
 &lt;!-- ENCOUNTERS SMALL ONLY --&gt;
     &lt;div class="show-for-small-only encounter-panel cell align-center-middle"&gt;
@@ -860,18 +794,6 @@ h1#x-total-score { font-size: 5rem; }
         &lt;/div&gt;
     &lt;/div&gt;    
 
-
-
-
-
-
-
-
-
-
-
-
-    
 &lt;!-- OBJECTIVES --&gt;
     &lt;div class="objectives-panel padding-top-for-small-only--xlarge padding-horizontal-for-small-only--large padding-vertical-for-medium-only--xlarge padding-horizontal-for-medium-only--large padding-for-large--xlarge cell align-center-middle"&gt;
         
@@ -890,7 +812,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 1:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 1:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 8 de 10 preguntas correctamente.&lt;/p&gt;&lt;!--Answer 8 out of 10 questions correctly.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective1&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective1&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -903,7 +825,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 2:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 2:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Logra un 80 % de precisión y una velocidad promedio por pregunta de 12 segundos o menos.&lt;/p&gt;&lt;!--Achieve 80% accuracy and an average speed per question of 12 seconds or less.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective2&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective2&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -916,7 +838,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 3:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 3:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Te daremos la respuesta y deberás relacionarla con la pregunta correspondiente que la haga verdadera. Logra un 80 % de precisión para cumplir con este objetivo. &lt;/p&gt;&lt;!--We’ll give you the answer and you must match it to the corresponding question that makes it true. Achieve 80% accuracy to complete this objective.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective3&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective3&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -929,7 +851,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 4:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 4:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Lee las situaciones de venta y elige la mejor respuesta con una precisión del 80 %.&lt;/p&gt;&lt;!--Read the sales scenarios and choose the best answer with 80% accuracy.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective4&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective4&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -946,7 +868,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 5:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 5:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 13 de 15 preguntas correctamente.&lt;/p&gt;&lt;!--Answer 13 out of 15 questions correctly.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective5&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective5&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -959,7 +881,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 6:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 6:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Relaciona el producto o la tecnología Intel® con su descripción con una precisión del 100 %.&lt;/p&gt;&lt;!--Match the Intel® product or technology to its description with 100% accuracy.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective6&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective6&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -972,7 +894,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 7:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 7:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Logra un 80 % de precisión y una velocidad promedio por pregunta de 12 segundos o menos.&lt;/p&gt;&lt;!--Achieve 80% accuracy and an average speed per question of 12 seconds or less.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective7&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective7&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -985,7 +907,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 8:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 8:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Usa las pistas visuales para responder preguntas sobre los productos y las tecnologías Intel® con un 80 % de precisión.&lt;/p&gt;&lt;!--Use the visual clues to answer questions about Intel® products and technologies with 80% accuracy.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective8&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective8&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1002,7 +924,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 9:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 9:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 13 de 15 preguntas correctamente.&lt;/p&gt;&lt;!--Answer 13 out of 15 questions correctly..--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective9&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective9&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1015,7 +937,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 10:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 10:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Relaciona el SKU del procesador Intel® con su descripción con una precisión del 100 %.&lt;/p&gt;&lt;!--Match the Intel® processor SKU to its description with 100% accuracy..--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective10&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective10&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1028,7 +950,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 11:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 11:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Logra un 90 % de precisión y una velocidad promedio por pregunta de 12 segundos o menos.&lt;/p&gt;&lt;!--Achieve 90% accuracy and an average speed per question of 12 seconds or less..--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective11&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective11&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1041,7 +963,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 12:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 12:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 10 preguntas consecutivas correctamente y logra un 80 % de precisión.&lt;/p&gt;&lt;!--Answer 10 consecutive questions correctly and achieve 80% overall accuracy.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective12&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective12&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1058,7 +980,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 13:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 13:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 13 de 15 preguntas correctamente.&lt;/p&gt;&lt;!--It’s backwards day! We’ll give you the answer and you must match it to the corresponding question that makes it true. Achieve 80% accuracy to complete this objective..--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective13&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective13&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1071,7 +993,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 14:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 14:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Logra un 80 % de precisión y una velocidad promedio por pregunta de 10 segundos o menos.&lt;/p&gt;&lt;!--Achieve 80% accuracy and an average speed per question of 10 seconds per less..--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective14&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective14&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1084,7 +1006,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 15:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 15:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Responde 18 de 20 preguntas correctamente.&lt;/p&gt;&lt;!--Answer 18 out of 20 questions correctly..--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective15&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective15&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1097,7 +1019,7 @@ h1#x-total-score { font-size: 5rem; }
                     &lt;div class="cell padding--large grid-x"&gt;
                         &lt;h4 class="cell small-12 voyageColor9 padding-bottom--small"&gt;&lt;strong&gt;OBJETIVO 16:&lt;/strong&gt;&lt;/h4&gt;&lt;!--OBJECTIVE 16:--&gt;
                         &lt;p class="cell small-12 text--white padding-bottom--small"&gt;Te daremos la respuesta y deberás relacionarla con la pregunta correspondiente que la haga verdadera. Logra un 80 % de precisión para cumplir con este objetivo. &lt;/p&gt;&lt;!--Answer 10 consecutive questions correctly and achieve 80% overall accuracy.--&gt;
-                        &lt;a class="" href="https://retailedge.intel.com/50/lar/quiz?code=202010qp-Objective16&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
+                        &lt;a class="" href="50/lar/quiz?code=202010qp-Objective16&amp;redirectid=483102"&gt;&lt;div class="cell small-12 large-shrink padding-vertical--small padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--small padding-horizontal-for-large--xlarge align-self-bottom"&gt;&lt;p class="margin--none text--bold btn-text" style="display:none;"&gt;BATALLA&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;!--BATTLE BUTTON--&gt;
                         &lt;p class="cell small-12 obj-score margin-top--large margin-bottom--none"&gt;Puntuación: &lt;span&gt;&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1105,9 +1027,7 @@ h1#x-total-score { font-size: 5rem; }
         &lt;/div&gt; 
 
     &lt;/div&gt;
-    
-    
-    
+
 &lt;!-- WEEKLY NAV MEDIUM/LARGE --&gt;
     &lt;div class="weekly-nav-wrap grid-x cell small-12 align-center-middle padding-for-small-only--large padding-for-medium-only--large padding-for-large--xlarge"&gt;
         &lt;div class="weekly-nav grid-x cell grid-margin-x grid-margin-y small-12 large-11 xlarge-10 padding-vertical--large"&gt;
@@ -1117,64 +1037,13 @@ h1#x-total-score { font-size: 5rem; }
             &lt;div class="week-4-nav grid-x cell small-6 medium-3 align-center"&gt;&lt;div class="cell small-12 grid-x" style="background:url('/content/images/voyage/sitepages/fordev/Thumb_4.jpg') center / contain no-repeat;"&gt;&lt;img class="cell small-12" src="/content/images/voyage/sitepages/fordev/Thumb_Locked.png"&gt;&lt;/div&gt;&lt;h5 class="align-self-middle padding-for-small-only--medium padding-for-medium-only--small padding-for-large--large text--bold text-center margin-bottom--none text--white small-12"&gt;SEMANA 4&lt;/h5&gt;&lt;/div&gt;&lt;!--WEEK 4--&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    
-
-    
+ 
 &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div id="IREPe4e9f39ae64242e28e790d1efa2dc637" data-controluid="e4e9f39a-e642-42e2-8e79-0d1efa2dc637" class="grid-container " style=""&gt;
     &lt;div class="grid-x ranking-wrap align-center-middle grid-x" style=""&gt;
-&lt;style&gt;
-.prize-item li { line-height: 1.8em; font-size: 16px; }
-.prize-item h3 { font-size: 1.5em; }
-.prize-item h4 { font-size: 1.2em; }
-.prizeBox { background: #1d2e35; }
-
-/* medium */
-@media print, screen and (max-width: 63.975em) {   
-.prizeBox { margin-top: 40px; }
-.prizeImg2 {
-    position: relative;
-    top: -90px;
-    margin-bottom: -60px;
-    max-width: 75%;
-}
-.badge-title { font-size: 1.3em; }
-.five-k-credits { font-size: 3.5em; }
-}
-
-/* large and up */    
-@media print, screen and (min-width: 64em) {   
-.prizeImg2 {
-    position: relative;
-    top: -90px;
-    margin-bottom: -60px;
-}
-.badge-title { font-size: 1.71em; }
-.five-k-credits { font-size: 4.5em; }
-.prizeBox { margin-bottom: 120px; }
-}
-
-/* small only */
-@media only screen and (max-width:39.9735em) {
-.prizeBox { margin-top: 60px; }
-}
-
-.FadeIn {
--webkit-animation: slideIn 0.8s ease 0.3s forwards;
-animation: slideIn 0.8s ease 0.3s forwards;
-}
-
-@keyframes slideIn {
-0% { -webkit-transform: translateX(-40px); opacity: 0; }
-100% { -webkit-transform: translateX(0px); opacity: 1; }
-}
-&lt;/style&gt;
-
-
-
 
 &lt;!-- NAUTICAL REWARDS --&gt;
 &lt;div class="grid-x cell align-center padding-horizontal-for-small-only--large padding-horizontal-for-medium-only--large padding-top-for-small-only--large padding-top-for-medium-only--xlarge padding-for-large--xlarge small-12 medium-11 large-10 xlarge-9"&gt;
@@ -1209,7 +1078,6 @@ animation: slideIn 0.8s ease 0.3s forwards;
         &lt;p class="bodyText1 padding-top--medium text--white"&gt;Y si llegas a los primeros puestos de la Tabla de líderes, ¡puedes ganar uno de estos premios increíbles*!&lt;!--And, if you top the Leaderboard, you could snag one of these awesome prizes*!--&gt;&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-
 
 &lt;!-- INDIVIDUAL PRIZES  --&gt;
 &lt;div class="cell small-12 grid-x margin-bottom--medium"&gt;
@@ -1269,9 +1137,6 @@ animation: slideIn 0.8s ease 0.3s forwards;
     &lt;/div&gt;
 &lt;/div&gt;
 
-
-
-
 &lt;!--Terms--&gt;
 &lt;div class="grid-x cell align-center padding-horizontal--large padding-top--large small-12 medium-11 large-10 xlarge-9"&gt;
     &lt;div class="cell padding-horizontal-for-large--large text-center"&gt;
@@ -1286,242 +1151,7 @@ animation: slideIn 0.8s ease 0.3s forwards;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;/code&gt;&lt;/pre&gt;
-	&lt;/div&gt;
-<div class="marvel-wrap grid-x grid-margin-x small-12 align-center wrap" style="margin-top:25px;padding-left:5px;padding-right:5px;min-height:750px;display:none;">
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
-<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">JavaScript</p><code style="">
-
-$(document).foundation();
-
-$(".week-1-nav").click(function () {
-	$(".week-1-objs, .week-1-enc").show();
-	$(
-		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
-});
-$(".week-2-nav").click(function () {
-	$(".week-2-objs, .week-2-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
-});
-$(".week-3-nav").click(function () {
-	$(".week-3-objs, .week-3-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
-});
-$(".week-4-nav").click(function () {
-	$(".week-4-objs, .week-4-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
-});
-
-/* pageload animation on current week's encounter */
-$(".encounter-text").addClass("fall-anim");
-$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
-$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
-
-/* adds animations for encounters panel */
-$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
-	function () {
-		if ($(".week-1-enc").is(":visible")) {
-			$(".week-1-enc .encounter-text").addClass("fall-anim");
-			$(".pirate").addClass("ghost-anim, shift-left");
-			$(".piratebg").addClass("ghost-animbg, shift-left");
-		} else if ($(".week-2-enc").is(":visible")) {
-			$(".week-2-enc .encounter-text").addClass("fall-anim");
-			$(".islander").addClass("ghost-anim");
-			$(".islanderbg").addClass("ghost-animbg");
-		} else if ($(".week-3-enc").is(":visible")) {
-			$(".week-3-enc .encounter-text").addClass("fall-anim");
-			$(".beast").addClass("ghost-anim");
-			$(".beastbg").addClass("ghost-animbg");
-		} else if ($(".week-4-enc").is(":visible")) {
-			$(".week-4-enc .encounter-text").addClass("fall-anim");
-			$(".empress").addClass("ghost-anim");
-			$(".empressbg").addClass("ghost-animbg");
-		} else if ($(".objectives-panel").is(":visible")) {
-			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
-				"rise-anim"
-			);
-		}
-	}
-);
-</code></pre>
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
-<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">CSS</p><code style="">
-
-$(document).foundation();
-
-$(".week-1-nav").click(function () {
-	$(".week-1-objs, .week-1-enc").show();
-	$(
-		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
-});
-$(".week-2-nav").click(function () {
-	$(".week-2-objs, .week-2-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
-});
-$(".week-3-nav").click(function () {
-	$(".week-3-objs, .week-3-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
-});
-$(".week-4-nav").click(function () {
-	$(".week-4-objs, .week-4-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
-});
-
-/* pageload animation on current week's encounter */
-$(".encounter-text").addClass("fall-anim");
-$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
-$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
-
-/* adds animations for encounters panel */
-$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
-	function () {
-		if ($(".week-1-enc").is(":visible")) {
-			$(".week-1-enc .encounter-text").addClass("fall-anim");
-			$(".pirate").addClass("ghost-anim, shift-left");
-			$(".piratebg").addClass("ghost-animbg, shift-left");
-		} else if ($(".week-2-enc").is(":visible")) {
-			$(".week-2-enc .encounter-text").addClass("fall-anim");
-			$(".islander").addClass("ghost-anim");
-			$(".islanderbg").addClass("ghost-animbg");
-		} else if ($(".week-3-enc").is(":visible")) {
-			$(".week-3-enc .encounter-text").addClass("fall-anim");
-			$(".beast").addClass("ghost-anim");
-			$(".beastbg").addClass("ghost-animbg");
-		} else if ($(".week-4-enc").is(":visible")) {
-			$(".week-4-enc .encounter-text").addClass("fall-anim");
-			$(".empress").addClass("ghost-anim");
-			$(".empressbg").addClass("ghost-animbg");
-		} else if ($(".objectives-panel").is(":visible")) {
-			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
-				"rise-anim"
-			);
-		}
-	}
-);
-</code></pre>
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
-<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">HTML</p><code style="">
-
-$(document).foundation();
-
-$(".week-1-nav").click(function () {
-	$(".week-1-objs, .week-1-enc").show();
-	$(
-		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
-});
-$(".week-2-nav").click(function () {
-	$(".week-2-objs, .week-2-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
-});
-$(".week-3-nav").click(function () {
-	$(".week-3-objs, .week-3-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
-});
-$(".week-4-nav").click(function () {
-	$(".week-4-objs, .week-4-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
-});
-
-/* pageload animation on current week's encounter */
-$(".encounter-text").addClass("fall-anim");
-$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
-$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
-
-/* adds animations for encounters panel */
-$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
-	function () {
-		if ($(".week-1-enc").is(":visible")) {
-			$(".week-1-enc .encounter-text").addClass("fall-anim");
-			$(".pirate").addClass("ghost-anim, shift-left");
-			$(".piratebg").addClass("ghost-animbg, shift-left");
-		} else if ($(".week-2-enc").is(":visible")) {
-			$(".week-2-enc .encounter-text").addClass("fall-anim");
-			$(".islander").addClass("ghost-anim");
-			$(".islanderbg").addClass("ghost-animbg");
-		} else if ($(".week-3-enc").is(":visible")) {
-			$(".week-3-enc .encounter-text").addClass("fall-anim");
-			$(".beast").addClass("ghost-anim");
-			$(".beastbg").addClass("ghost-animbg");
-		} else if ($(".week-4-enc").is(":visible")) {
-			$(".week-4-enc .encounter-text").addClass("fall-anim");
-			$(".empress").addClass("ghost-anim");
-			$(".empressbg").addClass("ghost-animbg");
-		} else if ($(".objectives-panel").is(":visible")) {
-			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
-				"rise-anim"
-			);
-		}
-	}
-);
-</code></pre>
+	&lt;/div&gt;</code></pre>
 	</div>
 	
 	
@@ -1559,264 +1189,797 @@ $(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="edge-wrap grid-x grid-margin-x small-12 align-center wrap" style="margin-top:25px;padding-left:5px;padding-right:5px;min-height:750px;display:none;">
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
-<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">JavaScript</p><code style="">
+<div class="marvel-wrap grid-x grid-margin-x grid-margin-y small-12 align-center wrap" style="margin-top:10px;padding-left:15px;padding-right:15px;min-height:750px;display:none;">
+	<pre class="cell small-12 large-8" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">JavaScript</span></p><code style="margin-top:-30px;">irep.ready(function() {
 
-$(document).foundation();
+    $(".quiz-locked .active-button").click(function() {
+        window.location = "50/lar/learning/details?code=202009art-Avengers&returnurl=avengersgiveaway";
+    })
+    
+    if (typeof mobileApp !== "undefined") {
+        mobileApp.wireUpActions();
+    }
 
-$(".week-1-nav").click(function () {
-	$(".week-1-objs, .week-1-enc").show();
-	$(
-		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
-});
-$(".week-2-nav").click(function () {
-	$(".week-2-objs, .week-2-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
-});
-$(".week-3-nav").click(function () {
-	$(".week-3-objs, .week-3-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
-});
-$(".week-4-nav").click(function () {
-	$(".week-4-objs, .week-4-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
-});
+    irep.callApi({
+        url: "/digitalrewards/getcode",
+        type: "GET",
+        data: {
+            PromotionCode: "MarvelPromo_LAR"
+        }
+    }).done(function(data) {
+        if ((data.rewardCode) === undefined) {
+            //returns the amount of available codes left
+            irep.callApi({
+                url: "/digitalrewards/remainingcodes",
+                type: "GET",
+                data: {
+                    Code: "MarvelPromo_LAR"
+                }
+            }).done(function(data) {
+                console.log(data.codesRemaining);
+                if ((data.codesRemaining) > 0) {
+                    // checks if intro trainings complete
+                    irep.callApi({
+                        url: "/education/promotiontimeframe?ts=" + Date.now(),
+                        type: "POST",
+                        data: {
+                            SearchItems: [{
+                                Type: "tag",
+                                Value: "avengers2020"
+                            }],
+                            StartDate: "2020-09-9T16:00:00.000Z"
+                        }
+                    }).done(function(d) {
+                        $.each(d.items, function(i, l) {
+                            if (l.completed) {
+                                $(".loading-msg").hide();
+                                $(".quiz-unlocked").show();
+                                //check if final quiz has been attempted in the last hour
+                                irep.callApi({
+                                    url: "/promotion/hasBeenTakenLastHour",
+                                    type: "GET",
+                                    data: {
+                                        ActivityCode: "202009exam-AvengersGame"
+                                    }
+                                }).done(function(data) {
+                                    if (data.takenLastHour) {
+                                        console.log(data.duration);
+                                        $(".failed-text").text("<MT-LOCALETEXT:235156>");
+                                        $(".failed-text").addClass("divider-1 margin-top-for-small-only--large margin-top-for-medium--xlarge");
+                                        var duration = moment.duration((data.duration));
+                                        var interval = 1;
+                                        var countdown = setInterval(function() {
+                                            duration = moment.duration(duration.asSeconds() - interval, 'seconds');
+                                            $('.timer').text(("0" + (duration.minutes())).slice(-2) + ':' + ("0" + (duration.seconds())).slice(-2));
+                                            if ($(".timer").text().includes("00:00")) {
+                                                clearInterval(countdown);
+                                                $(".failed-text").empty();
+                                                $(".timer").hide();
+                                                $(".take-quiz").text("<MT-LOCALETEXT:235146>");
+                                                $(".quiz-unlocked .avg-button").removeClass("inactive-button").addClass("active-button").click(function() {
+                                                    window.location = "50/lar/quiz?code=202009exam-AvengersGame&redirectid=457054";
+                                                })
+                                            }
+                                        }, 1000);
+                                    } else {
+                                        $(".failed-text").empty();
+                                        $(".take-quiz").text("<MT-LOCALETEXT:235146>");
+                                        $(".quiz-unlocked .avg-button").removeClass("inactive-button").addClass("active-button").click(function() {
+                                            window.location = "50/lar/quiz?code=202009exam-AvengersGame&redirectid=457054";
+                                        })
+                                    }
+                                });
+                            } else {
+                                $(".loading-msg").hide();
+                                $(".quiz-locked").show();
+                            }
+                        });
+                        if (typeof mobileApp !== "undefined") {
+                            mobileApp.wireUpActions();
+                        }
+                    });
+                } else {
+                    console.log("there are " + (data.codesRemaining) + " codes left, there are 0 codes left");
+                    $(".loading-msg").hide();
+                    $(".no-more-keys").show();
+                }
+            });
+        } else {
+            console.log("your reward code is " + (data.rewardCode) + " hooray!");
+            $(".loading-msg").hide();
+            $(".key-unlocked").show();
+            $(".key").html(data.rewardCode);
+        }
+    });
+})</code></pre>
+	<pre class="cell small-12 large-4" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">CSS</span></p><code style="margin-top:-30px;">/* for small view only */
+@media only screen and (max-width:39.9735em) { 
+    body { background: #020e1e url(/content/images/avengersgamecodes/for_dev/landing_bg_mobile_020d1c.jpg); background-position: center top; } 
+    .main {
+        background: url(/content/images/avengersgamecodes/for_dev/landing_panel_mobile1.png);
+        background-repeat: no-repeat;
+        background-position: center -60px;
+        overflow-x: hidden !important;
+        height: 1160px;
+        padding-top: 100px;
+        /*background-size: contain;*/
+    }
+}
+/* for medium view only */
+@media only screen and (min-width:40em) and (max-width:63.9735em) { 
+    body { background: #020e1e url(/content/images/avengersgamecodes/for_dev/landing_bg_tablet_020d1c.jpg); background-position: center 50px; }
+    .main {
+        background: url(/content/images/avengersgamecodes/for_dev/landing_panel_desktop.png);
+        background-repeat: no-repeat;
+        background-position: center -20px;
+        overflow-x: hidden !important;
+        height: 1195px;
+        padding-top: 150px;
+    }
+}
+/* for large view only */
+@media only screen and (min-width:64em) { 
+    body { background: #020e1e url(/content/images/avengersgamecodes/for_dev/landing_bg_desktop_020d1c.jpg); background-position: center 50px; }
+    .main {
+        background: url(/content/images/avengersgamecodes/for_dev/landing_panel_desktop.png);
+        background-repeat: no-repeat;
+        background-position: center -10px;
+        overflow-x: hidden !important;
+        height: 1195px;
+        padding-top: 200px;
+    }
+}
 
-/* pageload animation on current week's encounter */
-$(".encounter-text").addClass("fall-anim");
-$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
-$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
+body {
+    background-repeat: no-repeat;
+    overflow-x: hidden !important;
+}
 
-/* adds animations for encounters panel */
-$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
-	function () {
-		if ($(".week-1-enc").is(":visible")) {
-			$(".week-1-enc .encounter-text").addClass("fall-anim");
-			$(".pirate").addClass("ghost-anim, shift-left");
-			$(".piratebg").addClass("ghost-animbg, shift-left");
-		} else if ($(".week-2-enc").is(":visible")) {
-			$(".week-2-enc .encounter-text").addClass("fall-anim");
-			$(".islander").addClass("ghost-anim");
-			$(".islanderbg").addClass("ghost-animbg");
-		} else if ($(".week-3-enc").is(":visible")) {
-			$(".week-3-enc .encounter-text").addClass("fall-anim");
-			$(".beast").addClass("ghost-anim");
-			$(".beastbg").addClass("ghost-animbg");
-		} else if ($(".week-4-enc").is(":visible")) {
-			$(".week-4-enc .encounter-text").addClass("fall-anim");
-			$(".empress").addClass("ghost-anim");
-			$(".empressbg").addClass("ghost-animbg");
-		} else if ($(".objectives-panel").is(":visible")) {
-			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
-				"rise-anim"
-			);
+.loading-msg { animation: loading-animation 2s linear 0s infinite; }
+@keyframes loading-animation {
+0% { opacity:1; }
+50% { opacity:.5; }
+100% { opacity:1; }
+}
+.disclaimer-text {
+    font-size: 12px;
+    font-style: italic;
+    color: #858585
+}
+
+.sub-h { font-size: 20px; }
+.key-unlocked a, .key-unlocked a:hover { color: #06cff9; font-style: italic; }
+.key-unlocked ol li { line-height: 2em; font-size: 16px; }
+.active-key { background: url(/content/images/avengersgamecodes/for_dev/button_active.png); color: #FFFFFF; }
+.inactive-key { background: url(/content/images/avengersgamecodes/for_dev/button_inactive.png); color: #727272; }
+.avg-button {
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden !important;
+    background-size: 100%;
+    height: 106px;
+}
+.avg-button h2 { text-shadow: 0px 6px 6px rgba(0, 0, 0, 1); }
+/* for small view only */
+@media only screen and (max-width:39.9735em) { 
+.avg-button h2 { font-size: 1.5em; }  
+}
+/* for medium view only */
+@media only screen and (min-width:40em) and (max-width:63.9735em) { 
+.avg-button h2 { font-size: 3em; }
+}
+/* for large view only */
+@media only screen and (min-width:64em) { 
+.avg-button h2 { font-size: 3em; }
+}
+
+.sub-h { font-size: 20px; }
+.key-unlocked a, .key-unlocked a:hover { color: #06cff9; font-style: italic; }
+.active-key { background: url(/content/images/avengersgamecodes/for_dev/button_active.png); color: #FFFFFF; }
+.inactive-key { background: url(/content/images/avengersgamecodes/for_dev/button_inactive.png); color: #727272; }
+.avg-button {
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden !important;
+    background-size: 100%;
+    height: 106px;
+}
+.avg-button h2 { text-shadow: 0px 6px 6px rgba(0, 0, 0, 1); }
+
+/* for small view only */
+@media only screen and (max-width:39.9735em) { 
+.avg-button h2 { font-size: 1.5em; }
+.key-unlocked ol li { line-height: 1.7em; font-size: 14px; }
+}
+/* for medium view only */
+@media only screen and (min-width:40em) and (max-width:63.9735em) { 
+.avg-button h2 { font-size: 3em; }
+.key-unlocked ol li { line-height: 2em; font-size: 16px; }
+}
+/* for large view only */
+@media only screen and (min-width:64em) { 
+.avg-button h2 { font-size: 3em; }
+.key-unlocked ol li { line-height: 2em; font-size: 16px; }
+}
+.url-break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+}
+
+.timer { 
+    color: #ffffff;
+}
+.active-button { background: url(/content/images/avengersgamecodes/for_dev/button_active.png); cursor: pointer; color: #FFFFFF; }
+a.active-button:hover { color: #ffffff; }
+a.active-button:active { color: #ffffff; }
+.inactive-button { background: url(/content/images/avengersgamecodes/for_dev/button_inactive.png); color: #727272; }
+.avg-button {
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden !important;
+    background-size: 100%;
+    height: 106px;
+}
+.avg-button h2 { text-shadow: 0px 6px 6px rgba(0, 0, 0, 1); }
+/* for small view only */
+@media only screen and (max-width:39.9735em) { 
+.avg-button h2 { font-size: 1.5em; }  
+}
+/* for medium view only */
+@media only screen and (min-width:40em) and (max-width:63.9735em) { 
+.avg-button h2 { font-size: 3em; }
+}
+/* for large view only */
+@media only screen and (min-width:64em) { 
+.avg-button h2 { font-size: 3em; }
+}
+
+
+.header-bg h3 { color: #06cff9; }
+/* for small view only */
+@media only screen and (max-width:39.9735em) {
+.header-bg { height: 500px; }
+.header-bg h3 { font-size: 1.5em; font-weight: bold; }
+}
+/* for medium view only */
+@media only screen and (min-width:40em) and (max-width:63.9735em) {
+.header-bg { height: 700px; }
+.header-bg h3 { font-size: 2.5em; }
+}
+/* for large view only */
+@media only screen and (min-width:64em) {
+.header-bg { height: 935px; }
+.header-bg h3 { font-size: 2.5em; }
+.sub-header { max-width: 910px; margin-top: -25px; }
+}
+
+.divider-1 { border-top: 2px solid #06cff9; }</code></pre>
+	<pre class="cell small-12" style="position:relative;height:50%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">HTML</span></p><code style="margin-top:-30px;">&lt;div id="IREP4d8a29005a5e4b2d9074f0a45777b86d" data-controluid="4d8a2900-5a5e-4b2d-9074-f0a45777b86d" class="grid-container " style=""&gt;
+    &lt;div class="grid-x align-center-middle" style=""&gt;
+&lt;div class="grid-x cell align-center padding-horizontal-for-medium--xlarge text-center small-12 header-bg"&gt;
+    &lt;div class="cell align-self-bottom text-center align-center-middle grid-x"&gt;
+        &lt;img src="/content/images/avengersgamecodes/for_dev/logo.png"&gt;
+        &lt;div class="cell small-12 padding-horizontal-for-large--xlarge sub-header text-center"&gt;
+            &lt;h3 class="margin-bottom--none"&gt;¡GANA HOY MISMO EL NUEVO &lt;i&gt;JUEGO DE MARVEL'S&lt;/i&gt; AVENGERS CON UN PAQUETE DE TRAJES DE INTEL!&lt;/h3&gt;&lt;!--WIN THE NEW MARVEL’S AVENGERS GAME WITH AN INTEL OUTFIT PACK TODAY!--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="main grid-x align-center" style="position:relative;" &gt;
+&lt;div id="IREPfb53e6fabfa840d28a464d6fabf8cb2d" data-controluid="fb53e6fa-bfa8-40d2-8a46-4d6fabf8cb2d" class="grid-container " style=""&gt;
+    &lt;div class="grid-x align-center-middle padding-horizontal-for-medium--xlarge" style=""&gt;
+&lt;p class="loading-msg padding-vertical--xlarge text--white margin-top--xlarge" style="font-size:2.5em;"&gt;Cargando...&lt;/p&gt;&lt;!--LOADING..--&gt;
+
+&lt;div class="grid-x small-12 large-10 xlarge-9 no-more-keys align-center" style="display:none;"&gt;
+    &lt;div class="padding-top--large align-center-middle cell small-12 large-9 xlarge-8 text--white text-left padding-horizontal--large"&gt;
+        &lt;h4 class="padding-bottom--large margin--none text-center"&gt;¡Lo sentimos mucho! Se han canjeado todas las claves maestras. ¡Mejor suerte para la próxima!&lt;/h4&gt;&lt;!--Sorry! All Master Keys have been redeemed. Better luck next time!--&gt;
+    &lt;/div&gt;
+    &lt;h4 class="cell small-12 text-center padding-top--large text--white margin--none"&gt;&amp;nbsp;&lt;/h4&gt;
+    &lt;img class="margin-top--small" src="/content/images/avengersgamecodes/for_dev/divider_top.png"&gt;
+    &lt;div class="avg-button inactive-key margin-vertical--large small-11 large-7 xlarge-6 align-center-middle grid-x"&gt;&lt;h2 class="text-center padding-bottom--small margin--none"&gt;NO HAY MÁS CLAVES&lt;/h2&gt;&lt;/div&gt;&lt;!--NO KEYS LEFT--&gt;
+    &lt;img class="margin-top--small" src="/content/images/avengersgamecodes/for_dev/divider_bottom.png"&gt;
+&lt;/div&gt;
+&lt;div class="grid-x small-12 large-10 xlarge-9 quiz-locked align-center" style="display:none;"&gt;
+    &lt;div class="hide-for-small-only cell small-10 medium-6 text-align-for-small--center text-align-for-medium--right align-middle"&gt;
+        &lt;img src="/content/images/avengersgamecodes/for_dev/training_image.png"&gt;
+    &lt;/div&gt;
+    &lt;div class="align-middle cell grid-x medium-6 small-12 padding-for-small-only--large"&gt;
+        &lt;div class="text-align-for-small-only--center text-align-for-medium--left text--white padding-left-for-medium--large padding-right-for-xlarge--xlarge"&gt;
+            &lt;h4 class="padding-bottom--small margin--none"&gt;¿Quieres jugar al nuevo juego de &lt;i&gt;Marvel’s Avengers&lt;/i&gt;? ¡Completa este entrenamiento y disfruta de tus poderes!&lt;/h4&gt;&lt;!--Want to Play the New &lt;i&gt;Marvel’s Avengers &lt;/i&gt;Game? Take This Training and Embrace Your Powers!--&gt;
+            &lt;p class="padding-bottom--small margin--none bodyText1"&gt;¡Completa este entrenamiento con una puntuación del 80 % o superior para desbloquear el cuestionario final!&lt;/p&gt;&lt;!--Pass this training with an 80% or higher to unlock the Final Quiz!--&gt;
+            &lt;p class="text--bold padding-bottom--none margin--none bodyText1"&gt;&lt;i&gt;Marvel’s Avengers&lt;/i&gt; cobra vida con optimizaciones impulsadas por Intel®.&lt;/p&gt;&lt;!--Marvel’s Avengers Comes to Life with Optimizations Powered by Intel.--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="show-for-small-only cell small-10 medium-6 text-align-for-small--center text-align-for-medium--right align-middle"&gt;
+        &lt;img src="/content/images/avengersgamecodes/for_dev/training_image.png"&gt;
+    &lt;/div&gt;
+    &lt;h4 class="cell small-12 xlarge-10 text-center padding-vertical-for-medium--xlarge padding-vertical-for-small-only--large padding-horizontal-for-small-only--large text--white margin--none"&gt;¡No pierdas tiempo! ¡Las claves maestras son limitadas y están sujetas a disponibilidad!&lt;/h4&gt;&lt;!--Hurry! Master Keys are limited and subject to availability!--&gt;
+    &lt;img class="margin-top--small" src="/content/images/avengersgamecodes/for_dev/divider_top.png"&gt;
+    &lt;a href="50/lar/learning/details?code=202009art-Avengers&amp;returnurl=avengersgiveaway" class="cell avg-button active-button margin-vertical--large small-11 medium-10 large-8 xlarge-6 align-center-middle grid-x"&gt;&lt;h2 class="text-center padding-bottom--small margin--none"&gt;REALIZAR EL ENTRENAMIENTO&lt;/h2&gt;&lt;/a&gt;&lt;!--TAKE THE TRAINING--&gt;
+    &lt;img class="margin-top--small" src="/content/images/avengersgamecodes/for_dev/divider_bottom.png"&gt;
+&lt;/div&gt;
+
+
+&lt;div class="grid-x small-12 large-10 xlarge-9 quiz-unlocked align-center" style="display:none;"&gt;
+    &lt;div class="hide-for-small-only cell small-10 medium-6 text-align-for-small--center text-align-for-medium--right align-middle"&gt;
+        &lt;img src="/content/images/avengersgamecodes/for_dev/training_image_complete.png"&gt;
+    &lt;/div&gt;
+    &lt;div class="align-middle cell grid-x medium-6 small-12 padding-for-small-only--large"&gt;
+        &lt;div class="text-align-for-small-only--center text-align-for-medium--left text--white padding-left-for-medium--large padding-right-for-large--xlarge"&gt;
+            &lt;h4 class="padding-bottom--small margin--none padding-right-for-large--xlarge"&gt;¡Felicitaciones! ¡Has desbloqueado el cuestionario final!&lt;/h4&gt;&lt;!--Congratulations! You’ve unlocked the Final Quiz!--&gt;
+            &lt;p class="padding-bottom--none margin--none bodyText1"&gt;Completa el cuestionario final con una puntuación del 80 % o superior para obtener tu clave maestra de &lt;i&gt;Marvel’s Avengers&lt;/i&gt;.&lt;/p&gt;&lt;!--Pass the Final Quiz with an 80% or higher to redeem your Marvel’s Avengers Master Key.--&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="show-for-small-only cell small-10 medium-6 text-align-for-small--center text-align-for-medium--right align-middle"&gt;
+        &lt;img src="/content/images/avengersgamecodes/for_dev/training_image_complete.png"&gt;
+    &lt;/div&gt;
+    &lt;h4 class="cell small-12 xlarge-10 text-center padding-vertical-for-medium--xlarge padding-vertical-for-small-only--xlarge padding-horizontal-for-small-only--large text--white margin--none failed-text"&gt;&lt;/h4&gt;
+    &lt;img class="margin-top--small" src="/content/images/avengersgamecodes/for_dev/divider_top.png"&gt;
+    &lt;div class="avg-button inactive-button margin-vertical--large small-11 medium-10 large-8 xlarge-6 align-center-middle grid-x"&gt;&lt;h2 class="text-center padding-bottom--small margin--none"&gt;&lt;span class="take-quiz"&gt;&lt;/span&gt;&lt;span class="timer"&gt;&lt;/span&gt;&lt;/h2&gt;&lt;/div&gt;
+    &lt;img class="margin-top--small" src="/content/images/avengersgamecodes/for_dev/divider_bottom.png"&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="grid-x align-center-middle" style="" &gt;
+&lt;div class="text--white text--center align-self-center padding-horizontal--large padding-bottom--large" style="max-width:1000px;margin-top:-70px;z-index:1;"&gt;&lt;p class="disclaimer-text text--center"&gt;© 2020 MARVEL. © Intel Corporation. Intel, el logotipo Intel y otras marcas Intel son marcas comerciales de Intel Corporation o sus filiales. Otros nombres y marcas podrían ser reclamados como propiedad de terceros. El período de canje de claves maestras finaliza el 31 de marzo del 2021. Límite de 1 clave maestra por usuario.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+<div class="edge-wrap grid-x grid-margin-x grid-margin-y small-12 align-center wrap" style="margin-top:10px;padding-left:15px;padding-right:15px;min-height:750px;display:none;">
+
+
+	<pre class="cell small-12 large-4" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">JavaScript</span></p><code style="margin-top:-30px;">irep.ready(function() {
+	// builds trainings grid
+	irep.callApi({
+		url: "/education/promotiontimeframe?ts=" + Date.now(),
+		type: "POST",
+		data: {
+			SearchItems: [{
+				Type: "tag",
+				Value: "edgegames2020"
+			}],
+			StartDate: "2020-07-6T16:00:00.000Z"
 		}
-	}
-);
-</code></pre>
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
-<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">CSS</p><code style="">
-
-$(document).foundation();
-
-$(".week-1-nav").click(function () {
-	$(".week-1-objs, .week-1-enc").show();
-	$(
-		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
-});
-$(".week-2-nav").click(function () {
-	$(".week-2-objs, .week-2-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
-});
-$(".week-3-nav").click(function () {
-	$(".week-3-objs, .week-3-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
-});
-$(".week-4-nav").click(function () {
-	$(".week-4-objs, .week-4-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
-});
-
-/* pageload animation on current week's encounter */
-$(".encounter-text").addClass("fall-anim");
-$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
-$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
-
-/* adds animations for encounters panel */
-$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
-	function () {
-		if ($(".week-1-enc").is(":visible")) {
-			$(".week-1-enc .encounter-text").addClass("fall-anim");
-			$(".pirate").addClass("ghost-anim, shift-left");
-			$(".piratebg").addClass("ghost-animbg, shift-left");
-		} else if ($(".week-2-enc").is(":visible")) {
-			$(".week-2-enc .encounter-text").addClass("fall-anim");
-			$(".islander").addClass("ghost-anim");
-			$(".islanderbg").addClass("ghost-animbg");
-		} else if ($(".week-3-enc").is(":visible")) {
-			$(".week-3-enc .encounter-text").addClass("fall-anim");
-			$(".beast").addClass("ghost-anim");
-			$(".beastbg").addClass("ghost-animbg");
-		} else if ($(".week-4-enc").is(":visible")) {
-			$(".week-4-enc .encounter-text").addClass("fall-anim");
-			$(".empress").addClass("ghost-anim");
-			$(".empressbg").addClass("ghost-animbg");
-		} else if ($(".objectives-panel").is(":visible")) {
-			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
-				"rise-anim"
-			);
+	}).done(function(d) {
+		$.each(d.items, function(i, l) {
+			if (l.completed) {
+				$('#edgegames-trainings').append('&lt;div class=&quot;isCompleted text--white cell small-10 medium-4 large-3 margin-bottom--large&quot;&gt;&lt;div style=&quot;background: url(' + l.imageUrl + ') center center no-repeat;&quot;&gt;&lt;img style=&quot;width:100%; border:1px solid #ffffff;&quot; class=&quot;IAcompleteTraining&quot; src=&quot;content/images/edgegames/sitepages/Training_Checkmark2.png&quot;&gt;&lt;/div&gt;&lt;p class=&quot;margin-top--medium text-center text--white&quot;&gt;' + l.name + '&lt;/p&gt;')
+			} else {
+				$('#edgegames-trainings').append('&lt;a class=&quot;isNotCompleted text--white cell small-10 medium-4 large-3 margin-bottom--large&quot; href=&quot;/50/lar/learning/details?code=' + l.code + '&amp;returnurl=edgegames/trainings&quot;&gt;&lt;div class=&quot;&quot;&gt;&lt;img style=&quot;width:100%; border:1px solid #ffffff;&quot; class=&quot;IAincompleteTraining&quot; src=&quot;' + l.imageUrl + '&quot;&gt;&lt;p class=&quot;margin-top--medium text-center text--white&quot;&gt;' + l.name + '&lt;/div&gt;&lt;/a&gt;')
+			}
+		});
+		if (typeof mobileApp !== "undefined") {
+			mobileApp.wireUpActions();
 		}
-	}
-);
-</code></pre>
-		<pre class="cell small-12 medium-4" style="position:relative;height:100%;">
-<p style="position: absolute;top: 1px;right: 1px;padding: 5px 10px;background: #d7d7d7;">HTML</p><code style="">
-
-$(document).foundation();
-
-$(".week-1-nav").click(function () {
-	$(".week-1-objs, .week-1-enc").show();
-	$(
-		".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236120> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
-});
-$(".week-2-nav").click(function () {
-	$(".week-2-objs, .week-2-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236141> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
-});
-$(".week-3-nav").click(function () {
-	$(".week-3-objs, .week-3-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236153> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
-});
-$(".week-4-nav").click(function () {
-	$(".week-4-objs, .week-4-enc").show();
-	$(
-		".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc"
-	).hide();
-	$(".weekly-nav div").removeClass("active-week-ani");
-	$(this).addClass("active-week-ani");
-	$(".week-number").html(" <MT-LOCALETEXT:236165> ");
-	$(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
-});
-
-/* pageload animation on current week's encounter */
-$(".encounter-text").addClass("fall-anim");
-$(".pirate, .islander, .beast, .empress").addClass("ghost-anim");
-$(".piratebg, .islanderbg, .beastbg, .empressbg").addClass("ghost-animbg");
-
-/* adds animations for encounters panel */
-$(".objectives-nav, .week-1-nav, .week-2-nav, .week-3-nav, .week-4-nav").click(
-	function () {
-		if ($(".week-1-enc").is(":visible")) {
-			$(".week-1-enc .encounter-text").addClass("fall-anim");
-			$(".pirate").addClass("ghost-anim, shift-left");
-			$(".piratebg").addClass("ghost-animbg, shift-left");
-		} else if ($(".week-2-enc").is(":visible")) {
-			$(".week-2-enc .encounter-text").addClass("fall-anim");
-			$(".islander").addClass("ghost-anim");
-			$(".islanderbg").addClass("ghost-animbg");
-		} else if ($(".week-3-enc").is(":visible")) {
-			$(".week-3-enc .encounter-text").addClass("fall-anim");
-			$(".beast").addClass("ghost-anim");
-			$(".beastbg").addClass("ghost-animbg");
-		} else if ($(".week-4-enc").is(":visible")) {
-			$(".week-4-enc .encounter-text").addClass("fall-anim");
-			$(".empress").addClass("ghost-anim");
-			$(".empressbg").addClass("ghost-animbg");
-		} else if ($(".objectives-panel").is(":visible")) {
-			$(".week-1-objs, .week-2-objs, .week-3-objs, .week-4-objs").addClass(
-				"rise-anim"
-			);
+		$(".loading-msg").hide();
+		if ($(".isCompleted").length > 7) {
+			$(".complete-msg").show();
+		} else {
+			$(".incomplete-msg").show();
 		}
+	});
+	$(".stadium-nav.avail-nav, .stadium-nav.active-nav").click(function() {
+		window.location = "50/lar/edgegames/stadium";
+	})
+	$(".trainings-nav.avail-nav, .trainings-nav.active-nav").click(function() {
+		window.location = "50/lar/edgegames/trainings";
+	})
+	$(".hiw-nav.avail-nav, .hiw-nav.active-nav").click(function() {
+		window.location = "50/lar/edgegames/overview";
+	})
+	$(".leaderboard-nav.avail-nav, .leaderboard-nav.active-nav").click(function() {
+		window.location = "50/lar/edgegames/medalboard";
+	})
+	$(".rewards-nav.avail-nav, .rewards-nav.active-nav").click(function() {
+		window.location = "50/lar/edgegames/rewards";
+	})
+})
+$("a .subnavItem").click(function() {
+	$(".subnavItem").removeClass("activeSub");
+	$(this).addClass("activeSub");
+});</code></pre>
+
+
+	<pre class="cell small-12 large-4" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">CSS</span></p><code style="margin-top:-30px;">/* for small view only */
+@media only screen and (max-width:39.9735em) {
+	.grid-container {
+		padding-left: 0px;
+		padding-right:0px;
 	}
-);
-</code></pre>
-	</div>
+	.bottom, .top { padding: 8px; }
+}
+
+.button-promotional--uie-green {
+    font-size: 1.0625rem;
+    color: #fff;
+    padding: 1rem 1.5625rem;
+    display: inline-block;
+}
+
+body {
+    background: #00163b url(/content/images/edgegames/sitepages/Background_2.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    overflow-x: hidden !important;
+    background-size: cover;
+}
+
+    #week1, #week2, #week3, #week4, #badge1, #badge2, #badge3, #badge4, #badge5 {
+        cursor: pointer;
+    }
+    
+    .badgeBox {
+        background: #0a83e0;
+    }
+    
+    .badgeMenu {
+        max-width: 100px;
+        margin: 0px 6px;
+    }
+    .head1 {
+        font-size: 65px !important;
+        color: #ffffff !important;
+    }
+    
+    .mainBox {
+        background: rgba(9, 25, 44, 0.5) ;
+    }
+    
+    .prizeName {
+        font-size: 24px;
+        font-weight:bold;
+        color: #fecd04;
+        line-height: 24px;
+    }
+    
+    .weekLabelTxt {
+        color: #000000;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0px !important;
+    }
+    
+    .activeWeek {
+        background: #fecd04;
+    }
+    
+    .prizeBox {
+        background:  rgba(10,131,224, .7);
+    }
+    
+    .prizeBoxLabel {
+        background: #0a83e0;
+    }
+    
+    .head3 {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0px !important;
+    }
+    
+    .prizeRule {
+        border-bottom: 3px solid #0a83e0;
+    }
+    
+/* COLOR BAR */
+.color-bar {
+background: rgb(0,0,0,0);
+height:22px;
+-webkit-box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.35);
+-moz-box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.35);
+box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.35);
+}
+
+@media only screen and (max-width:39.9735em) {
+.color-bar {
+background:-moz-linear-gradient(-45deg,rgba(224,0,37,1)0%,rgba(224,0,37,1)20%,rgba(0,0,0,1)20%,rgba(0,0,0,1)40%,rgba(0,159,61,1)40%,rgba(0,159,61,1)60%,rgba(0,133,198,1)60%,rgba(0,133,198,1)80%,rgba(254,205,4,1)80%,rgba(254,205,4,1)100%);
+background:-webkit-linear-gradient(-45deg,rgba(224,0,37,1)0%,rgba(224,0,37,1)20%,rgba(0,0,0,1)20%,rgba(0,0,0,1)40%,rgba(0,159,61,1)40%,rgba(0,159,61,1)60%,rgba(0,133,198,1)60%,rgba(0,133,198,1)80%,rgba(254,205,4,1)80%,rgba(254,205,4,1)100%);
+background:linear-gradient(-45deg,rgba(224,0,37,1)0%,rgba(224,0,37,1)20%,rgba(0,0,0,1)20%,rgba(0,0,0,1)40%,rgba(0,159,61,1)40%,rgba(0,159,61,1)60%,rgba(0,133,198,1)60%,rgba(0,133,198,1)80%,rgba(254,205,4,1)80%,rgba(254,205,4,1)100%);
+}
+}
+
+@media only screen and (min-width:40em) {
+.color-bar {
+background:-moz-linear-gradient(-90deg,rgba(0,0,0,0)0%,rgba(0,0,0,0)65%,rgba(254,205,4,1)65%,rgba(254,205,4,1)85%,rgba(0,0,0,0)85%,rgba(0,0,0,0)100%);
+background:-webkit-linear-gradient(-90deg,rgba(0,0,0,0)0%,rgba(0,0,0,0)65%,rgba(254,205,4,1)65%,rgba(254,205,4,1)85%,rgba(0,0,0,0)85%,rgba(0,0,0,0)100%);
+background:linear-gradient(-90deg,rgba(0,0,0,0)0%,rgba(0,0,0,0)65%,rgba(254,205,4,1)65%,rgba(254,205,4,1)85%,rgba(0,0,0,0)85%,rgba(0,0,0,0)100%);
+}
+}
+
+.color-left {
+display:inline-block;
+transform: skew(45deg);
+background: #fecd04;
+height:inherit;
+width:20%;
+}
+
+.color-right {
+height:inherit;
+width:80%;
+transform: skew(-45deg);
+display:inline-block;
+background: rgb(0,0,0);
+background:-moz-linear-gradient(-90deg,rgba(224,0,37,1)20%,rgba(224,0,37,1)25%,rgba(0,0,0,1)25%,rgba(0,0,0,1)50%,rgba(0,159,61,1)50%,rgba(0,159,61,1)75%,rgba(0,133,198,1)75%,rgba(0,133,198,1)100%);
+background:-webkit-linear-gradient(-90deg,rgba(224,0,37,1)20%,rgba(224,0,37,1)25%,rgba(0,0,0,1)25%,rgba(0,0,0,1)50%,rgba(0,159,61,1)50%,rgba(0,159,61,1)75%,rgba(0,133,198,1)75%,rgba(0,133,198,1)100%);
+background:linear-gradient(-90deg,rgba(224,0,37,1)20%,rgba(224,0,37,1)25%,rgba(0,0,0,1)25%,rgba(0,0,0,1)50%,rgba(0,159,61,1)50%,rgba(0,159,61,1)75%,rgba(0,133,198,1)75%,rgba(0,133,198,1)100%);
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	margin:0px;
+	justify-content: center;
+}
+
+nav ul li {
+	position:relative;
+	display: block;
+	height: 88px;
+	width: 90px;
+	text-align: center;
+}
+
+.bottom, .top {
+	position: absolute;
+	top: 0;
+	margin: auto;
+	right: 0;
+	left: 0px;
+	height: 88px;
+	width: 62px;
+	border: 0;
+}
+
+.active-nav img.top { opacity: 0; }
+.active-nav img.bottom { opacity: 1; }
+
+.unavail-nav img.top { opacity: 0.5; }
+.unavail-nav img.bottom { opacity: 0; }
+
+.avail-nav img.bottom { opacity: 0; z-index:1; }
+.avail-nav img.top { z-index:2; }
+.avail-nav:hover img.top { opacity: 0; }
+.avail-nav:hover img.bottom { opacity: 1; }
+.avail-nav:hover {
+    cursor: pointer;
+    /*animation: nav-select .4s ease-out 0s forwards; */
+}
+
+.stadium-nav.avail-nav:hover { animation: stadium-bg .4s ease-out 0s forwards, nav-select .4s ease-out 0s forwards; } 
+.trainings-nav.avail-nav:hover { animation: trainings-bg .4s ease-out 0s forwards, nav-select .4s ease-out 0s forwards; }
+.hiw-nav.avail-nav:hover { animation: hiw-bg .4s ease-out 0s forwards, nav-select .4s ease-out 0s forwards; }
+.leaderboard-nav.avail-nav:hover { animation: leaderboard-bg .4s ease-out 0s forwards, nav-select .4s ease-out 0s forwards; }
+.rewards-nav.avail-nav:hover { animation: rewards-bg .4s ease-out 0s forwards, nav-select .4s ease-out 0s forwards; }
+
+.stadium-nav.active-nav {
+    background: #009f3d;
+    box-shadow: 0px 4px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+.trainings-nav.active-nav {
+    background: #e00025;
+    box-shadow: 0px 4px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+.hiw-nav.active-nav {
+    background: #0085c6;
+    box-shadow: 0px 4px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+.leaderboard-nav.active-nav {
+    background: #000000;
+    box-shadow: 0px 4px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+.rewards-nav.active-nav {
+    background: #fecd04;
+    box-shadow: 0px 4px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+
+@keyframes nav-select {
+0% {
+box-shadow: 22.5px 26.5px 0 -22.5px rgba(255, 255, 255, 0), 
+         	-22.5px 26.5px 0 -22.5px rgba(255, 255, 255, 0),
+        	inset -90px 0px 0 0px rgba(255, 255, 255, 0),
+        	inset 90px 0px 0 0px rgba(255, 255, 255, 0);
+}
+1% {
+box-shadow: 0px 26.5px 0 -22.5px rgba(255, 255, 255, 1), 
+        	0px 26.5px 0 -22.5px rgba(255, 255, 255, 1),
+        	inset -22.5px 0px 0 0px rgba(255, 255, 255, 1),
+	    	inset 22.5px 0px 0 0px rgba(255, 255, 255, 1);
+}
+100% {
+box-shadow: -22.5px 26.5px 0 -22.5px rgba(255, 255, 255, 1), 
+	        22.5px 26.5px 0 -22.5px rgba(255, 255, 255, 1),
+	        inset 0px 0px 0 0px rgba(255, 255, 255, 1),
+        	inset 0px 0px 0 0px rgba(255, 255, 255, 1);
+}
+}
+
+@keyframes stadium-bg { 0% { } 1% { } 100% { background: #009f3d; } }
+@keyframes trainings-bg { 0% { } 1% { } 100% { background: #e00025; } }
+@keyframes hiw-bg { 0% { } 1% { } 100% { background: #0085c6; } }
+@keyframes leaderboard-bg { 0% { } 1% { } 100% { background: #000000; } }
+@keyframes rewards-bg { 0% { } 1% { } 100% { background: #fecd04; } }
+
+@keyframes nav-select-shine {
+	0% {
+		box-shadow: 0px 4px 0 0 rgba(255, 255, 255, 1), 
+					inset 170px 250px 0px 100px rgba(255, 255, 255, 0);
+	}
+	100% {
+		box-shadow: 0px 4px 0 0 rgba(255, 255, 255, 1), 
+					inset 0px 0px 100px -100px rgba(255, 255, 255, .85);
+	}
+}
+
+.complete-msg.button-promotional--uie-green { background: #009f3d; }
+.complete-msg.button-promotional--uie-green:hover { background: #009f3d; }
+.loading-msg { animation: loading-animation 2s ease-in 0s infinite; }
+
+@keyframes loading-animation {
+	0% { opacity:1; }
+	50% { opacity:.5; }
+	100% { opacity:1; }
+}
+
+.bouncy { animation: bouncing 2s ease-in-out 0s infinite; }
+
+@keyframes bouncing {
+	0% { top:0px; }
+	50% { top:-15px; }
+	100% { top:0px; }
+}</code></pre>
+
+
+	<pre class="cell small-12 large-4" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">HTML</span></p><code style="margin-top:-30px;">&lt;!-- MAIN WRAP --&gt;
+&lt;div class=&quot;cell small-12 xlarge-10 align-center grid-x mainBox&quot; style=&quot;border-bottom: 20px solid #ffffff; position:relative; margin-top:175px;&quot;&gt;
+    &lt;div class=&quot;cell small-12 text-center grid-x align-center&quot; style=&quot;height:5px;background:#FFFFFF;&quot;&gt;&lt;div style=&quot;height:5px;background:#062550;&quot; class=&quot;logo-break&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;img src=&quot;/content/images/edgegames/sitepages/Logo.png&quot; style=&quot;position:absolute;top:-145px;&quot; class=&quot;logo-size&quot;&gt;
+    &lt;!--inner/main contents--&gt;
+    &lt;div class=&quot;cell small-11 large-10 xlarge-9 text-center padding-horizontal--small padding-bottom--large padding-custom&quot;&gt;
+    	&lt;p class=&quot;text--white body-copy&quot; style=&quot;font-style:oblique;line-height:1.8em;&quot;&gt;&lt;MT-LOCALETEXT:232117&gt;&lt;/p&gt;
+        &lt;a href=&quot;/50/lar/edgegames/overview&quot;&gt;&lt;img class=&quot;bouncy&quot; src=&quot;/content/images/edgegames/sitepages/Overview_Icon.png&quot; style=&quot;width:110px;position:relative;top:0px;border:0;&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- multicolored bar --&gt;
+&lt;div class=&quot;cell small-12 xlarge-10 align-center grid-x padding-bottom-for-medium--xlarge margin-bottom-for-medium--xlarge padding-horizontal-for-small--small padding-horizontal-for-medium--large padding-horizontal-for-large--xlarge&quot;&gt;
+    &lt;div class=&quot;cell small-12 medium-11 color-bar&quot;&gt;
+        &lt;div class=&quot;cell color-left hide-for-small-only&quot;&gt;&lt;/div&gt;&lt;div class=&quot;cell color-right hide-for-small-only&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+<br />
+&lt;!-- TOP LOGO --&gt;
+&lt;div class=&quot;cell small-12 align-center grid-x padding-top--large&quot;&gt;
+    &lt;img src=&quot;/content/images/edgegames/sitepages/Logo.png&quot;&gt;
+&lt;/div&gt;
+<br />
+&lt;!-- NAVIGATION --&gt;
+&lt;div class=&quot;cell small-12 xlarge-10 align-center grid-x&quot; style=&quot;background:#FFFFFF;z-index:1;&quot;&gt;
+&lt;nav class=&quot;cell small-12&quot;&gt;
+    &lt;ul&gt;
+        &lt;li id=&quot;&quot; class=&quot;stadium-nav avail-nav&quot;&gt;&lt;img class=&quot;bottom&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_1B.png&quot;&gt;&lt;img class=&quot;top&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_1A.png&quot;&gt;&lt;/li&gt;
+        &lt;li id=&quot;&quot; class=&quot;trainings-nav active-nav&quot;&gt;&lt;img class=&quot;bottom&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_2B.png&quot;&gt;&lt;img class=&quot;top&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_2A.png&quot;&gt;&lt;/li&gt;
+        &lt;li id=&quot;&quot; class=&quot;hiw-nav avail-nav&quot;&gt;&lt;img class=&quot;bottom&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_3B.png&quot;&gt;&lt;img class=&quot;top&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_3A.png&quot;&gt;&lt;/li&gt;
+        &lt;li id=&quot;&quot; class=&quot;leaderboard-nav avail-nav&quot;&gt;&lt;img class=&quot;bottom&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_4B.png&quot;&gt;&lt;img class=&quot;top&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_4A.png&quot;&gt;&lt;/li&gt;
+        &lt;li id=&quot;&quot; class=&quot;rewards-nav avail-nav&quot;&gt;&lt;img class=&quot;bottom&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_5B.png&quot;&gt;&lt;img class=&quot;top&quot; src=&quot;content/images/edgegames/sitepages/Nav_Icon_5A.png&quot;&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/a&gt;
+<br />
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+<br />
+&lt;!-- MAIN WRAP --&gt;
+&lt;div class=&quot;cell small-12 xlarge-10 align-center grid-x mainBox padding-bottom-for-small--small padding-horizontal-for-small--small padding-bottom-for-medium--large padding-horizontal-for-medium--large padding-bottom-for-large--xlarge padding-horizontal-for-large--xlarge margin-bottom--xlarge&quot; style=&quot;border-bottom: 5px solid #ffffff;&quot;&gt;
+    &lt;!-- multicolored bar --&gt;
+    &lt;div class=&quot;cell small-12 medium-11 color-bar&quot;&gt;
+        &lt;div class=&quot;cell color-left hide-for-small-only&quot;&gt;&lt;/div&gt;&lt;div class=&quot;cell color-right hide-for-small-only&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--inner/main contents--&gt;
+    &lt;div class=&quot;cell small-11 large-8 text-center padding-top-for-small-only--large padding-top-for-medium-only--large padding-top-for-large--xlarge&quot;&gt;
+    	&lt;h2 class=&quot;head1&quot;&gt;&lt;MT-LOCALETEXT:232108&gt;&lt;/h2&gt;
+    	&lt;div class=&quot;prizeRule align-center&quot; style=&quot;width: 70px; margin: 1.5rem auto;&quot;&gt;&lt;/div&gt;
+    	&lt;p class=&quot;loading-msg padding-vertical--xlarge text--white&quot; style=&quot;font-size:1.5em;&quot;&gt;&lt;MT-LOCALETEXT:225995&gt;&lt;/p&gt;
+    	&lt;p class=&quot;incomplete-msg text--white incomplete-msg&quot; style=&quot;display:none;&quot;&gt;&lt;MT-LOCALETEXT:232109&gt;&lt;/p&gt;
+    	&lt;p class=&quot;complete-msg text--white&quot; style=&quot;display:none;&quot;&gt;&lt;MT-LOCALETEXT:232113&gt;&lt;/p&gt;
+    	&lt;p class=&quot;complete-msg text--white&quot; style=&quot;display:none;&quot;&gt;&lt;MT-LOCALETEXT:232114&gt; &lt;a style=&quot;color:#FFFFFF;text-decoration:underline;&quot; href=&quot;/50/lar/learning/featured&quot;&gt;&lt;MT-LOCALETEXT:232115&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;cell small-12 grid-x grid-margin-x text--white text-center align-center padding-top--medium&quot; id=&quot;edgegames-trainings&quot;&gt;&lt;/div&gt;<br />
+&lt;/div&gt;</code></pre>
+	
+	
+</div>
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </div>
