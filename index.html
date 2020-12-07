@@ -134,7 +134,11 @@ nav {
 	
 	<div class="voyage-wrap grid-x grid-margin-x grid-margin-y grid-margin-y small-12 align-center wrap" style="margin-top:10px;padding-left:15px;padding-right:15px;min-height:750px;">
 		<pre class="cell small-12 large-6" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">JavaScript</span></p><code style="margin-top:-30px;">irep.ready(function(){
- 
+
+    setTimeout(function() {
+		$(".hiw-nav").trigger('click');
+	},10); 
+	
     if (window.location.href.indexOf("?t=battledeck") > -1 ) {
 		setTimeout(function() {
 			$(".battle-nav").trigger('click');
@@ -151,6 +155,24 @@ nav {
     $(".battle-wrap").hide();
     $(".ranking-wrap").hide();
     
+    //Leaderboard//
+    $("table").addClass("cell grid-x small-12 xlarge-10");
+    $("tbody").addClass("cell grid-x");
+    $("tr").addClass("cell grid-x");
+    $("th:first-child").addClass("cell small-5 medium-6 padding--medium text-left");
+    $("th:nth-child(2)").addClass("cell small-4 medium-3 padding--medium text-center");
+    $("th:nth-child(3)").addClass("cell small-3 padding--medium text-center");
+    $("td:first-child").addClass("cell small-5 medium-6 padding--medium text-left");
+    $("td:nth-child(2)").addClass("cell small-4 medium-3 padding--medium text-center");
+    $("td:nth-child(3)").addClass("cell small-3 padding--medium text-center");
+    $("tr[data-self = True ]").addClass('myRank');
+    $("th[colspan = 3 ]").removeClass("small-5 medium-6").addClass('small-12 noBorder');
+    if ($("tr[data-self]").length > 0) {
+        $(".lbHeader").show();
+        $(".lbRanks").show();
+        $(".lbSpacer").hide();
+    }
+    
     /* loading animation for users with slower cxn - plays by default in spaces that pull in data - turned off when data loads */
     var dots = 0;
     setInterval(function () {
@@ -158,10 +180,11 @@ nav {
             $('.loading-ani').append('.');
             dots++;
         } else {
-            $('.loading-ani').html('<MT-LOCALETEXT:233935>');
+            $('.loading-ani').html('CARGANDO');
             dots = 0;
         }
     }, 800);
+  
   
 // MAIN NAVIGATION
     $(".hiw-nav").click(function() {
@@ -169,6 +192,67 @@ nav {
         $(".hiw-nav").addClass("nav-selected");
         $(".hiw-wrap").fadeIn();
         $(".battle-wrap, .ranking-wrap").hide();
+        // REMATCH BUTTONS
+        // TRAININGS CLAIM REMATCH BUTTON
+        irep.callApi({
+        url: "voyageintothedeep/training",
+        type: "GET",
+        datatype: "JSON"
+        }).done(function (data) {
+             console.log("number of high priority trainings taken: " + (data.count));
+            if ((data.count) < 10) {
+                $(".rematch-trainings .btn-text").html(" LISTA DE ENTRENAMIENTOS "); // "TRAINING LIST"
+                $(".rematch-trainings").addClass("rematch-avail").removeClass("rematch-unavail");
+            } else {
+                $(".rematch-credits").addClass("rematch-unavail").removeClass("rematch-avail");
+                $(".rematch-credits .btn-text").html(" MÁX. OBTENIDO "); // "MAX EARNED"
+                $("a.trainings-btn").removeAttr("href");
+            }
+        });    
+    
+        // CREDITS CLAIM REMATCH BUTTON
+        irep.callApi({
+        url: "voyageintothedeep/available/purchase",
+        type: "GET",
+        datatype: "JSON"
+        }).done(function (data) {
+            console.log("rematch available for purchase with credits? " + (data.available));
+            if (data.available) {
+                $(".rematch-credits .btn-text").html(" COMPRAR REVANCHA "); // "PURCHASE REMATCH" - changes button text
+                $(".rematch-credits").addClass("rematch-avail").removeClass("rematch-unavail"); // blue background + pointer cursor
+                $(".rematch-credits").one("click", function() { 
+                    $(this).addClass("rematch-unavail").removeClass("rematch-avail"); // grey background + no pointer cursor, since user only allowed one redepemtion /week, clicking the button immediately 'disables' it
+                    $(".rematch-credits .btn-text").html(" COMPRADAS "); // "PURCHASED" - changes button text
+                    irep.callApi({
+                        url: "voyageintothedeep/purchase",
+                        type: "POST",
+                        datatype: "JSON"
+                        }).done(function (data) {
+                            console.log(data);
+                    });
+                });
+            } else {
+                $(".rematch-credits").addClass("rematch-unavail").removeClass("rematch-avail");
+                $(".rematch-credits .btn-text").html(" COMPRADAS "); // "PURCHASED"
+            }
+        });    
+    
+        // RXT CLAIM REMATCH BUTTON 
+        irep.callApi({
+        url: "voyageintothedeep/available/rxt",
+        type: "GET",
+        datatype: "JSON"
+        }).done(function (data) {
+            console.log("rematch available for purchase with rxt? " + (data.available));
+            if (data.available) {
+                $(".rematch-rxt .btn-text").html(" ENVIAR MÉTRICAS "); // "SUBMIT METRICS"
+                $(".rematch-rxt").addClass("rematch-avail").removeClass("rematch-unavail");
+            } else {
+                $(".rematch-rxt").addClass("rematch-unavail").removeClass("rematch-avail");
+                $(".rematch-rxt .btn-text").html(" ENVIADAS "); // "SUBMITTED"
+                $("a.rxt-btn").removeAttr("href");
+            }
+        });
     });
     $(".battle-nav").click(function() {
         $(".nav-item").removeClass("nav-selected");
@@ -201,9 +285,9 @@ nav {
         $(".battle-wrap, .hiw-wrap").hide();
     });
     
-// BATTLE DECK CARDS
+
+// BATTLE DECK CARDS & NAV
     $(".objectives-panel").hide();
-    $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc").hide();
     
     /* encounter/objective navigation */
     $(".encounter-nav").click(function() {
@@ -225,32 +309,48 @@ nav {
         $(".week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc").hide();
         $(".weekly-nav div").removeClass("active-week-ani");
         $(this).addClass("active-week-ani");
-        $(".week-number").html(" <MT-LOCALETEXT:236120> ");
-        $(".objective-subheading").html(" <MT-LOCALETEXT:236128> "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
+        $(".week-number").html(" SEMANA 1 ");
+        $(".objective-subheading").html(" Presta atención a la sabiduría del Antiguo Marinero, transmitida mediante los siguientes objetivos. "); // Heed the wisdom of the Ancient Mariner bequeathed in the objectives below.
     });
     $(".week-2-nav").click(function() {
         $(".week-2-objs, .week-2-enc").show();
         $(".week-1-objs, .week-1-enc, .week-3-objs, .week-3-enc, .week-4-objs, .week-4-enc").hide();
         $(".weekly-nav div").removeClass("active-week-ani");
         $(this).addClass("active-week-ani");
-        $(".week-number").html(" <MT-LOCALETEXT:236141> ");
-        $(".objective-subheading").html(" <MT-LOCALETEXT:236145> "); // Solve the Wise Islander’s riddles by completing the four objectives below.
+        $(".week-number").html(" SEMANA 2 ");
+        $(".objective-subheading").html(" Resuelve los acertijos del Sabio Isleño cumpliendo con los cuatro objetivos siguientes. "); // Solve the Wise Islander’s riddles by completing the four objectives below.
     });
     $(".week-3-nav").click(function() {
         $(".week-3-objs, .week-3-enc").show();
         $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc").hide();
         $(".weekly-nav div").removeClass("active-week-ani");
         $(this).addClass("active-week-ani");
-        $(".week-number").html(" <MT-LOCALETEXT:236153> ");
-        $(".objective-subheading").html(" <MT-LOCALETEXT:236157> "); // Withstand the waters and prove your knowledge.
+        $(".week-number").html(" SEMANA 3 ");
+        $(".objective-subheading").html(" Resiste a las aguas y demuestra tus conocimientos. "); // Withstand the waters and prove your knowledge.
     });
-    $(".week-4-nav").click(function() {
-         $(".week-4-objs, .week-4-enc").show();
-         $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc").hide();
-         $(".weekly-nav div").removeClass("active-week-ani");
-         $(this).addClass("active-week-ani");
-         $(".week-number").html(" <MT-LOCALETEXT:236165> ");
-         $(".objective-subheading").html(" <MT-LOCALETEXT:236169> "); // You’ve come this far. It’s time to outwit the Sea Empress.
+    
+    /* week 4 unlocks */    
+    irep.callApi({
+    url: "voyageintothedeep/battledeck",
+    type: "GET",
+    datatype: "JSON"
+    }).done(function (data) {
+        if ((data.objectivesCompleted) > 11) {
+            $(".week-number").html(" SEMANA 4 ");
+            $(".week-4-nav").addClass("week-unlocked active-week-ani");
+            $(".week-3-nav").removeClass("active-week-ani");
+            $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc").hide();
+            $(".week-4-nav").click(function() {
+                $(".week-4-objs, .week-4-enc").show();
+                $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-3-objs, .week-3-enc").hide();
+                $(".weekly-nav div").removeClass("active-week-ani");
+                $(this).addClass("active-week-ani");
+                $(".week-number").html(" SEMANA 4 ");
+                $(".objective-subheading").html(" Has llegado hasta aquí. Es hora de superar a la Reina del Mar. "); // You’ve come this far. It’s time to outwit the Sea Empress.
+            });
+        } else {
+            $(".week-1-objs, .week-1-enc, .week-2-objs, .week-2-enc, .week-4-objs, .week-4-enc").hide();
+        }
     });
     
     /* pageload animation on current week's encounter */
@@ -281,68 +381,6 @@ nav {
         }
     });
     
-// REMATCH BUTTONS
-    // TRAININGS CLAIM REMATCH BUTTON
-    irep.callApi({
-    url: "voyageintothedeep/training",
-    type: "GET",
-    datatype: "JSON"
-    }).done(function (data) {
-         console.log("number of high priority trainings taken: " + (data.count));
-        if ((data.count) < 10) {
-            $(".rematch-trainings .btn-text").html(" <MT-LOCALETEXT:236109> "); // "TRAINING LIST"
-            $(".rematch-trainings").addClass("rematch-avail").removeClass("rematch-unavail");
-        } else {
-            $(".rematch-credits").addClass("rematch-unavail").removeClass("rematch-avail");
-            $(".rematch-credits .btn-text").html(" <MT-LOCALETEXT:236110> "); // "MAX EARNED"
-            $("a.trainings-btn").removeAttr("href");
-        }
-    });    
-
-    // CREDITS CLAIM REMATCH BUTTON
-    irep.callApi({
-    url: "voyageintothedeep/available/purchase",
-    type: "GET",
-    datatype: "JSON"
-    }).done(function (data) {
-        console.log("rematch available for purchase with credits? " + (data.available));
-        if (data.available) {
-            $(".rematch-credits .btn-text").html(" <MT-LOCALETEXT:236112> "); // "PURCHASE REMATCH" - changes button text
-            $(".rematch-credits").addClass("rematch-avail").removeClass("rematch-unavail"); // blue background + pointer cursor
-            $(".rematch-credits").one("click", function() { 
-                $(this).addClass("rematch-unavail").removeClass("rematch-avail"); // grey background + no pointer cursor, since user only allowed one redepemtion /week, clicking the button immediately 'disables' it
-                $(".rematch-credits .btn-text").html(" <MT-LOCALETEXT:236113> "); // "PURCHASED" - changes button text
-                irep.callApi({
-                    url: "voyageintothedeep/purchase",
-                    type: "POST",
-                    datatype: "JSON"
-                    }).done(function (data) {
-                        console.log(data);
-                });
-            });
-        } else {
-            $(".rematch-credits").addClass("rematch-unavail").removeClass("rematch-avail");
-            $(".rematch-credits .btn-text").html(" <MT-LOCALETEXT:236113> "); // "PURCHASED"
-        }
-    });    
-
-    // RXT CLAIM REMATCH BUTTON 
-    irep.callApi({
-    url: "voyageintothedeep/available/rxt",
-    type: "GET",
-    datatype: "JSON"
-    }).done(function (data) {
-        console.log("rematch available for purchase with rxt? " + (data.available));
-        if (data.available) {
-            $(".rematch-rxt .btn-text").html(" <MT-LOCALETEXT:236115> "); // "SUBMIT METRICS"
-            $(".rematch-rxt").addClass("rematch-avail").removeClass("rematch-unavail");
-        } else {
-            $(".rematch-rxt").addClass("rematch-unavail").removeClass("rematch-avail");
-            $(".rematch-rxt .btn-text").html(" <MT-LOCALETEXT:236116> "); // "SUBMITTED"
-            $("a.rxt-btn").removeAttr("href");
-        }
-    });
-    
     // BATTLE DECK OBJECTIVES
     irep.callApi({
     url: "voyageintothedeep/scores",
@@ -352,13 +390,14 @@ nav {
             console.log(item);
             // avatar item checked
             if ((item.score) > 0) {
-                $("#obj-" + item.objectiveId + " .avatar-item").append( "&lt;div class='align-center-middle cell grid-x small-12' style='background: rgba(229,169,45,0.85);'&rt;&lt;img src='/content/images/voyage/sitepages/fordev/Checkmark.png'&rt;&lt;/div&rt;" );
+                $("#obj-" + item.objectiveId + " .avatar-item").append( "<div class='align-center-middle cell grid-x small-12' style='background: rgba(229,169,45,0.85);'><img src='/content/images/voyage/sitepages/fordev/Checkmark.png'></div>" );
                 // display and load score
                 $("#obj-" + item.objectiveId + " .obj-score").show();
                 $("#obj-" + item.objectiveId + " .obj-score span").html(item.score);
             }
         })
     });
+    
 })</code></pre>
 				<pre class="cell small-12 large-6" style="position:relative;height:100%;"><p style="position: sticky;top:0px;right:0px;text-align:right;margin:0px;"><span class="tab">CSS</span></p><code style="margin-top:-30px;">/* for small view only */
 @media only screen and (max-width:39.9735em) {
