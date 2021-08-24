@@ -26,24 +26,35 @@
 hljs.initHighlightingOnLoad();
 $(document).foundation();
 $(document).ready(function(){
-    $(".voyage-nav").click(function() {
+	
+    $(".nav-item").click(function() {
         $(".nav-item").removeClass("nav-selected");
-        $(".voyage-nav").addClass("nav-selected");
-        $(".voyage-wrap").fadeIn();
-        $(".marvel-wrap, .edge-wrap").hide();
-    });
-    $(".marvel-nav").click(function() {
-        $(".nav-item").removeClass("nav-selected");
-        $(".marvel-nav").addClass("nav-selected");
-        $(".marvel-wrap").fadeIn();	
-        $(".edge-wrap, .voyage-wrap").hide();
-	  });
-    $(".edge-nav").click(function() {
-        $(".nav-item").removeClass("nav-selected");
-        $(".edge-nav").addClass("nav-selected");
-        $(".edge-wrap").fadeIn();	
-        $(".marvel-wrap, .voyage-wrap").hide();
-	  });
+        $(this).addClass("nav-selected");
+	if ($(this).is(".voyage-nav")) { $(".voyage-wrap").fadeIn(); $(".marvel-wrap, .edge-wrap").hide(); }
+	if ($(this).is(".marvel-nav")) { $(".marvel-wrap").fadeIn(); $(".edge-wrap, .voyage-wrap").hide(); }
+	if ($(this).is(".edge-nav")) { $(".edge-wrap").fadeIn(); $(".marvel-wrap, .voyage-wrap").hide(); }
+    });	
+
+	
+//     $(".voyage-nav").click(function() {
+//         $(".nav-item").removeClass("nav-selected");
+//         $(".voyage-nav").addClass("nav-selected");
+//         $(".voyage-wrap").fadeIn();
+//         $(".marvel-wrap, .edge-wrap").hide();
+//     });
+//     $(".marvel-nav").click(function() {
+//         $(".nav-item").removeClass("nav-selected");
+//         $(".marvel-nav").addClass("nav-selected");
+//         $(".marvel-wrap").fadeIn();	
+//         $(".edge-wrap, .voyage-wrap").hide();
+// 	  });
+//     $(".edge-nav").click(function() {
+//         $(".nav-item").removeClass("nav-selected");
+//         $(".edge-nav").addClass("nav-selected");
+//         $(".edge-wrap").fadeIn();	
+//         $(".marvel-wrap, .voyage-wrap").hide();
+//     });
+	
 })
 </script>
 <style>
